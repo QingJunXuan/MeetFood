@@ -4,6 +4,7 @@ import com.meetfood.entity.User;
 import com.meetfood.repository.UserRepository;
 import com.meetfood.statusCode.JsonResult;
 import com.meetfood.statusCode.StatusCode;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -13,8 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-//import user.JsonResult;
-//import user.StatusCode;
 
 
 @Controller    // This means that this class is a Controller

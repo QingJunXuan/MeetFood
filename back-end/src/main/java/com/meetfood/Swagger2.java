@@ -18,9 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 
 @Configuration
-
 @EnableSwagger2
-
 public class Swagger2 {
     /**
      * 创建API应用
@@ -35,7 +33,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.swaggerTest.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.meetfood.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -49,7 +47,7 @@ public class Swagger2 {
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
                 .description("更多请关注http://www.baidu.com")
                 .termsOfServiceUrl("http://www.baidu.com")
-                .contact("sunf")
+                .contact("xuan")
                 .version("1.0")
                 .build();
     }
