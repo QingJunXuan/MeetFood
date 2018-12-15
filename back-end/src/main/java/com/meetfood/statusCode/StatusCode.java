@@ -1,4 +1,4 @@
-package user;
+package com.meetfood.statusCode;
 
 /**
  * 功能：输出的json字段的值是StatusCode类决定
@@ -60,4 +60,5 @@ public enum StatusCode {
         this.message = message;
     }
 }
+
 

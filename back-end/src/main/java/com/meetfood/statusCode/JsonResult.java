@@ -1,4 +1,4 @@
-package user;
+package com.meetfood.statusCode;
 
 /**
  * 这个类定义了返回的json格式，即json含有哪些字段

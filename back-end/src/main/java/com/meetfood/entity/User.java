@@ -1,4 +1,4 @@
-package user;
+package com.meetfood.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,12 +17,12 @@ public class User {
     private String bio;//简介
     private String photo;//头像
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getType() {
         return type;
@@ -31,19 +31,19 @@ public class User {
         this.type = type;
     }
 
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getPassword() {
         return password;
@@ -66,4 +66,5 @@ public class User {
         this.photo = photo;
     }
 }
+
 

@@ -26,6 +26,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
     compile("org.springframework.boot:spring-boot-starter-web")
 
     // JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
@@ -34,6 +35,10 @@ dependencies {
     // Use MySQL Connector-J
     compile 'mysql:mysql-connector-java'
 
+    //swagger/swagger-ui
+    compile('io.springfox:springfox-swagger2:2.2.2')
+    compile('io.springfox:springfox-swagger-ui:2.2.2')
+    
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

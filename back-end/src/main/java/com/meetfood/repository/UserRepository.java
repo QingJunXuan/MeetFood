@@ -1,7 +1,7 @@
-package user;
+package com.meetfood.repository;
 
+import com.meetfood.entity.User;
 import org.springframework.data.repository.CrudRepository;
-
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -13,5 +13,5 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     //@Query(value = "from User u where u.email=:email")
     List<User> findByEmail(@Param("email") String email);
     List<User> findByEmailAndPassword(@Param("email") String email,
-                                    @Param("password") String password);
+                                      @Param("password") String password);
 }
