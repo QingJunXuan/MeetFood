@@ -1,15 +1,47 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/views/Main.vue'
+import GuestBasicInfor from '@/views/Guest/GuestBasicInfor.vue'
+import GuestDetailInfor from '@/views/Guest/GuestDetailInfor.vue'
+import AllReviews from '@/views/Guest/AllReviews.vue'
+import MyFavorite from '@/views/Guest/MyFavorite.vue'
+import Message from '@/views/Guest/Message.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
       name: 'Main',
       component: Main
-    }
+    },
+    {
+      path: '/Guest_Basic_Infor',
+      name: 'GuestBasicInfor',
+      component: GuestBasicInfor
+    },
+    {
+      path: '/Guest_Detail_Infor',
+      name: 'GuestDetailInfor',
+      component: GuestDetailInfor
+    },
+    {
+      path: '/ALL_Reviews',
+      name: 'AllReviews',
+      component: AllReviews
+    },
+    {
+      path: '/My_Favorite',
+      name: 'MyFavorite',
+      component: MyFavorite
+    },
+    {
+      path: '/Message',
+      name: 'Message',
+      component: Message
+    },
   ]
 })
+
+export default router
