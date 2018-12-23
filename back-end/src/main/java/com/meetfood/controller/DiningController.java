@@ -67,7 +67,7 @@ public class DiningController {
     }
 
     //登录
-    @PostMapping(path = "login")
+    @PostMapping(path = "/login")
     @ApiOperation(value = "使用邮箱密码登录餐厅",notes = "返回json")
     @ApiImplicitParams({
             @ApiImplicitParam( paramType ="query",name="email",value="登录邮箱",required=true,dataType="String"),
@@ -97,5 +97,13 @@ public class DiningController {
         }catch (Exception e){
             return "failed";
         }
+    }
+
+    //返回餐厅信息
+    @RequestMapping(path = "/view")
+    @ApiOperation(value = "根据餐厅id返回餐厅信息",notes = "返回JSON")
+    @ApiImplicitParam( paramType = "query",name = "id",value = "餐厅id",required = true,dataType = "Integer")
+    public @ResponseBody Iterable<Dining> viewDining(@RequestParam Integer id){
+        return diningRepository.viewById(id);
     }
 }

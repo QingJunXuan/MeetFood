@@ -15,7 +15,7 @@ public class Comment {
     private String text;//评论正文
     private Date time;
     private Integer dining_id;
-    private Integer sorce;//guest评分
+    private Integer score;//guest评分
 
     public Integer getId(){ return id;}
     public void setId(Integer id){this.id = id;}
@@ -32,6 +32,6 @@ public class Comment {
     public Integer getDining_id(){ return dining_id;}
     public void setDining_id(Integer dining_id){this.dining_id = dining_id;}
 
-    public Integer getSorce(){ return  sorce; }
-    public void setSorce(Integer sorce){this.sorce = sorce;}
+    public Integer getScore(){ return  score; }
+    public void setScore(Integer score){this.score= score;}
 }

@@ -10,4 +10,5 @@ public interface DiningRepository extends CrudRepository<Dining,Integer> {
     List<Dining> findByEmail(@Param("email") String email);
     List<Dining> findByEmailAndPassword(@Param("email") String email,
                                        @Param("password") String password);
+    List<Dining> viewById(@Param("id") Integer id);
 }
