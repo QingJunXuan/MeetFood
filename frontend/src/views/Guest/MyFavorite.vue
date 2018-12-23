@@ -14,8 +14,8 @@
                     <div class="box">
                         <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
                             <el-card :body-style="{ padding: '0px' }">
-                             <img src="src/assets/1.jpg" class="image">
-                         <div style="padding: 14px;">
+                             <img src="../../assets/1.jpg" class="image">
+                         <div style="padding: 25px;">
                             <span>收藏的餐厅</span>
                          <div class="bottom clearfix">
                          <time class="time">{{ currentDate }}</time>

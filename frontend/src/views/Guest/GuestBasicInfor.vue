@@ -81,4 +81,3 @@ template {
     padding-top: 50px;
 }
 </style>
-
