@@ -11,10 +11,10 @@
                     background-color="#181818"
                     text-color="#fff"
                     active-text-color="#fff">
-                <el-menu-item index="1" >HOME</el-menu-item>
-                <el-menu-item index="2" >DISCOVERY QUEUES</el-menu-item> 
-                <el-menu-item index="3" >YOUR ORDER</el-menu-item>  
-                <el-menu-item index="4" >YOUR MEETFOOD.COM</el-menu-item>               
+                <el-menu-item index="1" @click="HOME" >HOME</el-menu-item>
+                <el-menu-item index="2" @click="DISCOVERY_QUEUES" >DISCOVERY QUEUES</el-menu-item> 
+                <el-menu-item index="3" @click="YOUR_ORDER">YOUR ORDER</el-menu-item>  
+                <el-menu-item index="4" @click="YOUR_MEETFOOR">YOUR MEETFOOD.COM</el-menu-item>               
             </el-menu>
         </el-col>  
         <el-col :span="3"></el-col>         
@@ -23,6 +23,32 @@
 </template>
 
 <script>
+    export default {
+        methods: {
+            HOME(){
+                this.$router.push('/')
+            },
+            DISCOVERY_QUEUES(){
+                this.$router.push('/')
+            },
+            YOUR_MEETFOOR(){
+                this.$router.push('/Guest_Basic_Infor')
+            },
+            YOUR_ORDER(){
+                this.$router.push('/Guest_Order_All')
+            },
+            handleSelect(key, keyPath) {
+                console.log(this);
+                console.log(key,keyPath);
+            }
+        },
+        computed:{
+            activeIndex(){       
+                    return this.$route.path.replace('/','');
+            }
+        },
+    }
+
     
 </script>
 

@@ -1,26 +1,35 @@
 <template>
               <div class="sidebar">
                     <div class="sidebar_title">
-                        <h5 > 个人信息</h5>
+                        <h5 > 我的预订 </h5>
                     </div>
                     <el-menu 
                     :default-active="activeIndex" 
                     background-color="#fff" text-color="#4D4D4D"  
                     active-text-color="rgb(60, 121, 202)"
                     @select="handleSelect" router>
-                    <el-menu-item index="Guest_Basic_Infor" >
+                    <el-menu-item index="Guest_Order_Undone" >
                         <i class="el-icon-menu"></i>                       
-                        <span slot="title">基本信息{{path}}</span>
+                        <span slot="title">未完成</span>
                     </el-menu-item>
-                    <el-menu-item index="All_Reviews" > 
+                     <el-menu-item index="Guest_Order_Done" >
+                        <i class="el-icon-menu"></i>                       
+                        <span slot="title">已完成</span>
+                    </el-menu-item>
+                     <el-menu-item index="Guest_Order_All" >
+                        <i class="el-icon-menu"></i>                       
+                        <span slot="title">全部</span>
+                    </el-menu-item>
+        
+                    <el-menu-item index="Guest_Order_Week" > 
                         <i class="el-icon-menu"></i>                     
-                        <span slot="title">所有评价</span>
+                        <span slot="title">最近一周</span>
                     </el-menu-item>
-                    <el-menu-item index="My_Favorite" >   
+                    <el-menu-item index="Guest_Order_Month" >   
                         <i class="el-icon-menu"></i>                   
-                        <span slot="title">我的收藏</span>
+                        <span slot="title">最近一月</span>
                     </el-menu-item>
-                
+             
                     </el-menu>
               </div>
       
