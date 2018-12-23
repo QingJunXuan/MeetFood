@@ -4,18 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Blob;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class User {
+public class Guest {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    private Integer type = 0;
+    private Integer age;
     private String name;
     private String email;
     private String password;
-    private String bio;//简介
-    private String photo;//头像
+    private String tel;
+    private Blob photo;//头像
 
     public Integer getId() {
         return id;
@@ -24,11 +25,11 @@ public class User {
         this.id = id;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getAge() {
+        return age;
     }
-    public void setType(Integer type) {
-        this.type = type;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -52,17 +53,17 @@ public class User {
         this.password = password;
     }
 
-    public String getBio() {
-        return bio;
+    public String getTel() {
+        return tel;
     }
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
-    public String getPhoto() {
+    public Blob getPhoto() {
         return photo;
     }
-    public void setPhoto(String photo) {
+    public void setPhoto(Blob photo) {
         this.photo = photo;
     }
 }
