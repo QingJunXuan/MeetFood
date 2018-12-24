@@ -17,7 +17,6 @@ import HostOrderDone from '@/views/Host/Order/HostOrderDone.vue'
 import HostOrderUndone from '@/views/Host/Order/HostOrderUndone.vue'
 import HostOrderMonth from '@/views/Host/Order/HostOrderMonth.vue'
 import HostOrderWeek from '@/views/Host/Order/HostOrderWeek.vue'
-import test from '@/views/Guest/test.vue'
 
 Vue.use(Router)
 
@@ -28,11 +27,6 @@ const router = new Router({
       path: '/',
       name: 'Main',
       component: Main
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: test
     },
     {
       path: '/Guest_Basic_Infor',
