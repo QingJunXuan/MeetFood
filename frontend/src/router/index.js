@@ -6,10 +6,12 @@ import GuestDetailInfor from '@/views/Guest/GuestDetailInfor.vue'
 import AllReviews from '@/views/Guest/AllReviews.vue'
 import MyFavorite from '@/views/Guest/MyFavorite.vue'
 import Message from '@/views/Guest/Message.vue'
+import Shop from '@/views/Shop/Shop.vue'
 
 Vue.use(Router)
 
 const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -40,6 +42,11 @@ const router = new Router({
       path: '/Message',
       name: 'Message',
       component: Message
+    },
+    {
+      path: '/Shop',
+      name: 'Shop',
+      component: Shop
     },
   ]
 })
