@@ -7,6 +7,7 @@ import MyFavorite from '@/views/Guest/MyFavorite.vue'
 import Shop from '@/views/Shop/Shop.vue'
 import Edit from '@/views/Shop/Edit.vue'
 import Menu from '@/views/Shop/Menu.vue'
+import Comment from '@/views/Shop/Comment.vue'
 import GuestOrderAll from '@/views/Guest/Order/GuestOrderAll.vue'
 import GuestOrderDone from '@/views/Guest/Order/GuestOrderDone.vue'
 import GuestOrderUndone from '@/views/Guest/Order/GuestOrderUndone.vue'
@@ -113,6 +114,11 @@ const router = new Router({
       path: '/Menu',
       name: 'Menu',
       component: Menu
+    },
+    {
+      path: '/Comment',
+      name: 'Comment',
+      component: Comment
     }
   ]
 })

@@ -7,7 +7,7 @@
                 <div class="title">
                     <span>西餐厅</span>
                 </div>
-                <img :src="imgUrl">
+                <img :src="imgUrl" width="1000">
             </div>
         </el-col>
         <el-col :span="8">
@@ -28,11 +28,11 @@
     <el-row>
         <el-col :span="24">
             <div class="picture_small">
-                <img src="../../assets/1.jpg" width="300" height="300">
-                <img src="../../assets/1.jpg" width="300" height="300">
-                <img src="../../assets/1.jpg" width="300" height="300">
-                <img src="../../assets/1.jpg" width="300" height="300">
-                <img src="../../assets/1.jpg" width="300" height="300">
+                <img src="../../assets/3.jpg" width="300" height="300">
+                <img src="../../assets/4.jpg" width="300" height="300">
+                <img src="../../assets/5.jpg" width="300" height="300">
+                <img src="../../assets/6.jpg" width="300" height="300">
+                <img src="../../assets/7.jpg" width="300" height="300">
             </div>
         </el-col>
     </el-row>
@@ -67,19 +67,22 @@
         </el-col> 
         <el-col :span="8">
             <div class="reserve">
-                <div class="title">
-                    <span>预定栏</span>
+                <div class="reserve_price">
+                    <span>￥359</span>
                 </div>
-                
-
-                <el-form ref="form" :model="form" label-width="80px">
-                    <el-rate
+                <div class="reserve_peoplenum">
+                    <span>建议用餐人数：3~5人</span>
+                </div>
+                <el-rate
                         v-model="value5"
                         disabled
                         show-score
                         text-color="#ff9900"
-                        score-template="{value}">
-                    </el-rate>
+                        score-template="{value}"
+                        class="rate">
+                </el-rate>
+               
+                <el-form ref="form" :model="form" label-width="80px">    
                     <el-form-item>
                         <span>日期</span>
                         <el-row>
@@ -103,13 +106,14 @@
                         </el-row>
                     </el-form-item>
                     <el-form-item>
+                        <el-input type="textarea" v-model="form.desc" placeholder="留言" style="width: 80%;">></el-input>
+                    </el-form-item>
+
+                    <el-form-item>
                         <el-button type="primary" @click="onSubmit">立即预订</el-button>
                         <span>您暂时不会被收费</span>
                     </el-form-item>
-                    
-                    <el-form-item>
-                        <el-input type="textarea" v-model="form.desc" placeholder="留言" style="width: 80%;">></el-input>
-                    </el-form-item>
+                            
                 </el-form>
             </div>    
         </el-col> 
@@ -120,6 +124,27 @@
                 <div class="title">
                     <span>评价</span>
                 </div>
+                <div class="review">
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>评价的标题</span>
+                        </div>
+                        <div class="text item">
+                            这里是一些评价
+                        </div>
+                        <img src="../../assets/1.jpg" class="image">
+                        
+                    </el-card>
+                    <el-card class="box-card">
+                        <div slot="header" class="clearfix">
+                            <span>评价的标题</span>
+                        </div>
+                        <div class="text item">
+                            这里是一些评价
+                        </div>
+                        <img src="../../assets/1.jpg" class="image">
+                    </el-card>
+                </div>    
             </div>
         </el-col>     
     </el-row>
@@ -138,7 +163,7 @@ export default {
 
     data(){
         return {
-            imgUrl:require("../../assets/1.jpg"),
+            imgUrl:require("../../assets/2.jpg"),
             form: {
                 date1: '',
                 date2: '',
@@ -234,7 +259,7 @@ template {
     margin-left: 10px;
     font-size: 16px;
     background-color: #f3f1f1;
-    height: 320px;
+    
 }
 .introduction_content{
     margin-top: 10px;
@@ -263,9 +288,56 @@ template {
     font-size: 16px;
     color: gray;
     height: 500px;
-    width: 500px;
+    width: 450px;
     border-style:solid;
     border-color:#a0a0a0;
     border-width:1px;
 }
+.reserve_price{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-left: 60px;
+    font-size: 22px;
+    color: gray;
+}
+.reserve_peoplenum{
+    padding-bottom: 20px;
+    padding-left: 10px;
+    margin-left: 60px;
+    font-size: 18px;
+    color: gray;
+}
+.rate{
+    padding-left: 10px;
+    margin-left: 60px;
+}
+.review{
+    padding-left: 10px;
+}
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+    .image {
+    width: 20%;
+    display: block;
+  }
 </style>
