@@ -1,7 +1,7 @@
 <template>
               <div class="sidebar">
                     <div class="sidebar_title">
-                        <h5 > 我的预定 </h5>
+                        <h5 > My Reserve </h5>
                     </div>
                     <el-menu 
                     :default-active="activeIndex" 
@@ -10,24 +10,24 @@
                     @select="handleSelect" router>
                     <el-menu-item index="Host_Order_Undone" >
                         <i class="el-icon-menu"></i>                       
-                        <span slot="title">未完成</span>
+                        <span slot="title">Undone</span>
                     </el-menu-item>
                      <el-menu-item index="Host_Order_Done" >
                         <i class="el-icon-menu"></i>                       
-                        <span slot="title">已完成</span>
+                        <span slot="title">Done</span>
                     </el-menu-item>
                      <el-menu-item index="Host_Order_All" >
                         <i class="el-icon-menu"></i>                       
-                        <span slot="title">全部</span>
+                        <span slot="title">All</span>
                     </el-menu-item>
         
                     <el-menu-item index="Host_Order_Week" > 
                         <i class="el-icon-menu"></i>                     
-                        <span slot="title">最近一周</span>
+                        <span slot="title">Lasted Week</span>
                     </el-menu-item>
                     <el-menu-item index="Host_Order_Month" >   
                         <i class="el-icon-menu"></i>                   
-                        <span slot="title">最近一月</span>
+                        <span slot="title">Lasted Month</span>
                     </el-menu-item>
              
                     </el-menu>

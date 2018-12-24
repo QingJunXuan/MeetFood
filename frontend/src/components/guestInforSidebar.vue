@@ -1,7 +1,7 @@
 <template>
               <div class="sidebar">
                     <div class="sidebar_title">
-                        <h5 > 个人信息</h5>
+                        <h5 > Personal information </h5>
                     </div>
                     <el-menu 
                     :default-active="activeIndex" 
@@ -10,17 +10,21 @@
                     @select="handleSelect" router>
                     <el-menu-item index="Guest_Basic_Infor" >
                         <i class="el-icon-menu"></i>                       
-                        <span slot="title">基本信息{{path}}</span>
+                        <span slot="title">Basic Information</span>
                     </el-menu-item>
                     <el-menu-item index="All_Reviews" > 
                         <i class="el-icon-menu"></i>                     
-                        <span slot="title">所有评价</span>
+                        <span slot="title">All Reviews</span>
                     </el-menu-item>
                     <el-menu-item index="My_Favorite" >   
                         <i class="el-icon-menu"></i>                   
-                        <span slot="title">我的收藏</span>
+                        <span slot="title">My Favorite</span>
                     </el-menu-item>
-                
+                    <el-menu-item index="/" >  
+                <el-button type="text" style="color:#4D4D4D;width:100%;height:60px" @click="logout">
+                <span>Log out</span>
+                </el-button>
+                </el-menu-item>
                     </el-menu>
               </div>
       
