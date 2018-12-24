@@ -12,9 +12,8 @@
                     text-color="#fff"
                     active-text-color="#fff">
                 <el-menu-item index="1" @click="HOME" >HOME</el-menu-item>
-                <el-menu-item index="2" @click="DISCOVERY_QUEUES" >DISCOVERY QUEUES</el-menu-item> 
-                <el-menu-item index="3" @click="YOUR_ORDER">YOUR ORDER</el-menu-item>  
-                <el-menu-item index="4" @click="YOUR_MEETFOOR">YOUR MEETFOOD.COM</el-menu-item>               
+                <el-menu-item index="2" @click="Edit_Page" >Edit Page</el-menu-item> 
+                <el-menu-item index="3" @click="YOUR_ORDER">YOUR ORDER</el-menu-item>       
             </el-menu>
         </el-col>  
         <el-col :span="3"></el-col>         
@@ -28,14 +27,11 @@
             HOME(){
                 this.$router.push('/')
             },
-            DISCOVERY_QUEUES(){
+            Edit_Page(){
                 this.$router.push('/')
             },
-            YOUR_MEETFOOR(){
-                this.$router.push('/Guest_Basic_Infor')
-            },
-            YOUR_ORDER(){
-                this.$router.push('/Guest_Order_All')
+            YOUR_Order(){
+                this.$router.push('/Host_Order_All')
             },
             handleSelect(key, keyPath) {
                 console.log(this);

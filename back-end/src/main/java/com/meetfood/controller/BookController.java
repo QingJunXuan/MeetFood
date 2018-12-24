@@ -2,10 +2,8 @@ package com.meetfood.controller;
 
 import com.meetfood.entity.Book;
 import com.meetfood.repository.BookRepository;
-import com.sun.xml.internal.ws.wsdl.writer.document.ParamType;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +24,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
+    //根据状态查看预约信息
     @GetMapping({"/booking",
             "/waiting",
             "/finished"
@@ -41,35 +40,38 @@ public class BookController {
         return bookRepository.findByStateAndGuest_id(state,guest_id);
     }
 
-    @GetMapping({"/all",
-            "/lastWeek",
+    //根据时间查看预约信息
+    @GetMapping({"/lastWeek",
             "/lastMonth"
     })
     @ApiOperation(value = "获取最近一周、一月的订单",notes = "返回json")
     @ApiImplicitParams({@ApiImplicitParam( paramType = "query",name = "guest_id",value="当前用户",required = true,dataType = "Integer"),
-            @ApiImplicitParam( paramType = "query",name = "date_state",value="距当前的时间",required = true,dataType = "Integer")
+            @ApiImplicitParam( paramType = "query",name = "dateState",value="距当前的时间",required = true,dataType = "Integer")
     })
     public @ResponseBody Iterable<Book> getBook2(@RequestParam Integer guest_id,
-                                                 @RequestParam Integer date_state){
+                                                 @RequestParam Integer dateState){
         //SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd");
         //ft.format(current_time);
 
+        //dateState不存在在表中，值有7，30(或者0，1)，表示天数
         Calendar c = Calendar.getInstance();
         //过去七天
         c.setTime(new Date());
-        c.add(Calendar.DATE, - date_state);
+        c.add(Calendar.DATE, - dateState);
         Date d = c.getTime();
 
         return bookRepository.findByTimestampAfter(d,guest_id);
     }
-/*
+
+    //查看当前用户的所有预订订单
     @GetMapping(path = "/all")
-    @ApiOperation(value = "当前用户的所有预定订单",notes = "返回json")
+    @ApiOperation(value = "当前用户的所有预订订单",notes = "返回json")
     @ApiImplicitParam( paramType = "query",name = "guest_id",value = "当前用户",required = true,dataType = "Integer")
     public @ResponseBody Iterable<Book> getByGuest(@RequestParam Integer guest_id){
         return bookRepository.findByGuest_id(guest_id);
     }
-*/
+
+    //预约餐厅
     @RequestMapping(path = "/book")
     @ApiOperation(value = "点击餐厅界面，进行预约",notes = "返回json")
     @ApiImplicitParams({@ApiImplicitParam( paramType ="query",name="dining_id",value="餐厅编号",required=true,dataType="Integer"),

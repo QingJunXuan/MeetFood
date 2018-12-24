@@ -1,12 +1,13 @@
 <template>
-<div>
+<el-container>
     <guestTopbar/>
     <el-row>
         <el-col :span="4">          
             <guestInforSidebar/>
         </el-col>
     </el-row>
-</div>
+    <el-footer>Footer</el-footer>
+</el-container>
 </template>
 
 <script>
