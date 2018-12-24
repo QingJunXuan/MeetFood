@@ -18,6 +18,8 @@ import HostOrderDone from '@/views/Host/Order/HostOrderDone.vue'
 import HostOrderUndone from '@/views/Host/Order/HostOrderUndone.vue'
 import HostOrderMonth from '@/views/Host/Order/HostOrderMonth.vue'
 import HostOrderWeek from '@/views/Host/Order/HostOrderWeek.vue'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
 
 Vue.use(Router)
 
@@ -113,7 +115,17 @@ const router = new Router({
       path: '/Comment',
       name: 'Comment',
       component: Comment
-    }
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
   ]
 })
 
