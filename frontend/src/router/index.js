@@ -4,7 +4,6 @@ import Main from '@/views/Main.vue'
 import GuestBasicInfor from '@/views/Guest/GuestBasicInfor.vue'
 import AllReviews from '@/views/Guest/AllReviews.vue'
 import MyFavorite from '@/views/Guest/MyFavorite.vue'
-import Message from '@/views/Guest/Message.vue'
 import Shop from '@/views/Shop/Shop.vue'
 import GuestOrderAll from '@/views/Guest/Order/GuestOrderAll.vue'
 import GuestOrderDone from '@/views/Guest/Order/GuestOrderDone.vue'
@@ -16,7 +15,6 @@ import HostOrderDone from '@/views/Host/Order/HostOrderDone.vue'
 import HostOrderUndone from '@/views/Host/Order/HostOrderUndone.vue'
 import HostOrderMonth from '@/views/Host/Order/HostOrderMonth.vue'
 import HostOrderWeek from '@/views/Host/Order/HostOrderWeek.vue'
-import test from '@/views/Guest/test.vue'
 
 Vue.use(Router)
 
@@ -27,11 +25,6 @@ const router = new Router({
       path: '/',
       name: 'Main',
       component: Main
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: test
     },
     {
       path: '/Guest_Basic_Infor',

@@ -8,18 +8,18 @@
          <el-col :span="20" style="background-color:#F7F6F6">         
                 <div class="basic_info">
                     <div class="basic_info_title">
-                        <span>我的收藏</span>
+                        <span>My Favorite</span>
                     </div>
 
                     <div class="box">
                         <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
                             <el-card :body-style="{ padding: '0px' }">
-                             <img src="../../assets/1.jpg" class="image">
+                             <img src="../../assets/2.jpg" class="image">
                          <div style="padding: 60px;">
-                            <span>收藏的餐厅</span>
+                            <span> Collection restaurant </span>
                          <div class="bottom clearfix">
                          <time class="time">{{ currentDate }}</time>
-                         <el-button type="text" class="button">查看详情</el-button>
+                         <el-button type="text" class="button"> View Details </el-button>
                         </div>
                         </div>
                         </el-card>
