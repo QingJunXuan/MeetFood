@@ -5,6 +5,8 @@ import GuestBasicInfor from '@/views/Guest/GuestBasicInfor.vue'
 import AllReviews from '@/views/Guest/AllReviews.vue'
 import MyFavorite from '@/views/Guest/MyFavorite.vue'
 import Shop from '@/views/Shop/Shop.vue'
+import Edit from '@/views/Shop/Edit.vue'
+import Menu from '@/views/Shop/Menu.vue'
 import GuestOrderAll from '@/views/Guest/Order/GuestOrderAll.vue'
 import GuestOrderDone from '@/views/Guest/Order/GuestOrderDone.vue'
 import GuestOrderUndone from '@/views/Guest/Order/GuestOrderUndone.vue'
@@ -52,11 +54,6 @@ const router = new Router({
       component: GuestOrderDone
     },
     {
-      path: '/Shop',
-      name: 'Shop',
-      component: Shop
-    },
-    {
       path: '/Guest_Order_Undone',
       name: 'GuestOrderUndone',
       component: GuestOrderUndone
@@ -95,6 +92,21 @@ const router = new Router({
       path: '/Host_Order_Week',
       name: 'HostOrderWeek',
       component: HostOrderWeek
+    },
+    {
+      path: '/Shop',
+      name: 'Shop',
+      component: Shop
+    },
+    {
+      path: '/Edit',
+      name: 'Edit',
+      component: Edit
+    },
+    {
+      path: '/Menu',
+      name: 'Menu',
+      component: Menu
     }
   ]
 })
