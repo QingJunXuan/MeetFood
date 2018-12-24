@@ -4,11 +4,17 @@
     <el-row>
         <el-col :span="16">
             <div class="picture">
-                <div class="title">
-                    <span>{{Dining.name}}</span>
-                </div>
+                <el-col :span="18">
+                    <div class="title">
+                        <span>{{Dining.name}}</span>
+                    </div>
+                </el-col>
+                <el-col :span="4">
+                    <el-button class="title" @click="toEdit">Edit page</el-button>
+                </el-col>    
                 <img :src="imgUrl" width="1000">
             </div>
+            
         </el-col>
         <el-col :span="8">
             <div class="title">
@@ -18,7 +24,7 @@
                 <h4>{{item.name}}</h4>
             </div>
             <div class="ingredients">
-                <el-button class="ingredients" @click="toNutrients">View nutrients</el-button>
+                <el-button class="ingredients" @click="toMenu">View nutrients</el-button>
             </div>
         </el-col>
     </el-row>
@@ -194,9 +200,12 @@ export default {
           map.setCurrentCity("上海");
           map.enableScrollWheelZoom(true);
       },
-      toNutrients(){
+      toMenu(){
           this.$router.push({path:'/Menu'})
-      }
+      },
+      toEdit(){
+          this.$router.push({path:'/Edit'})
+      },
     }
 }
 </script>
