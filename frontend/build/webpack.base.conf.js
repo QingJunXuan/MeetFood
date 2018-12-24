@@ -20,6 +20,10 @@ function resolve (dir) {
 })*/
 
 module.exports = {
+  externals:{
+    'BMap':'BMap',
+    'BMap_Symbol_SHAPE_POINT': 'BMap_Symbol_SHAPE_POINT'
+  },
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
