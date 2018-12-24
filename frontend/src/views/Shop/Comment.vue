@@ -5,10 +5,10 @@
         <el-col :span="24">
             <div class="information">
                 <el-form ref="form" :model="form" label-width="80px">
-                    <el-form-item label="评论标题">
+                    <el-form-item label="Title">
                         <el-input v-model="form.title"></el-input>
                     </el-form-item>
-                    <el-form-item label="评论内容">
+                    <el-form-item label="Content">
                         <el-input type="textarea" v-model="form.content"></el-input>
                     </el-form-item>
                     <div class="image">
@@ -21,8 +21,8 @@
                         </el-upload>
                     </div>
                     <el-form-item class="button">
-                        <el-button type="primary" @click="onSubmit">提交评论</el-button>
-                        <el-button>取消</el-button>
+                        <el-button type="primary" @click="onSubmit">Submit the Comment</el-button>
+                        <el-button>Cancel</el-button>
                     </el-form-item>
                 </el-form>
 

@@ -2,18 +2,18 @@
 <div>
     <guestTopbar/>
     <div class="title">
-        <span>XXX西餐厅</span>
+        <span>Deliciousrilla</span>
     </div>
     <el-row>
         <div class="section">
             <div class="title">
-                <span>图片</span>
+                <span>Pictures</span>
             </div>
             <el-col :span="8">
                 <div class="image_big">
                     <img src="../../assets/4.jpg" height="300">
                 </div>
-                <el-button>上传封面</el-button>
+                <el-button>Upload the cover</el-button>
             </el-col>
             <el-col :span="8">
                 <div class="image_small">
@@ -22,14 +22,14 @@
                     <img src="../../assets/7.jpg" height="150" width="150">
                     <img src="../../assets/1.jpg" height="150" width="150">
                 </div>
-                <el-button>上传图片</el-button>
+                <el-button>Upload the picture</el-button>
             </el-col>
         </div>
     </el-row>
     <el-row>
         <div class="section">
             <div class="title">
-                <span>简介</span>
+                <span>Introduction</span>
             </div>
             <div class="introduction">
                 <el-input type="textarea" v-model="introduction" placeholder="请输入简介"></el-input>
@@ -40,7 +40,7 @@
         <el-col :span="8">
             <div class="section">
                 <div class="title">
-                    <span>菜谱</span>
+                    <span>Menu</span>
                 </div>
                 <div class="dish">
                     <el-input v-model="introduction"></el-input>
@@ -53,7 +53,7 @@
         <el-col :span="8">
             <div class="section">
                 <div class="title">
-                    <span>原料</span>
+                    <span>Ingredients</span>
                 </div>
                 <div class="dish">
                     <el-input v-model="introduction"></el-input>
@@ -67,10 +67,10 @@
     <el-row>
         <div class="section">
             <div class="title">
-                <span>位置</span>
+                <span>Location</span>
             </div>
             <div class="block">
-                <span class="demonstration">选择所在地</span>
+                <span class="demonstration">Choose the location</span>
                 <el-cascader
                     expand-trigger="hover"
                     :options="options"
@@ -81,12 +81,12 @@
             </div>
             <div class="block">
                 <el-col :span="24">
-                    <span class="demonstration">输入详细地址</span>
+                    <span class="demonstration">Enter the detailed address</span>
                     <div class="location_detail">
                         <el-input v-model="location_detail"></el-input>
                     </div>
                     <div class="location_detail">
-                        <el-button>搜索</el-button>
+                        <el-button>Search</el-button>
                     </div>
                 </el-col>
             </div>
@@ -97,35 +97,35 @@
     <el-row>
         <div class="section">
             <div class="title">
-                <span>联系电话</span>
+                <span>Telephone Number</span>
             </div>
             <div class="input">
                 <el-input v-model="introduction"></el-input>
             </div>
 
             <div class="title">
-                <span>邮箱</span>
+                <span>E-mail</span>
             </div>
             <div class="input">
                 <el-input v-model="introduction"></el-input>
             </div>
 
             <div class="title">
-                <span>推荐用餐人数</span>
+                <span>Number of guests suggested</span>
             </div>
             <div class="input">
                 <el-input v-model="introduction"></el-input>
             </div>
 
             <div class="title">
-                <span>定价</span>
+                <span>Set the Price</span>
             </div>
             <div class="input">
                 <el-input v-model="price"></el-input>
             </div>
 
             <div class="title">
-                <el-button type="primary" @click="onSubmit">保存修改</el-button>
+                <el-button type="primary" @click="onSubmit">Save the change</el-button>
             </div>
         </div>
     </el-row>

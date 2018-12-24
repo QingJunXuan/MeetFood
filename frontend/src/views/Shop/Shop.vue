@@ -5,23 +5,23 @@
         <el-col :span="16">
             <div class="picture">
                 <div class="title">
-                    <span>西餐厅</span>
+                    <span>Deliciousrilla</span>
                 </div>
                 <img :src="imgUrl" width="1000">
             </div>
         </el-col>
         <el-col :span="8">
             <div class="title">
-                <span>今日菜谱</span>
+                <span>Menu Today</span>
             </div>
             <div class="menu">
-                <h4>第一道菜是什么呢</h4>
-                <h4>第二道菜是什么呢</h4>
-                <h4>第三道菜是什么呢</h4>
-                <h4>第四道菜是什么呢</h4>
+                <h4>The first dish</h4>
+                <h4>The second dish</h4>
+                <h4>The third dish</h4>
+                <h4>The fourth dish</h4>
             </div>
             <div class="ingredients">
-                <el-button class="ingredients">查看营养成分</el-button>
+                <el-button class="ingredients">View nutrients</el-button>
             </div>
         </el-col>
     </el-row>
@@ -43,23 +43,23 @@
                     <el-col :span="4">
                         <img src="../../assets/1.jpg" class="avatar">
                     </el-col> 
-                    <el-col :span="4">
+                    <el-col :span="8">
                         <div class="hostname">
                             <span>HOST:Lela</span>
                         </div>
                         <div class="reviewamount">
-                            <span>共收到79条评价</span>
+                            <span>79 Comments Now</span>
                         </div>
                     </el-col>
                 </el-row>
                 <div class="introduction">
-                    <span>简介：</span>
-                    <div class="introduction_content">这里是餐厅的简介啊什么的blabla</div>
+                    <span>Introduction:</span>
+                    <div class="introduction_content">Here are some introductions of the restaurant</div>
                 </div>    
             </div>
             <div class="map">
                 <div class="title">
-                    <span>地图</span>
+                    <span>Location</span>
                     <div class="baidumap" id="allmap" style="height:500px">
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <span>￥359</span>
                 </div>
                 <div class="reserve_peoplenum">
-                    <span>建议用餐人数：3~5人</span>
+                    <span>Number of guests suggested：3~5 person</span>
                 </div>
                 <el-rate
                         v-model="value5"
@@ -84,34 +84,34 @@
                
                 <el-form ref="form" :model="form" label-width="80px">    
                     <el-form-item>
-                        <span>日期</span>
+                        <span>DATE</span>
                         <el-row>
                             <el-col>
-                                <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 80%;"></el-date-picker>
+                                <el-date-picker type="date" placeholder="Choose Date" v-model="form.date1" style="width: 80%;"></el-date-picker>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col>
-                                <el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2" style="width: 80%;"></el-time-picker>
+                                <el-time-picker type="fixed-time" placeholder="Choose Time" v-model="form.date2" style="width: 80%;"></el-time-picker>
                             </el-col>
                         </el-row>
                     </el-form-item>
                     <el-form-item>
-                        <span>人数</span>
+                        <span>Number of guests</span>
                         <el-row>
-                            <el-select v-model="form.region" placeholder="请选择人数" style="width: 80%;">
+                            <el-select v-model="form.region" placeholder="Please choose the number of guests" style="width: 80%;">
                                 <el-option label="1位" value="1"></el-option>
                                 <el-option label="2位" value="2"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
                     <el-form-item>
-                        <el-input type="textarea" v-model="form.desc" placeholder="留言" style="width: 80%;">></el-input>
+                        <el-input type="textarea" v-model="form.desc" placeholder="Leave some message" style="width: 80%;">></el-input>
                     </el-form-item>
 
                     <el-form-item>
-                        <el-button type="primary" @click="onSubmit">立即预订</el-button>
-                        <span>您暂时不会被收费</span>
+                        <el-button type="primary" @click="onSubmit">Reserve Now!</el-button>
+                        <span>You needn't to pay now</span>
                     </el-form-item>
                             
                 </el-form>
@@ -122,25 +122,25 @@
         <el-col :span="20">
             <div class="information">
                 <div class="title">
-                    <span>评价</span>
+                    <span>Comments</span>
                 </div>
                 <div class="review">
                     <el-card class="box-card">
                         <div slot="header" class="clearfix">
-                            <span>评价的标题</span>
+                            <span>The title of Comments</span>
                         </div>
                         <div class="text item">
-                            这里是一些评价
+                            Here is one comment.
                         </div>
                         <img src="../../assets/1.jpg" class="image">
                         
                     </el-card>
                     <el-card class="box-card">
                         <div slot="header" class="clearfix">
-                            <span>评价的标题</span>
+                            <span>The title of Comments</span>
                         </div>
                         <div class="text item">
-                            这里是一些评价
+                            Here is one comment.
                         </div>
                         <img src="../../assets/1.jpg" class="image">
                     </el-card>
