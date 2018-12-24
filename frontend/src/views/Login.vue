@@ -1,39 +1,56 @@
 <template>
-<div style="background-color:#E4E5E6;height:740px;" >
+<div  >
+   <guestTopbar/>
     <el-row type="flex" justify="center">
-        <el-col :span="7">
+        <el-col :span="8">
             <!--logo-->
-            <div style="height:120px"></div>
+            <div style="height:70px"></div>
             <!--login-->
-            <div class="login_box">
-                <b style="font-size:38px;color:#303133;margin-bottom:20px;">登录</b>
-                <br><span style="color:#909399;font-size:15px;">登录以进入你的账号</span>
+            <div class="login_box left">
+                <b style="font-size:38px;color:#303133;margin-bottom:20px;">Login</b>
+                <br><span style="color:#909399;font-size:15px;">Sign In to your account</span>
                  <el-form label-position="top" label-width="60px" style=" margin-top: 30px;">
                     <el-form-item label="">
-                        <el-input v-model="email" placeholder="邮箱"><template slot="prepend">&nbsp;&nbsp;</template></el-input>
+                        <el-input v-model="email" placeholder="E-mail"><template slot="prepend">&nbsp;&nbsp;</template></el-input>
                     </el-form-item>
                     <el-form-item label="">
-                        <el-input v-model="pwd" type="password" placeholder="密码"><template slot="prepend">&nbsp;&nbsp;</template></el-input>
+                        <el-input v-model="pwd" type="password" placeholder="Password"><template slot="prepend">&nbsp;&nbsp;</template></el-input>
                         <span style="color:#e4260c">{{wrong_pwd}}</span>
                     </el-form-item>      
                     <el-form-item >
-                        <b class="forget" @click="forget">忘记密码？</b>
+                        <b class="forget" @click="forget">forget your password?</b>
                     </el-form-item>           
                     <el-form-item>
-                        <el-button  @click="loginRequester" class="login_button login_requester">以Requester身份登录</el-button>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button  @click="loginWorker" class="login_button login_worker">以Worker身份登录</el-button>
-                    </el-form-item>
-                    
-                    <el-form-item>
-                        <div class="sign_up">
+                        <el-button  @click="loginQuest" 
+                        style="background-color:#F5C300;color:#fff;font-weight:500;font-size:17px;width:110px;">
+                          Login
+                          </el-button>
+                          <el-button  @click="loginHost" type="text">
+                            Login as a host
+                          </el-button>
+                    </el-form-item>                   
+                   
+                        <!--<div class="sign_up">
                             <el-button  @click="register" style="width:100%;">注册新账户</el-button>
-                        </div>
-                    </el-form-item>
+                        </div>-->
                 </el-form>
-            </div>
+            </div>            
+        </el-col>
 
+        <el-col :span="7">
+          <div style="height:70px;"></div>
+          <div class="login_box right">
+            <b style="font-size:34px;color:#fff;margin-bottom:20px;">Sign up</b>
+            <p style="width:280px;color:#fff;font-weight:100;font-size:19px;">
+              Register a new account to join in the incredible food journey!
+              You can sign up as a guest to be a order and enjoy fascinating food
+              or as a host to offer your wonderful dishes to all your guests.
+            </p>
+            <el-button  @click="loginQuest" 
+              style="background-color:#F5C300;color:#fff;font-weight:500;font-size:17px;width:110px;">
+              Sign up
+              </el-button>
+            </div>
         </el-col>
 
     </el-row>
@@ -41,9 +58,13 @@
 </template>
 
 <script>
+import guestTopbar from '@/components/guestTopbar.vue'
     import * as axios from 'axios'
 
     export default {
+      components:{
+        guestTopbar
+      },
       computed: {
         getToken () {
           return this.$store.state.token;
@@ -234,8 +255,7 @@
           role:'',
           wrong_pwd:'',
           button_disabled:false,
-          radio:false,
-          logo:require("../../static/logo_black.png"),
+          radio:false,        
         }
       }
     }
@@ -247,10 +267,23 @@
     border-style:solid;
     border-width: 1px;
     border-color:rgb(209, 209, 209);
-    border-radius: 4px;
+    height: 300px;
     padding:30px 40px;
     margin-top: 20px;
+    margin-bottom: 50px;
     background-color:#fff;
+}
+.left{
+  border-radius: 4px 0px 0px 4px;
+  border-right: 0px;
+  padding: 60px 60px
+}
+.right{
+  border-radius: 0px 4px 4px 0px;
+   border-left: 0px;
+   background-color: #20A8D8;
+   text-align:center ;
+   padding-top:90px;
 }
 .el-form--label-top .el-form-item__label{
     padding-bottom:0;
