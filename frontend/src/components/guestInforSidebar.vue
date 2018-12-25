@@ -45,6 +45,9 @@ export default {
       handleSelect(key, keyPath) {
         console.log(this);
         console.log(key,keyPath);
+      },
+      logout() {
+          this.$message('Log out')
       }
     }
 }

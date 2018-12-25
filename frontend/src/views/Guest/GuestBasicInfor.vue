@@ -11,12 +11,12 @@
                         <span>Basic Information</span>
                     </div>
                     <div class="box">
-                        <el-form label-position="left" label-width="110px" :model="user" >                                            
+                        <el-form label-position="left" label-width="110px" >                                            
                         <el-form-item label="Name">
-                        <el-input v-model="name"></el-input>
+                        <el-input v-model="username"></el-input>
                         </el-form-item>
                         <el-form-item label="Email">
-                        <el-input v-model="eMail"></el-input>
+                        <el-input v-model="email"></el-input>
                         </el-form-item>
                         <el-form-item label="Age">
                         <el-input v-model="age"></el-input>
@@ -60,13 +60,13 @@ export default {
             let param = new URLSearchParams();
             let self = this;
             //param.append('id',this.guest.id);
-            param.append('name',this.guest.name);
+            param.append('username',this.guest.username);
             param.append('age',this.guest.age);
             param.append('email',this.guest.email);
             param.append('teleNumber',this.guest.teleNumber);
             axios({
                 method: 'post',
-                url: 'api/guest/reviser?',
+                url: 'http://111.187.58.169/guest/reviser?',
                 data:param
             })
             .then(function(reponse) {
@@ -92,7 +92,7 @@ export default {
     data() {
         return{
             user: {
-            name: this.$store.state.name,
+            username: this.$store.state.username,
         },
         input_search: '',
         input_advice: '',
@@ -100,20 +100,20 @@ export default {
         activeNames: [],
         form:
           {
-            name: '',
+            username: '',
             age: '',
             teleNumber: '',
             email:'',
           },
         guest: {
-          name: '',
+            username: '',
             age: '',
             teleNumber: '',
             email:'',
         },
       }
     },
-    created() {
+   created() {
         let that=this
       if(this.$route.params.page!=null)
       {
