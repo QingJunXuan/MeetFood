@@ -6,10 +6,13 @@
             <div class="information">
                 <el-form ref="form" :model="form" label-width="80px">
                     <el-form-item label="Title">
-                        <el-input v-model="form.title"></el-input>
+                        <el-input v-model="form.title" placeholder="Please enter the title"></el-input>
                     </el-form-item>
                     <el-form-item label="Content">
-                        <el-input type="textarea" v-model="form.content"></el-input>
+                        <el-input type="textarea" v-model="form.content" placeholder="Please enter the comment content"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Rate">
+                          <el-rate v-model="form.rate" :colors="['#99A9BF', '#F7BA2A', '#FF9900']" class="rate"></el-rate>
                     </el-form-item>
                     <div class="image">
                         <el-upload
@@ -43,6 +46,7 @@ export default {
         form: {
           title: '',
           content: '',
+          rate:0
         }
       }
     },
@@ -85,5 +89,8 @@ template {
 .image{
     padding-left: 10px;
     margin-left: 60px;
+}
+.rate{
+    margin-top: 10px;
 }
 </style>

@@ -7,7 +7,7 @@
                 <div class="title">
                     <span>{{Dining.name}}</span>
                 </div>
-                <img :src="imgUrl" width="1000">
+                <img :src="Dining.cover" width="1000">
             </div>
         </el-col>
         <el-col :span="8">
@@ -24,12 +24,8 @@
     </el-row>
     <el-row>
         <el-col :span="24">
-            <div class="picture_small">
-                <img src="../../assets/3.jpg" width="300" height="300">
-                <img src="../../assets/4.jpg" width="300" height="300">
-                <img src="../../assets/5.jpg" width="300" height="300">
-                <img src="../../assets/6.jpg" width="300" height="300">
-                <img src="../../assets/7.jpg" width="300" height="300">
+            <div class="picture_row">
+                <img  v-for="(item, i) in Dining.picture" :key="i" :src="item" width="300" height="300" class="picture_small">
             </div>
         </el-col>
     </el-row>
@@ -38,11 +34,11 @@
             <div class="information">
                 <el-row>
                     <el-col :span="4">
-                        <img src="../../assets/1.jpg" class="avatar">
+                        <img :src="Dining.hostavatar" class="avatar">
                     </el-col> 
                     <el-col :span="8">
                         <div class="hostname">
-                            <span>HOST:Lela</span>
+                            <span>HOST:{{Dining.hostname}}</span>
                         </div>
                         <div class="reviewamount">
                             <span>79 Comments Now</span>
@@ -65,13 +61,13 @@
         <el-col :span="8">
             <div class="reserve">
                 <div class="reserve_price">
-                    <span>￥359</span>
+                    <span>￥{{Dining.price}}</span>
                 </div>
                 <div class="reserve_peoplenum">
-                    <span>Number of guests suggested：3~5 person</span>
+                    <span>Number of guests suggested：{{Dining.person}} person</span>
                 </div>
                 <el-rate
-                        v-model="value5"
+                        v-model="Dining.rate"
                         disabled
                         show-score
                         text-color="#ff9900"
@@ -79,31 +75,31 @@
                         class="rate">
                 </el-rate>
                
-                <el-form ref="form" :model="form" label-width="80px">    
+                <el-form ref="form" :model="reserve" label-width="80px">    
                     <el-form-item>
                         <span>DATE</span>
                         <el-row>
                             <el-col>
-                                <el-date-picker type="date" placeholder="Choose Date" v-model="form.date1" style="width: 80%;"></el-date-picker>
+                                <el-date-picker type="date" placeholder="Choose Date" v-model="reserve.date1" style="width: 80%;"></el-date-picker>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col>
-                                <el-time-picker type="fixed-time" placeholder="Choose Time" v-model="form.date2" style="width: 80%;"></el-time-picker>
+                                <el-time-picker type="fixed-time" placeholder="Choose Time" v-model="reserve.date2" style="width: 80%;"></el-time-picker>
                             </el-col>
                         </el-row>
                     </el-form-item>
                     <el-form-item>
                         <span>Number of guests</span>
                         <el-row>
-                            <el-select v-model="form.region" placeholder="Please choose the number of guests" style="width: 80%;">
+                            <el-select v-model="reserve.number" placeholder="Please choose the number of guests" style="width: 80%;">
                                 <el-option label="1位" value="1"></el-option>
                                 <el-option label="2位" value="2"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
                     <el-form-item>
-                        <el-input type="textarea" v-model="form.desc" placeholder="Leave some message" style="width: 80%;">></el-input>
+                        <el-input type="textarea" v-model="reserve.message" placeholder="Leave some message" style="width: 80%;">></el-input>
                     </el-form-item>
 
                     <el-form-item>
@@ -130,8 +126,7 @@
                         <div class="text item">
                             {{item.text}}
                         </div>
-                        <img src="../../assets/1.jpg" class="image">
-                        
+                        <img :src="item.img" class="image">
                     </el-card>
                 </div>    
             </div>
@@ -155,6 +150,19 @@ export default {
             Dining:{
                 name:'Deliciousrilla',
                 intro:'Here are some introductions of the restaurant',
+                rate:'4.3',
+                hostname:'Lela',
+                hostavatar:require("../../assets/1.jpg"),
+                cover:require("../../assets/2.jpg"),
+                picture:[
+                    require("../../assets/3.jpg"),
+                    require("../../assets/4.jpg"),
+                    require("../../assets/5.jpg"),
+                    require("../../assets/6.jpg"),
+                    require("../../assets/7.jpg"),
+                    ],
+                price:357,
+                person:"3~5"
             },
             Dish:[
             {
@@ -164,18 +172,25 @@ export default {
                 name:'the second dish'
             }
             ],
-            imgUrl:require("../../assets/2.jpg"),
-            form: {
+            reserve: {
                 date1: '',
                 date2: '',
-                region:'',
-                desc:'',
+                number:0,
+                message:'',
             },
             comment:[{
                 guestid:"aaa",
                 text:"Here is the comment of one guest",
-                rate:"3.7"
-            }]
+                rate:"4",
+                img:require("../../assets/1.jpg")
+            },
+            {
+                guestid:"bbb",
+                text:"Here is another comment of one guest",
+                rate:"5",
+                img:require("../../assets/2.jpg")
+            }
+            ]
         }
     },
     methods: {
@@ -209,11 +224,14 @@ template {
 .picture{
     height: 6s00px;
 }
-.picture_small{
+.picture_row{
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 22px;
     color: gray;
+}
+.picture_small{
+    margin-right: 10px;
 }
 .img{
     height: 100px;
@@ -236,8 +254,8 @@ template {
     padding-bottom: 20px;
     padding-left: 10px;
     margin-left: 10px;
-    font-size: 22px;
-    color: gray;
+    font-size: 24px;
+    color: rgb(102, 101, 101);
 }
 .menu{
     padding-left: 10px;
