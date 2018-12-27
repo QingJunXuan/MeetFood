@@ -18,6 +18,7 @@
                             </span>
                              <time class="time">{{ currentDate }}</time>
                             <el-rate v-model="item.rate" disabled show-score text-color="#ff9900" score-template="{value}" class="rate"></el-rate>
+                            <el-button type="text" class="button"> View Details </el-button>
                         </div>
                         <div class="text item">
                             {{item.text}}
@@ -123,6 +124,10 @@ export default {
     .image {
     width: 20%;
     display: block;
+  }
+  .button {
+      padding: 0;
+      float: right;
   }
 </style>
 
