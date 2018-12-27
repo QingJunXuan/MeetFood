@@ -5,18 +5,21 @@
         <el-col :span="4">          
             <guestInforSidebar/>
         </el-col>
-         <el-col :span="20" style="background-color:#F7F6F6">         
-                <div class="basic_info">
+         <el-col :span="20" style="background-color:rgb(255, 255, 255)">         
+                
                     <div class="basic_info_title">
                         <span>My Favorite</span>
                     </div>
 
                     <div class="box">
-                        <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
+                        <el-col :span="8" v-for="(item, i) in Favorite" :key="i">
                             <el-card :body-style="{ padding: '0px' }">
-                             <img src="../../assets/2.jpg" class="image">
+                             <img :src="item.img" class="image">
                          <div style="padding: 60px;">
-                            <span> Collection restaurant </span>
+                            <span>{{item.favoriteID}}</span>
+                            <div class="text item">
+                                {{ item.text }}
+                                </div>
                          <div class="bottom clearfix">
                          <time class="time">{{ currentDate }}</time>
                          <el-button type="text" class="button"> View Details </el-button>
@@ -26,7 +29,7 @@
                         </el-col>          
                
                     </div>
-                </div>
+               
             
         </el-col>
     </el-row>
@@ -43,7 +46,39 @@ export default {
     },
     data() {
         return{
-            currentDate: new Date()
+            currentDate: new Date(),
+            Favorite:[
+            {
+                favoriteID:"1",
+                text:"one",
+                img: require("../../assets/2.jpg")
+            },
+            {
+                favoriteID:"2",
+                text:"two",
+                img: require("../../assets/2.jpg")
+            },
+             {
+                favoriteID:"3",
+                text:"three",
+                img: require("../../assets/2.jpg")
+            },
+            {
+                favoriteID:"4",
+                text:"four",
+                img: require("../../assets/2.jpg")
+            },
+             {
+                favoriteID:"5",
+                text:"five",
+                img: require("../../assets/2.jpg")
+            },
+            {
+                favoriteID:"6",
+                text:"six",
+                img: require("../../assets/2.jpg")
+            }
+            ]
         }
     }
 }
@@ -54,12 +89,6 @@ template {
     height: 100%;
     width:100%
     }
-.basic_info{
-    margin:30px;
-    background-color: #fff;
-    height: 640px;
-    border: solid 1px rgb(255, 255, 255);
-}
 .basic_info_title{
     width: 600px;
     padding-top: 40px;
@@ -71,7 +100,7 @@ template {
 }
 .box{
     width: 80%;
-    padding-left: 60px;
+    padding-left: 50px;
     padding-top: 50px;
 }
   .time {
@@ -102,6 +131,17 @@ template {
   
   .clearfix:after {
       clear: both
+  }
+  .img{
+    height: 100px;
+    margin-left: 20px;
+}
+ .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
   }
 </style>
 
