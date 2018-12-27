@@ -50,32 +50,32 @@ export default {
             {
                 favoriteID:"1",
                 text:"one",
-                img: require("../../../assets/5.jpg")
+                img: require("../../../assets/2.jpg")
             },
             {
                 favoriteID:"2",
                 text:"two",
-                img: require("../../../assets/5.jpg")
+                img: require("../../../assets/2.jpg")
             },
              {
                 favoriteID:"3",
                 text:"three",
-                img: require("../../../assets/5.jpg")
+                img: require("../../../assets/2.jpg")
             },
             {
                 favoriteID:"4",
                 text:"four",
-                img: require("../../../assets/5.jpg")
+                img: require("../../../assets/2.jpg")
             },
              {
                 favoriteID:"5",
                 text:"five",
-                img: require("../../../assets/5.jpg")
+                img: require("../../../assets/2.jpg")
             },
             {
                 favoriteID:"6",
                 text:"six",
-                img: require("../../../assets/5.jpg")
+                img: require("../../../assets/2.jpg")
             }
             ]
         }
