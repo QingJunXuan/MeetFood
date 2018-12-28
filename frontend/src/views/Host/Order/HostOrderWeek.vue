@@ -40,8 +40,8 @@ import hostTopbar from '@/components/hostTopbar.vue'
 import hostReserveSidebar from '@/components/hostReserveSidebar.vue'
 export default {
     components:{
-        guestTopbar,
-        guestReserveSidebar
+        hostTopbar,
+        hostReserveSidebar
     },
     data(){
         return{
