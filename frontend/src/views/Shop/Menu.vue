@@ -180,7 +180,6 @@ template {
     padding-bottom: 20px;
     font-size: 16px;
     color: gray;
-    height: 500px;
     width: 450px;
     border-style:solid;
     border-color:#a0a0a0;
