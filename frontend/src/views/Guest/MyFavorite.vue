@@ -14,7 +14,9 @@
                     <div class="box">
                         <el-col :span="8" v-for="(item, i) in Favorite" :key="i">
                             <el-card :body-style="{ padding: '0px' }">
-                             <img :src="item.img" class="image">
+                                <div class="recommend_pic_box" style="width:100%;height:300px;overflow:hidden;">
+                             <img :src="item.img" class="image" style="height:600px;width:900px">
+                                </div>
                          <div style="padding: 60px;">
                             <span>{{item.favoriteID}}</span>
                             <div class="text item">
@@ -51,7 +53,7 @@ export default {
             {
                 favoriteID:"1",
                 text:"one",
-                img: require("../../assets/2.jpg")
+                img: require("../../assets/1.jpg")
             },
             {
                 favoriteID:"2",
@@ -61,22 +63,22 @@ export default {
              {
                 favoriteID:"3",
                 text:"three",
-                img: require("../../assets/2.jpg")
+                img: require("../../assets/3.jpg")
             },
             {
                 favoriteID:"4",
                 text:"four",
-                img: require("../../assets/2.jpg")
+                img: require("../../assets/4.jpg")
             },
              {
                 favoriteID:"5",
                 text:"five",
-                img: require("../../assets/2.jpg")
+                img: require("../../assets/5.jpg")
             },
             {
                 favoriteID:"6",
                 text:"six",
-                img: require("../../assets/2.jpg")
+                img: require("../../assets/6.jpg")
             }
             ]
         }
