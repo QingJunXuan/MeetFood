@@ -8,9 +8,7 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Blob;
 import java.util.Date;
@@ -24,7 +22,7 @@ public class DishController {
 
     //新建菜品
     @ResponseBody
-    @RequestMapping(path="/addDish")
+    @PostMapping(path="/addDish")
     @ApiOperation(value="",notes="返回json/String")
     @ApiImplicitParams({
             @ApiImplicitParam( paramType = "query",name="dining_id",value="餐厅id",required=true,dataType="Integer"),
@@ -62,7 +60,7 @@ public class DishController {
 
     //删除现有菜品
     @ResponseBody
-    @RequestMapping(path="/deleteDish")
+    @DeleteMapping(path="/deleteDish")
     @ApiOperation(value="删除某种菜品",notes="返回json/String")
     @ApiImplicitParam( paramType ="query",name="id",value="菜品id",required=true,dataType="String")
     public String deleteDish (@RequestParam Integer id) {
@@ -91,7 +89,7 @@ public class DishController {
 */
     //查看所有现有菜品
     @ResponseBody
-    @RequestMapping(path="/viewDish")
+    @GetMapping(path="/viewDish")
     @ApiOperation(value="根据餐厅id查看现有菜品",notes="返回json/String")
     @ApiImplicitParam( paramType ="query",name="dining_id",value="餐厅id",required=true,dataType="Integer")
     public Iterable<Dish> viewDish (@RequestParam Integer dining_id) {

@@ -53,7 +53,7 @@ public class Dish {
     public Date getStop_time(){return  stop_time;}
     public void setStop_time(Date stop_time){this.stop_time=stop_time;}
 
-    public Integer getDining_idd(){ return dining_id;}
+    public Integer getDining_id(){ return dining_id;}
     public void setDining_id(Integer dining_id){this.dining_id= dining_id;}
 
 }

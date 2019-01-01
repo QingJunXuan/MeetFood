@@ -12,10 +12,10 @@ public class Guest {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
     private Integer age;
-    private String name;
+    private String username;
     private String email;
     private String password;
-    private String tel;
+    private String teleNumber;
     private Blob photo;//头像
 
     public Integer getId() {
@@ -32,11 +32,11 @@ public class Guest {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -53,11 +53,11 @@ public class Guest {
         this.password = password;
     }
 
-    public String getTel() {
-        return tel;
+    public String getTeleNumber() {
+        return teleNumber;
     }
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setTeleNumber(String teleNumber) {
+        this.teleNumber = teleNumber;
     }
 
     public Blob getPhoto() {
@@ -66,6 +66,7 @@ public class Guest {
     public void setPhoto(Blob photo) {
         this.photo = photo;
     }
+
 }
 
 

@@ -1,16 +1,22 @@
 package com.meetfood.statusCode;
 
+import java.util.List;
+
 /**
  * 这个类定义了返回的json格式，即json含有哪些字段
  */
 public class JsonResult {
     private int code;
-    private String message;
+    private List message;
     private Object date;
 
-    public JsonResult(int code, String message, Object date) {
+    public JsonResult(int code, List message, Object date) {
         this.code = code;
         this.message = message;
+        this.date = date;
+    }
+    public JsonResult(int code,Object date){
+        this.code = code;
         this.date = date;
     }
 
@@ -18,7 +24,7 @@ public class JsonResult {
         return code;
     }
 
-    public String getMessage() {
+    public List getMessage() {
         return message;
     }
 

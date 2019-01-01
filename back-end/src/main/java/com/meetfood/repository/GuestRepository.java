@@ -14,4 +14,5 @@ public interface GuestRepository extends CrudRepository<Guest, Integer> {
     List<Guest> findByEmail(@Param("email") String email);
     List<Guest> findByEmailAndPassword(@Param("email") String email,
                                        @Param("password") String password);
+    List<Guest> findMessageById(@Param("id") Integer id);
 }
