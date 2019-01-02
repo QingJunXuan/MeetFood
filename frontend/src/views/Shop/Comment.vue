@@ -5,9 +5,6 @@
         <el-col :span="24">
             <div class="information">
                 <el-form ref="form" :model="form" label-width="80px">
-                    <el-form-item label="Title">
-                        <el-input v-model="form.title" placeholder="Please enter the title"></el-input>
-                    </el-form-item>
                     <el-form-item label="Content">
                         <el-input type="textarea" v-model="form.content" placeholder="Please enter the comment content"></el-input>
                     </el-form-item>
@@ -37,14 +34,15 @@
 
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
+import axios from 'axios'
 export default {
    components:{
         guestTopbar,
     },
+    
     data() {
       return {
         form: {
-          title: '',
           content: '',
           rate:0
         }
@@ -52,7 +50,25 @@ export default {
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        let that = this;
+        let param = new URLSearchParams();
+        param.append('dining_id',1);
+        param.append('guest_id',1);
+        param.append('text',this.form.content);
+        param.append('score',this.form.rate);
+
+        axios({
+            method:'post',
+            url:'http://172.20.10.4:8080/comment/addComment/text',
+            data: param
+        })
+        .then(function(response){
+            that.$message('成功')
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
       },
       handleRemove(file, fileList) {
         console.log(file, fileList);

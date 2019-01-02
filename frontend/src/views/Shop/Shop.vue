@@ -141,14 +141,20 @@
 
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
+import axios from 'axios'
 export default {
     mounted(){
         this.baiduMap();
 
         let that = this;
         let param = new URLSearchParams();
-        param.append('id',file.id);
-
+        param.append('id',1);
+        let order = new URLSearchParams();
+        order.append('repast_time',this.reserve.date1);
+        order.append('dining_id',1);
+        order.append('guest_id',1);
+        let dining_id = new URLSearchParams();
+        dining_id.append('dining_id',1);
         axios({
             method:'get',
             url:'http://172.20.10.4:8080/dining/view',
@@ -168,7 +174,7 @@ export default {
         axios({
             method:'get',
             url:'http://172.20.10.4:8080/comment/receivedComments',
-            data:param
+            data:dining_id
         })
         .then(function(response){
             that.comment.text = response.data.text;
@@ -182,7 +188,7 @@ export default {
         axios({
             method:'post',
             url:'http://172.20.10.4:8080/myReservation/book',
-            data: order_time
+            data: order
         })
         .then(function(response){
             that.$message('成功')
@@ -256,6 +262,15 @@ export default {
     methods: {
       onSubmit() {
         console.log('submit!');
+        this.$alert('您已成功预订', '预订成功', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
       },
       baiduMap(){
           var map = new BMap.Map("allmap");

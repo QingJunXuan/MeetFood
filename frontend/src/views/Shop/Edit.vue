@@ -169,6 +169,7 @@
 
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
+import axios from 'axios'
 
 export default {
     mounted(){
@@ -287,17 +288,36 @@ export default {
         }
       },
       onSubmit(){
+        let that = this
+        this.button_disabled = true;
+        let param = new URLSearchParams();
+        let self = this;
+        
+        param.append('Diningintro',this.Dining.intro);
         axios({
             method:'put',
             url:'http://172.20.10.4:8080/dining/update',
-            data: Dining
+            data: param
         })
-        .then(function(response){
-            that.$message('成功')
+        .then(function(reponse) {
+            console.log(reponse);
+            
         })
-        .catch(function(error){
-            console.log(error)
-            this.errored = true
+        .catch(function (error) {
+            alert(error);
+        })
+
+        axios({
+            method:'put',
+            url:'http://172.20.10.4:8080/dining/update',
+            data: param
+        })
+        .then(function(reponse) {
+            console.log(reponse);
+            
+        })
+        .catch(function (error) {
+            alert(error);
         })
       }
     }

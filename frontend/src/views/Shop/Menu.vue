@@ -103,6 +103,7 @@
 
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
+import axios from 'axios'
 
 export default {
     components:{
@@ -155,6 +156,15 @@ export default {
     methods: {
       onSubmit() {
         console.log('submit!');
+        this.$alert('您已成功预订', '预订成功', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
       },
       toShop(){
           this.$router.push({path:'/Shop'})

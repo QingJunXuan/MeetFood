@@ -148,6 +148,7 @@
 
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
+import axios from 'axios'
 export default {
     mounted(){
         this.baiduMap();
