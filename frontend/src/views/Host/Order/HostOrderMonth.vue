@@ -93,40 +93,12 @@ export default {
             ]
         }
     },
-    created(){
-         let that = this;
-          axios({
-            method:	'get',
-            url: 'http://172.20.10.4:8080/myOrderForm/all?dining_id=1', 
-          })
-            .then(function (response) {
-            console.log(response);
-             that.Order = response.data.images;
-             for(let i=0;i<response.data.images.length;i++){
-                let albums=response.data.images[i].resources;
-                let link;
-                //console.log(albums.length)
-                if(albums.length==0){
-                    link='../../../assets/1.jpg';
-                    //console.log(link)
-                }
-                else{
-                    link= albums[0].link;
-                }
-                console.log(that.Order[i])
-                that.Order[i].cover=link;
-                
-             }
-             
-             console.log(that.Order)
-            })
-            .catch(function (error) {
-              alert(error);
-            });
-    },
     methods: {
         order_detail(id){
-            this.$router.push('/Shop/'+id)
+            if(id==1)
+            this.$router.push('/Shop')
+            else
+            this.$router.push('/Shop_Snack')
         }
     }
 }

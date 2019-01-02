@@ -66,8 +66,8 @@ export default {
                         date:"2018-04-13",
             },{
                        text:"Name:Snack Shop",
-                        img:require("../../../assets/P2.jpg"),
-                        id:"1",
+                        img:require("../../../assets/3-3.jpg"),
+                        id:"2",
                         rate:"3.8",
                         address:"Address:160 North Halsted Street, Chicago, IL 60661",
                         Email:"Email:snack@gmail.com",
@@ -118,40 +118,12 @@ export default {
             ]
         }
     },
-    created(){
-         let that = this;
-          axios({
-            method:	'get',
-            url: 'http://172.20.10.4:8080/myReservation/all?guest_id=1', 
-          })
-            .then(function (response) {
-            console.log(response);
-             /*that.Order = response.data.images;
-             for(let i=0;i<response.data.images.length;i++){
-                let albums=response.data.images[i].resources;
-                let link;
-                //console.log(albums.length)
-                if(albums.length==0){
-                    link='../../../assets/1.jpg';
-                    //console.log(link)
-                }
-                else{
-                    link= albums[0].link;
-                }
-                console.log(that.Order[i])
-                that.Order[i].cover=link;
-                
-             }
-             
-             console.log(that.Order)*/
-            })
-            .catch(function (error) {
-              alert(error);
-            });
-    },
     methods: {
         order_detail(id){
+            if(id==1)
             this.$router.push('/Shop')
+            else
+            this.$router.push('/Shop_Snack')
         }
     }
 }
