@@ -137,7 +137,7 @@ const router = new Router({
     {
       path: '/Shop_host',
       name: 'Shop_host',
-      meta: { login: true },
+      
       component: Shop_host
     },
     {
@@ -168,7 +168,7 @@ router.beforeEach((to, from, next) => {
   // 全局拦截器的
   if (to.meta.login) { // 判断该路由是否需要登录权限
     if (window.localStorage.getItem('token') === null) {
-      alert('未登录，请先登录')
+      alert('Please login first')
       next({
         path: '/login',
         query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由

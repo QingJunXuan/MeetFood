@@ -39,7 +39,7 @@
                             <el-carousel-item v-for="item in popular_rest" :key="item.id">
                                 <div style="width:100%;height:100%" :style="{backgroundImage: 'url(' + item.cover + ')',backgroundSize:'cover' }">
                                     <div class="popular_intro">
-                                        <h3 style="color:#fff">{{item.name}}</h3>
+                                       <router-link  to="/Shop"> <h3 style="color:#fff">{{item.name}}</h3></router-link>
                                         <p  style="color:#ddd">{{item.intro}}</p>
                                     </div>
                                 </div>
@@ -117,48 +117,48 @@ export default {
             },
             popular_rest:[{
                 id:'1',
-                name:'Deliciousrilla1',
+                name:'Deliciousrilla',
                 cover:'../../static/homepage/1.jpg',
-                intro:'Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi.',
+                intro:'Traditional Mexican recipes and warm decor make you feel at home at this Chicago mainstay.',
                 city:'Shanghai'
             },{
                 id:'2',
-                name:'Deliciousrilla2',
+                name:'Johnnies Snack Shop',
                 cover:'../../static/homepage/2.jpg',
                 intro:'Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi.',
                 city:'Shanghai'
             },{
                 id:'3',
-                name:'Deliciousrilla3',
+                name:'New Furama Restaurant',
                 cover:'../../static/homepage/3.jpg',
-                intro:'Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi.',
+                intro:'At the beginning of 2016, New Furama Restaurant hosted a fashion show that showcased qipaos, or cheongsams—traditional form-fitting Chinese dresses with high collars and high slits. Many Chinese parents took their American-born children to the show to help them connect with their Chinese heritage, something New Furama was happy to play a part in.The Chinatown eatery gives Chicagoans a taste of China in other ways, too. Theres the food, of course, dim sum and Cantonese-style dishes such as egg-custard buns, chicken feet spiced with Chinese herbs, fried shrimp balls, and the classic rice-porridge comfort dish known as congee. Then theres the decor, which mixes rich fuchsia and red with golden accents, including a golden buddha that greets people when they enter the dining areaNew Furama also hosts many special occasions, including weddings complete with turntables in the middle of the tables. These allow guests to easily share dishes, drinks, and the song-request lists they intend to hand to the DJ.',
                 city:'Shanghai'
             }
             ],
             comment:[{
                 reviewid:"1",
-                text:"comment1",
-                rate:"4",
+                text:"Gyro omelet was incredible! They also have a 3 eggs, 3 pancakes and 3 sausages deal for $9. Amazing! Especially for the area of overpriced “foodie” places.",
+                rate:"5",
                 img_list:[
                     {url:'../../static/homepage/6.jpg'},
                     {url:'../../static/homepage/7.jpg'},
-                    {url:'../../static/homepage/8.jpg'},
+                    
                     {url:'../../static/homepage/9.jpg'}
                     ],
-                data:'2019-1-1',
+                data:'2018-05-16',
                 user:'elementum',
                 dinning_name:'Deliciousrilla1'
             },
             {
                 reviewid:"2",
-                text:"comment2",
-                rate:"5",
+                text:"Yum! Great place to eat!",
+                rate:"3.9",
                 img_list:{
                     url:'../../static/homepage/6.jpg',
                     url:'../../static/homepage/7.jpg',
                     url:'../../static/homepage/8.jpg',
                     url:'../../static/homepage/9.jpg'},
-                data:'2019-1-1',
+                data:'2018-06-12',
                 user:'elementum',
                 dinning_name:'Deliciousrilla2'
             }

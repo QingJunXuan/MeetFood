@@ -50,13 +50,7 @@
                     </div>
                     <h3 style="font-weight:400;font-size:25x;color:#303133">{{recommend.name}}</h3>
                     <p style="color:#606266">
-                        Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. 
-                        Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur 
-                        ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis dapibus, eros justo
-                        auctor lectus, a lobortis lorem mauris quis nunc. Praesent pellentesque facilisis elit.
-                            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos 
-                            hymenaeos. In hac habitasse platea dictumst. Nullam id ante eget dui vulputate aliquam. 
-                            Pellentesque erat erat, tincidunt in.
+                        Traditional Mexican recipes and warm decor make you feel at home at this Chicago mainstay.
                     </p>
                     <ul style="color:#909399">
                         <li v-for="item in menu" :key="item.id">
@@ -66,7 +60,7 @@
                     <p >
                         pricing：${{recommend.price}}
                     </p>
-                    <el-button type="">Browse</el-button>
+                    <el-button @click="enter_shop">Browse</el-button>
                 </div>
           </el-col>
           <el-col :span="1"><p></p></el-col>
@@ -109,15 +103,11 @@ export default {
             menu:[
                 {
                     id:1,
-                    content:"Vestibulum sem magna, elementum ut"
+                    content:"Caesar Salad"
                 },
                 {
                     id:2,
-                    content:"Vestibulum sem magna, elementum ut"
-                },
-                {
-                    id:3,
-                    content:"Vestibulum sem magna, elementum ut"
+                    content:"Chicken Cordon Bleu"
                 }
             ],
             side_restraunt:[
@@ -140,8 +130,10 @@ export default {
             ]
         }
     },
-    computed:{
-        
+    methods:{
+        enter_shop(){
+            this.$router.push('/Shop')
+        }
     },
     mounted(){
         
