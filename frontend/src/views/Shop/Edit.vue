@@ -286,6 +286,20 @@ export default {
           this.DishForm.splice(index, 1)
         }
       },
+      onSubmit(){
+        axios({
+            method:'put',
+            url:'http://172.20.10.4:8080/dining/update',
+            data: Dining
+        })
+        .then(function(response){
+            that.$message('成功')
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+      }
     }
 }
 </script>

@@ -148,10 +148,10 @@ export default {
         let that = this;
         let param = new URLSearchParams();
         param.append('id',file.id);
-        
+
         axios({
             method:'get',
-            url:'/api/dining/view',
+            url:'http://172.20.10.4:8080/dining/view',
             data:param
         })
         .then(function(response){
@@ -167,7 +167,7 @@ export default {
 
         axios({
             method:'get',
-            url:'/api/comment/receivedComments',
+            url:'http://172.20.10.4:8080/comment/receivedComments',
             data:param
         })
         .then(function(response){
@@ -181,7 +181,7 @@ export default {
 
         axios({
             method:'post',
-            url:'/api/myReservation/book',
+            url:'http://172.20.10.4:8080/myReservation/book',
             data: order_time
         })
         .then(function(response){

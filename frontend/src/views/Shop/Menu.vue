@@ -108,7 +108,20 @@ export default {
     components:{
         guestTopbar,
     },
-
+    mounted(){
+        axios({
+            method:'post',
+            url:'http://172.20.10.4:8080/myReservation/book',
+            data: order_time
+        })
+        .then(function(response){
+            that.$message('成功')
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+    },
     data(){
         return {
             imgUrl:require("../../assets/1.jpg"),
