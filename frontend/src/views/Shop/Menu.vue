@@ -110,13 +110,35 @@ export default {
         guestTopbar,
     },
     mounted(){
+        let that=this;
+        let order = new URLSearchParams();
+        order.append('repast_time',this.reserve.date1);
+        order.append('dining_id',1);
+        order.append('guest_id',1);
+        let param = new URLSearchParams();
+        param.append('dining_id',1);
         axios({
             method:'post',
             url:'http://172.20.10.4:8080/myReservation/book',
-            data: order_time
+            data: order
         })
         .then(function(response){
             that.$message('成功')
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+
+        axios({
+            method:'get',
+            url:'http://172.20.10.4:8080/dining/dish/viewDish',
+            data: param
+        })
+        .then(function(response){
+            that.$message('成功')
+            that.Dish.name = response.data.name;
+            that.Dish.ingredients = response.data.ingredients;
         })
         .catch(function(error){
             console.log(error)
