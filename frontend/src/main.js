@@ -10,7 +10,6 @@ import store from './store'
 
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
-axios.defaults.withCredentials = false
 
 Vue.use(ElementUI)
 
