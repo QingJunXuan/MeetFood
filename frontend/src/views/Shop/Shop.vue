@@ -161,6 +161,7 @@ export default {
         })
 
     },
+    props:['id'],
     components:{
         guestTopbar,
     },
