@@ -9,7 +9,7 @@ const store = new Vuex.Store({
   state: {
     // 存储token
     token: window.localStorage.getItem('token'),
-    username: window.localStorage.getItem('username'),
+    
   },
 
   mutations: {

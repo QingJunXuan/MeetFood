@@ -151,7 +151,7 @@ import * as axios from 'axios'
                     
                     axios({
                     method:'post',
-                    url: 'http://172.20.10.4:8080/dining/register',
+                    url: '/api/dining/register',
                     data:param
                     })
                     .then(function(response){
