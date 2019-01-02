@@ -52,40 +52,6 @@ export default {
         cancel() {
             this.$message('The system will not retain any of your changes')
         },
-        confirmupdate() {
-            let that = this
-            this.button_disabled = true;
-            let param = new URLSearchParams();
-            let self = this;
-            //param.append('id',this.guest.id);
-            param.append('username',this.guest.username);
-            param.append('age',this.guest.age);
-            param.append('email',this.guest.email);
-            param.append('teleNumber',this.guest.teleNumber);
-            axios({
-                method: 'put',
-                url: 'http://172.20.10.4:8080/guest/reviser?id=1',
-                data:param
-            })
-            .then(function(reponse) {
-                 console.log(reponse);
-            if(reponse.data.code[0] == "2") {
-                   self.$message("修改成功")
-                }
-                else if(response.data.code[0] == "4") {
-                  that.wrong_pwd = "用户名或密码错误";
-                  that.button_disabled = false;
-                }
-                else if(response.data.code[0] == "5") {
-                  that.wrong_pwd("服务器错误")
-                  that.button_disabled = false;
-                }
-            })
-            .catch(function (error) {
-                alert(error);
-                token_pointer.button_disabled = false;
-              })
-        }
     },
     data() {
         return{
