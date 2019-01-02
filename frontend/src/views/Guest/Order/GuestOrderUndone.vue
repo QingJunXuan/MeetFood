@@ -39,6 +39,7 @@
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
 import guestReserveSidebar from '@/components/guestReserveSidebar.vue'
+import axios from 'axios'
 export default {
     components:{
         guestTopbar,

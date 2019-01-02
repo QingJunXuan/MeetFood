@@ -39,6 +39,7 @@
 <script>
 import hostTopbar from '@/components/hostTopbar.vue'
 import hostReserveSidebar from '@/components/hostReserveSidebar.vue'
+import axios from 'axios'
 export default {
     components:{
         hostTopbar,

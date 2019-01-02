@@ -40,6 +40,7 @@
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
 import guestInforSidebar from '@/components/guestInforSidebar.vue'
+import axios from 'axios'
 export default {
     components:{
         guestTopbar,
@@ -62,7 +63,7 @@ export default {
            let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/collection/all', 
+            url: 'http://172.20.10.4:8080/collection/all?guest_id=1', 
           })
             .then(function (response) {
             console.log(response);
