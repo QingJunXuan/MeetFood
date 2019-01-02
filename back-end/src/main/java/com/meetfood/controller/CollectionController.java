@@ -2,7 +2,9 @@ package com.meetfood.controller;
 
 import com.meetfood.entity.Collection;
 //import com.meetfood.entity.CollectionPK;
+import com.meetfood.entity.Dining;
 import com.meetfood.repository.CollectionRepository;
+import com.meetfood.repository.DiningRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -20,6 +22,8 @@ import java.util.List;
 public class CollectionController {
     @Autowired
     private CollectionRepository collectionRepository;
+    @Autowired
+    private DiningRepository diningRepository;
 
     //收藏餐厅
 
@@ -47,6 +51,11 @@ public class CollectionController {
             collection.setDining_id(dining_id);
             collection.setGuest_id(guest_id);
             collectionRepository.save(collection);
+
+            Dining dining = new Dining();
+            Integer num = dining.getCollections();
+            dining.setCollections(num+1);
+            diningRepository.save(dining);
             return "success";
         }catch (Exception e){
             return "failed";

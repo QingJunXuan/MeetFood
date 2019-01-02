@@ -21,6 +21,7 @@ public class Dining {
     private String intro;
     private String tel;
     private String address;
+    private Integer collections;//收藏数
     private Blob icon;
 
     public Integer getId() {
@@ -78,6 +79,9 @@ public class Dining {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public Integer getCollections(){return collections;}
+    public void setCollections(Integer collections){this.collections=collections;}
 
     public Blob getIcon() {
         return icon;
