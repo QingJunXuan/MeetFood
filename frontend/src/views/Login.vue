@@ -21,7 +21,7 @@
                         <b class="forget" @click="forget">forget your password?</b>
                     </el-form-item>           
                     <el-form-item>
-                        <el-button  @click="loginQuest" 
+                        <el-button  @click="loginGuest" 
                         style="background-color:#F5C300;color:#fff;font-weight:500;font-size:17px;width:110px;">
                           Login
                           </el-button>
@@ -77,7 +77,7 @@ import guestTopbar from '@/components/guestTopbar.vue'
         register(){
           this.$router.push('/register')
         },
-        loginRequester:function () {
+        loginGuest:function () {
           console.log(localStorage.token);
           delete localStorage.token;
           delete localStorage.username;
@@ -86,41 +86,41 @@ import guestTopbar from '@/components/guestTopbar.vue'
           console.log(localStorage.token);
           let token_pointer = this
           this.button_disabled = true;
-          this.role = "ROLE_REQUESTER";
+          //this.role = "ROLE_REQUESTER";
           if (this.email == "") {
             this.$message({
-              message: '请输入用户名',
+              message: 'Please enter the email',
               type: 'warning'
             });
           }
           else if (this.pwd == "") {
-            this.$message('请输入密码');
+            this.$message('Please enter the password');
           }
           else
           {
             let param = new URLSearchParams();
             let self = this;
             let login = false;
-            param.append('username',this.email);
+            param.append('email',this.email);
             param.append('password',this.pwd);
-            param.append('role',this.role);
+            
             axios({
               method:	'post',
-              url: '/api/login',
+              url: 'http://172.20.10.4:8080/guest/login',
               data:param
             })
               .then(function (response) {
                 console.log(response);
                 if(response.data.code[0] == "2") {
                   window.sessionStorage.removeItem('token');
-                  let token = response.data.X_Auth_Token;
+                  let token = response.data.X_Auth_Token;//token
                   let email = self.email;
                   let user_information = {
                     token: token,
                     email: email
                   }
                   token_pointer.$store.commit('UserLogin', user_information);
-                  axios({
+                  /*axios({
                     method:	'get',
                     url: '/api/requester/find-myself',
                   })
@@ -135,7 +135,7 @@ import guestTopbar from '@/components/guestTopbar.vue'
                     })
                     .catch(function (error) {
                       alert(error);
-                    });
+                    });*/
                   token_pointer.button_disabled = false;
                 }
                 else if(response.data.code[0] == "4") {
@@ -153,30 +153,30 @@ import guestTopbar from '@/components/guestTopbar.vue'
               });
           }
         },
-        loginWorker:function () {
+        loginHost:function () {
           delete localStorage.token;
           delete localStorage.username;
           let self = this
           this.button_disabled = true;
-          this.role = "ROLE_WORKER";
+          //this.role = "ROLE_WORKER";
           if (this.email == "") {
             this.$message({
-              message: '请输入用户名',
+              message: 'Please enter the email',
               type: 'warning'
             });
           }
           else if (this.pwd == "") {
-            this.$message('请输入密码');
+            this.$message('Please enter the password');
           }
           else
           {
             let param = new URLSearchParams();
-            param.append('username',this.email);
+            param.append('email',this.email);
             param.append('password',this.pwd);
-            param.append('role',this.role);
+            
             axios({
               method:	'post',
-              url: '/api/login',
+              url: '/dining/login',
               data:param
             })
               .then(function (response) {
