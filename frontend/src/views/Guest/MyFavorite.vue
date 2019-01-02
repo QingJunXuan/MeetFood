@@ -12,10 +12,10 @@
                     </div>
 
                     <div class="box">
-                        <el-col :span="8" v-for="(item, i) in Favorite" :key="i">
+                        <el-col :span="8" v-for="item in Favorite" :key="item.id">
                             <el-card :body-style="{ padding: '0px' }">
-                                <div class="recommend_pic_box" style="width:100%;height:300px;overflow:hidden;">
-                             <img :src="item.img" class="image" style="height:600px;width:900px">
+                                <div class="recommend_pic_box" style="width:100%;height:250px;overflow:hidden;">
+                             <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
                             <span>{{item.favoriteID}}</span>
@@ -23,8 +23,7 @@
                                 {{ item.text }}
                                 </div>
                          <div class="bottom clearfix">
-                         <time class="time">{{ currentDate }}</time>
-                         <el-button type="text" class="button"> View Details </el-button>
+                         <el-button type="text" class="button" @click="view_detail(item.favoriteID)"> View Details </el-button>
                         </div>
                         </div>
                         </el-card>
@@ -46,43 +45,61 @@ export default {
         guestTopbar,
         guestInforSidebar
     },
+    coomputed: {
+        pic:function(item){
+
+        }
+    },
+    computed: {
+        pic:function(item){
+
+        }
+    },
     data() {
         return{
-            currentDate: new Date(),
-            Favorite:[
-            {
                 favoriteID:"1",
                 text:"one",
-                img: require("../../assets/1.jpg")
-            },
-            {
-                favoriteID:"2",
-                text:"two",
-                img: require("../../assets/2.jpg")
-            },
-             {
-                favoriteID:"3",
-                text:"three",
-                img: require("../../assets/3.jpg")
-            },
-            {
-                favoriteID:"4",
-                text:"four",
-                img: require("../../assets/4.jpg")
-            },
-             {
-                favoriteID:"5",
-                text:"five",
-                img: require("../../assets/5.jpg")
-            },
-            {
-                favoriteID:"6",
-                text:"six",
-                img: require("../../assets/6.jpg")
-            }
-            ]
+                img: require("../../assets/1.jpg"),
+                Favorite:[],
         }
-    }
+
+    },
+    created(){
+           let that = this;
+          axios({
+            method:	'get',
+            //url: '/api/image/findImages', 
+          })
+            .then(function (response) {
+            console.log(response);
+             that.picFile = response.data.images;
+             for(let i=0;i<response.data.images.length;i++){
+                let albums=response.data.images[i].resources;
+                let link;
+                //console.log(albums.length)
+                if(albums.length==0){
+                    link='../../../static/blank.jpg';
+                    //console.log(link)
+                }
+                else{
+                    link= albums[0].link;
+                }
+                console.log(that.picFile[i])
+                that.picFile[i].cover=link;
+                
+             }
+             
+             console.log(that.picFile)
+            })
+            .catch(function (error) {
+              alert(error);
+            });
+        },
+        methods: {
+            view_detail(id){
+                this.$router.push('/Shop/'+id)
+            }
+        }
 }
 </script>
 

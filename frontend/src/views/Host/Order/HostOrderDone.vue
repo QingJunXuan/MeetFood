@@ -14,8 +14,8 @@
                      <div class="box">
                         <el-col :span="8" v-for="(item, i) in Favorite" :key="i">
                             <el-card :body-style="{ padding: '0px' }">
-                             <div class="recommend_pic_box" style="width:100%;height:300px;overflow:hidden;">
-                             <img :src="item.img" class="image" style="height:600px;width:900px">
+                             <div class="recommend_pic_box" style="width:100%;height:250px;overflow:hidden;">
+                             <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
                             <span>{{item.favoriteID}}</span>
