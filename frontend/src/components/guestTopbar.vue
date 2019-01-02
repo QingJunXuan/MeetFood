@@ -26,7 +26,7 @@
     export default {
         methods: {
             HOME(){
-                this.$router.push('/Shop')
+                this.$router.push('/')
             },
             DISCOVERY_QUEUES(){
                 this.$router.push('/discovery')
