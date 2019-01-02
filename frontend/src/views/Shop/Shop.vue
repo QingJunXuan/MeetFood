@@ -169,7 +169,7 @@ export default {
         return {
             Dining:{
                 name:'Deliciousrilla',
-                intro:'Here are some introductions of the restaurant',
+                intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
                 rate:'4.3',
                 hostname:'Lela',
                 hostavatar:require("../../assets/1.jpg"),
@@ -186,11 +186,17 @@ export default {
             },
             Dish:[
             {
-                name:'the first dish'
+                name:'Caesar Salad'
             },
             {
-                name:'the second dish'
-            }
+                name:'Chicken Cordon Bleu'
+            },
+            {
+                name:'Deep-Fried Chicken and Bacon Rolls'
+            },
+            {
+                name:'Beef Stroganoff'
+            },
             ],
             reserve: {
                 date1: '',
@@ -231,7 +237,7 @@ export default {
       },
       toNutrients(){
           this.$router.push({path:'/Menu'})
-      }
+      },
     }
 }
 </script>
@@ -290,7 +296,6 @@ template {
     padding-left: 10px;
     margin-left: 20px;
     font-size: 16px;
-    height: 500px;
     border-style:solid;
     border-color:#a0a0a0;
     border-width:0px;
@@ -301,7 +306,7 @@ template {
     padding-bottom: 20px;
     padding-left: 20px;
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 20px;
     background-color: #f3f1f1;
     
 }
@@ -310,8 +315,9 @@ template {
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
+    padding-right: 40px;
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 20px;
 }
 .map{
     margin-top: 20px;

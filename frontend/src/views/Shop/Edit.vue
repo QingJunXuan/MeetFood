@@ -1,11 +1,12 @@
 <template>
 <div>
     <guestTopbar/>
+    <el-form class="dish">
     <div class="title">
         <span>Deliciousrilla</span>
     </div>
     <el-row>
-        <div class="section">
+        <div class="picture">
             <div class="title">
                 <span>Pictures</span>
             </div>
@@ -13,14 +14,27 @@
                 <div class="image_big">
                     <img src="../../assets/4.jpg" height="300">
                 </div>
-                <el-button>Upload the cover</el-button>
+                <el-upload
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :on-preview="handlePictureCardPreview"
+                    :on-remove="handleRemove">
+                     <el-button>Upload the cover</el-button>
+                </el-upload>
+               
             </el-col>
-            <el-col :span="8">
+            <el-col :span="16">
+                <el-upload
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    list-type="picture-card"
+                    :on-preview="handlePictureCardPreview"
+                    :on-remove="handleRemove">
+                    <i class="el-icon-plus"></i>
+                </el-upload>
+                <el-dialog :visible.sync="dialogVisible">
+                    <img width="100%" :src="dialogImageUrl" alt="">
+                </el-dialog>
                 <div class="image_small">
-                    <img src="../../assets/5.jpg" height="150" width="150">
-                    <img src="../../assets/6.jpg" height="150" width="150">
-                    <img src="../../assets/7.jpg" height="150" width="150">
-                    <img src="../../assets/1.jpg" height="150" width="150">
+                    <img  v-for="(item, i) in Dining.picture" :key="i" :src="item" width="150" height="150">
                 </div>
                 <el-button>Upload the picture</el-button>
             </el-col>
@@ -31,38 +45,56 @@
             <div class="title">
                 <span>Introduction</span>
             </div>
-            <div class="introduction">
-                <el-input type="textarea" v-model="introduction" placeholder="请输入简介"></el-input>
-            </div> 
+            <el-form-item class="introduction">
+                <el-input type="textarea" v-model="Dining.intro" placeholder=""></el-input>
+            </el-form-item> 
         </div>
     </el-row>
     <el-row>
-        <el-col :span="8">
-            <div class="section">
-                <div class="title">
-                    <span>Menu</span>
-                </div>
-                <div class="dish">
-                    <el-input v-model="introduction"></el-input>
-                </div>
-                <div class="dish">
-                    <el-input v-model="introduction"></el-input>
-                </div>
+        <div class="section">
+            <el-row>
+                <el-col :span="8">
+                    <div class="title">
+                        <span>Dish</span>
+                    </div>
+                </el-col>    
+                <el-col :span="8">
+                    <div class="title">
+                        <span>Ingredients</span>
+                    </div>
+                </el-col>
+            </el-row>
+            <div class="dish">
+                <el-row>
+                    <el-form-item
+                        v-for="(domain, index) in DishForm"
+                        :key="domain.key"
+                        :prop="'domains.' + index + '.value'"
+                    >
+                        <el-col :span="8">
+                            <div class="dish">
+                                <el-input v-model="DishForm[index].name"></el-input>
+                            </div>
+                        </el-col>
+                        <el-col :span="8">
+                            <div class="dish">
+                                <el-input v-model="DishForm[index].ingredients"></el-input>
+                            </div>
+                        </el-col>
+                        <el-col :span="8">
+                            <div class="dish">
+                                <el-button @click.prevent="removeDomain(domain)">DELETE</el-button>
+                            </div>
+                        </el-col>   
+                    </el-form-item>
+                </el-row>
+                <el-row>
+                    <div class="dish">
+                        <el-button @click="addDomain">ADD</el-button>
+                    </div>
+                </el-row>
             </div>
-        </el-col>
-        <el-col :span="8">
-            <div class="section">
-                <div class="title">
-                    <span>Ingredients</span>
-                </div>
-                <div class="dish">
-                    <el-input v-model="introduction"></el-input>
-                </div>
-                <div class="dish">
-                    <el-input v-model="introduction"></el-input>
-                </div>
-            </div>
-        </el-col>
+        </div>
     </el-row>
     <el-row>
         <div class="section">
@@ -99,37 +131,38 @@
             <div class="title">
                 <span>Telephone Number</span>
             </div>
-            <div class="input">
-                <el-input v-model="introduction"></el-input>
-            </div>
+            <el-form-item class="input">
+
+                <el-input v-model="Dining.phone"></el-input>
+            </el-form-item>
 
             <div class="title">
                 <span>E-mail</span>
             </div>
-            <div class="input">
-                <el-input v-model="introduction"></el-input>
-            </div>
+            <el-form-item class="input">
+                <el-input v-model="Dining.email"></el-input>
+            </el-form-item>
 
             <div class="title">
                 <span>Number of guests suggested</span>
             </div>
-            <div class="input">
-                <el-input v-model="introduction"></el-input>
-            </div>
+            <el-form-item class="input">
+                <el-input v-model="Dining.person"></el-input>
+            </el-form-item>
 
             <div class="title">
                 <span>Set the Price</span>
             </div>
-            <div class="input">
-                <el-input v-model="price"></el-input>
-            </div>
+            <el-form-item class="input">
+                <el-input v-model="Dining.price"></el-input>
+            </el-form-item>
 
             <div class="title">
                 <el-button type="primary" @click="onSubmit">Save the change</el-button>
             </div>
         </div>
     </el-row>
-
+    </el-form>
     
 </div>
 </template>
@@ -150,6 +183,35 @@ export default {
         dialogVisible: false,
         location_detail:'',
         introduction:'',
+        DishForm: [
+        {
+            name: 'onedish',
+            ingredients:'apple',
+        },
+        {
+            name: 'anotherdish',
+            ingredients:'beef',
+        },
+        ],
+        Dining:{
+            name:'Deliciousrilla',
+            intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
+            rate:'4.3',
+            hostname:'Lela',
+            hostavatar:require("../../assets/1.jpg"),
+            cover:require("../../assets/2.jpg"),
+            picture:[
+                    require("../../assets/3.jpg"),
+                    require("../../assets/4.jpg"),
+                    require("../../assets/5.jpg"),
+                    require("../../assets/6.jpg"),
+                    require("../../assets/7.jpg"),
+                    ],
+            price:357,
+            person:"3~5",
+            email:"abc@gmail.com",
+            phone:"61006200"
+        },
         price:'',
         options: [{
           value: 'China',
@@ -211,7 +273,19 @@ export default {
           }));
           map.setCurrentCity("上海");
           map.enableScrollWheelZoom(true);
-      }
+      },
+      addDomain() {
+        this.DishForm.push({
+          value: '',
+          key: Date.now()
+        });
+      },
+      removeDomain(item) {
+        var index = this.DishForm.indexOf(item)
+        if (index !== -1) {
+          this.DishForm.splice(index, 1)
+        }
+      },
     }
 }
 </script>
@@ -241,7 +315,20 @@ template {
     padding-left: 10px;
     margin-left: 20px;
     font-size: 16px;
-    height: 500px;
+    
+    width: 80%;
+    border-style:solid;
+    border-color:#a0a0a0;
+    border-width:1px;
+}
+.picture{
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+    height:500px;
     width: 80%;
     border-style:solid;
     border-color:#a0a0a0;
@@ -255,7 +342,6 @@ template {
     margin-left: 10px;
     font-size: 16px;
     background-color: #f3f1f1;
-    height: 320px;
 }
 .location_cas{
     width:80%
