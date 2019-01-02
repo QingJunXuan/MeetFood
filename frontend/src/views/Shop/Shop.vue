@@ -143,6 +143,23 @@ import guestTopbar from '@/components/guestTopbar.vue'
 export default {
     mounted(){
         this.baiduMap();
+
+        let that = this;
+        let param = new URLSearchParams();
+        param.append('id',file.id);
+        axios({
+            method:'get',
+            url:'/api/',
+            data:param
+        })
+        .then(function(response){
+            this.info = response
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+
     },
     components:{
         guestTopbar,
