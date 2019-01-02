@@ -1,42 +1,56 @@
 <template>
-<div style="background-color:#E4E5E6" >
+<div  >
+    <guestTopbar/>
     <el-row type="flex" justify="center">
         <el-col :span="7">          
             <!--login-->
             <div class="requester_box">
-                <b style="font-size:38px;color:#303133;margin-bottom:20px;">注册</b>
-                <br><span style="color:#909399;font-size:15px;">创建新账号</span>
+                <b style="font-size:38px;color:#303133;margin-bottom:20px;">Register</b>
+                <br><span style="color:#909399;font-size:15px;">Create a new account</span>
                  <el-form label-position="top" label-width="60px" :model="user" :rules="rules" required ref="user" status-icon>
                     <el-form-item label="" prop="name">
-                        <el-input v-model="user.name" placeholder="用户名">
+                        <el-input v-model="user.name" placeholder="Username">
                             <template slot="prepend">&nbsp;&nbsp;</template>
                             </el-input>
                     </el-form-item>
                     <el-form-item label="" prop="email">
-                        <el-input v-model="user.email" placeholder="邮箱">
+                        <el-input v-model="user.email" placeholder="E-mail">
+                            <template slot="prepend">&nbsp;&nbsp;</template>
+                            </el-input>
+                    </el-form-item>
+                    <el-form-item label="" prop="tele">
+                        <el-input v-model="user.tele" placeholder="Telephone">
+                            <template slot="prepend">&nbsp;&nbsp;</template>
+                            </el-input>
+                    </el-form-item>
+                    <el-form-item label="" prop="age">
+                        <el-input v-model="user.age" placeholder="Age">
                             <template slot="prepend">&nbsp;&nbsp;</template>
                             </el-input>
                     </el-form-item>
                     <el-form-item label="" prop="pwd">
-                        <el-input v-model="user.pwd" type="password" placeholder="密码">
+                        <el-input v-model="user.pwd" type="password" placeholder="Password">
                             <template slot="prepend">&nbsp;&nbsp;</template>
                         </el-input>
                     </el-form-item>
                     <el-form-item label="" prop="pwd2">
-                        <el-input v-model="user.pwd2" type="password" placeholder="确认密码">
+                        <el-input v-model="user.pwd2" type="password" placeholder="Confirm password">
                             <template slot="prepend">&nbsp;&nbsp;</template>
                         </el-input>
                     </el-form-item>
-                    
+                    <el-form-item label="" prop="identity">
+                        <el-radio-group v-model="user.identity">
+                            <el-radio-button label="Guest"></el-radio-button>
+                            <el-radio-button label="Host"></el-radio-button>                                             
+                        </el-radio-group>
+                    </el-form-item> 
                     <el-form-item style="padding-top:10px;">
-                        <el-button  @click="register('user')" class="register_button">创建新账号</el-button>
-                    </el-form-item>
-                    
-
+                        <el-button  @click="register('user')" class="register_button">Register</el-button>
+                    </el-form-item>                                       
                 </el-form>
                 <div style="margin-bottom:0;font-size:15px;">
-                    <span style="color:#606266">已经拥有账户？</span>
-                    <div class="login_text"><b @click="login">登录</b></div>
+                    <span style="color:#606266">Already have an account?</span>
+                    <div class="login_text"><b @click="login">Login</b></div>
                 </div>
             </div>
 
@@ -47,7 +61,12 @@
 </template>
 
 <script>
+import guestTopbar from '@/components/guestTopbar.vue'
+import * as axios from 'axios'
     export default {
+        components:{
+            guestTopbar
+        } ,
         methods: {
            login () {
                 this.$router.push('/login')
@@ -55,21 +74,42 @@
             register(formName) {
                 this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    axios.post('http://localhost:8080/',{
-                    "username":this.username,
-                    "email":this.email,
-                    "tele":this.teleNumber,
-                    "pwd":this.pwd
-                }).then(function(response){
-                    if(response.status == 200) {                 
-                    }
-                }).catch(function(error){
-                   
+                    if(this.user.identity=="guest"){
+                        
+                        let that = this;
+                    let param = new URLSearchParams();
+                    param.append('username',that.user.name);
+                    param.append('email',that.user.email);
+                    param.append('password',that.user.pwd);
+                    param.append('age',that.user.age);
+                    param.append('teleNumber',that.user.tele);                   
+                    console.log(param);
+                    axios({
+                    method:'post',
+                    url: 'api/register',
+                    data:param
+                    })
+                    .then(function(response){
+                      console.log(response);
+                        if(response.data.code[0] == "2"){
+                            that.$message('注册成功！');
+                            that.$router.replace('/login');
+                        }
+                        else if(response.data.code == "400") {
+                        that.wrong_pwd("输入格式有误")
+                        }
+                        else if(response.data.code == "500") {
+                        that.wrong_pwd("服务器错误")
+                        }
+                    })
+                    .catch(function (error) {
+                        alert(error);
                     });
-                   this.$router.push('/register_requester_info');
+                    
                 } else {
                     console.log('error submit!!');
                     return false;
+                }
                 }
                 });
             },
@@ -77,7 +117,7 @@
         data () {
             var validatePass = (rule, value, callback) => {
                 if (value === '') {
-                callback(new Error('密码不能为空'));
+                callback(new Error('Please enter the password'));
                 } else {
                 if (this.user.pwd2 !== '') {
                     this.$refs.user.validateField('pwd2');
@@ -87,28 +127,37 @@
             };
             var validateCheck = (rule, value, callback) => {
                     if (value === '') {
-                    callback(new Error('请再次输入密码'));
+                    callback(new Error('Please enter the password again'));
                     } else if (value !== this.user.pwd) {
-                    callback(new Error('两次输入密码不一致!'));
+                    callback(new Error('The two passwords you entered did not match'));
                     } else {
                     callback();
                     }
                 };    
             return {    
                        
-                user: {},
+                user: {
+                    name:'',
+                    email:'',
+                    pwd:'',
+                    pwd2:'',
+                    identity:'Guest'
+                },
                 rules: {
                     name: [
-                        {required: true, message: '用户名不能为空', trigger: 'blur'}
+                        {required: true, message: 'Please enter the username', trigger: 'blur'}
                     ],
                     email:[
-                        {required: true, message: '邮箱不能为空', trigger: 'blur'}
+                        {required: true, message: 'Please enter the E-mail', trigger: 'blur'}
                     ],
                     pwd: [
                         {validator:validatePass, trigger: 'blur'}
                     ],
                     pwd2:[
                         {validator:validateCheck, trigger: 'blur'}
+                    ],
+                    identity:[
+                        {required: true, message: 'Please choose an identity', trigger: 'blur'}
                     ],
 
                 }

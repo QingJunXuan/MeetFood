@@ -12,7 +12,7 @@
                     text-color="#fff"
                     active-text-color="#fff">
                 <el-menu-item index="1" @click="HOME" >HOME</el-menu-item>
-                <el-menu-item index="2" @click="DISCOVERY_QUEUES" >DISCOVERY QUEUES</el-menu-item> 
+                <el-menu-item index="2" @click="DISCOVERY_QUEUES" >DISCOVERY</el-menu-item> 
                 <el-menu-item index="3" @click="YOUR_ORDER">YOUR ORDER</el-menu-item>  
                 <el-menu-item index="4" @click="YOUR_MEETFOOR">YOUR MEETFOOD.COM</el-menu-item>               
             </el-menu>
@@ -29,7 +29,7 @@
                 this.$router.push('/')
             },
             DISCOVERY_QUEUES(){
-                this.$router.push('/')
+                this.$router.push('/discovery')
             },
             YOUR_MEETFOOR(){
                 this.$router.push('/Guest_Basic_Infor')
@@ -63,7 +63,7 @@
     text-align: center
 }
 .el-menu-item{
-    width:230px;
+    width:25%;
 
 }
 .el-menu-item:hover{
