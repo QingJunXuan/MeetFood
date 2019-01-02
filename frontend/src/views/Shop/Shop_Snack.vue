@@ -28,7 +28,7 @@
     <el-row>
         <el-col :span="24">
             <div class="picture_row" style="width:100%;height:300px;overflow: hidden;">
-                <img  v-for="(item, i) in Dining.picture" :key="i" :src="item" width="300" height="300" class="picture_small">
+                <img  v-for="(item, i) in Dining.picture" :key="i" :src="item" width="300" height="100%" class="picture_small">
             </div>
         </el-col>
     </el-row>
@@ -196,13 +196,13 @@ export default {
                 rate:4.1,
                 hostname:'Johnies',
                 hostavatar:require("../../assets/1.jpg"),
-                cover:require("../../assets/2.jpg"),
+                cover:require("../../assets/2-1.jpg"),
                 picture:[
-                    require("../../assets/3.jpg"),
-                    require("../../assets/4.jpg"),
-                    require("../../assets/5.jpg"),
-                    require("../../assets/6.jpg"),
-                    require("../../assets/7.jpg"),
+                    require("../../assets/2-2.jpg"),
+                    require("../../assets/2-3.jpg"),
+                    require("../../assets/2-4.jpg"),
+                    require("../../assets/2-5.jpg"),
+                    require("../../assets/2-6.jpg"),
                     ],
                 price:159,
                 person:"1~3"
@@ -228,14 +228,14 @@ export default {
                 message:'',
             },
             comment:[{
-                guestid:"Alice",
-                text:"Here is the comment of one guest",
-                rate:4,
+                guestid:"Tim K.",
+                text:"Gyro omelet was incredible! They also have a 3 eggs, 3 pancakes and 3 sausages deal for $9. Amazing! Especially for the area of overpriced “foodie” places.",
+                rate:4.8,
                 img:require("../../assets/1.jpg")
             },
             {
-                guestid:"Cindy",
-                text:"Here is another comment of one guest",
+                guestid:"Kevin P.",
+                text:"Great food and service thank you",
                 rate:5,
                 img:require("../../assets/2.jpg")
             }

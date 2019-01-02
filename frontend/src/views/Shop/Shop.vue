@@ -192,7 +192,7 @@ export default {
         return {
             Dining:{
                 name:'Deliciousrilla',
-                intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
+                intro:'Traditional Mexican recipes and warm decor make you feel at home at this Chicago mainstay.',
                 rate:4.3,
                 hostname:'Lela',
                 hostavatar:require("../../assets/1.jpg"),
@@ -228,14 +228,14 @@ export default {
                 message:'',
             },
             comment:[{
-                guestid:"Alice",
-                text:"Here is the comment of one guest",
+                guestid:"Courtney L.",
+                text:"The food and atmosphere were amazing. The margaritas were kind of strong.",
                 rate:4,
                 img:require("../../assets/1.jpg")
             },
             {
-                guestid:"Cindy",
-                text:"Here is another comment of one guest",
+                guestid:"John S.",
+                text:"This is an unbelievable value. Great restaurant. You would be dumb if you do not buy and use it. I feel like I am stealing from them when I bought and used this groupon especially with a 20% ",
                 rate:5,
                 img:require("../../assets/2.jpg")
             }

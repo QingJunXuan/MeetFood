@@ -8,6 +8,7 @@ import Shop from '@/views/Shop/Shop.vue'
 import Shop_Snack from '@/views/Shop/Shop_Snack.vue'
 import Edit from '@/views/Shop/Edit.vue'
 import Menu from '@/views/Shop/Menu.vue'
+import Menu_Snack from '@/views/Shop/Menu_Snack.vue'
 import Comment from '@/views/Shop/Comment.vue'
 import Shop_host from '@/views/Shop/Shop_host.vue'
 import GuestOrderAll from '@/views/Guest/Order/GuestOrderAll.vue'
@@ -120,6 +121,11 @@ const router = new Router({
       path: '/Menu',
       name: 'Menu',
       component: Menu
+    },
+    {
+      path: '/Menu_Snack',
+      name: 'Menu_Snack',
+      component: Menu_Snack
     },
     {
       path: '/Comment',
