@@ -23,7 +23,7 @@
                                 {{ item.text }}
                                 </div>
                          <div class="bottom clearfix">
-                         <el-button type="text" class="button" @click="view_detail(item.favoriteID)"> View Details </el-button>
+                         <el-button type="text" class="button" @click="view_detail(item.favorite.id)"> View Details </el-button>
                         </div>
                         </div>
                         </el-card>
@@ -45,11 +45,6 @@ export default {
         guestTopbar,
         guestInforSidebar
     },
-    coomputed: {
-        pic:function(item){
-
-        }
-    },
     computed: {
         pic:function(item){
 
@@ -57,8 +52,7 @@ export default {
     },
     data() {
         return{
-                favoriteID:"1",
-                text:"one",
+                text:"",
                 img: require("../../assets/1.jpg"),
                 Favorite:[],
         }
@@ -68,28 +62,28 @@ export default {
            let that = this;
           axios({
             method:	'get',
-            //url: '/api/image/findImages', 
+            url: 'http://172.20.10.4:8080/collection/all', 
           })
             .then(function (response) {
             console.log(response);
-             that.picFile = response.data.images;
+             that.Favorite = response.data.images;
              for(let i=0;i<response.data.images.length;i++){
                 let albums=response.data.images[i].resources;
                 let link;
                 //console.log(albums.length)
                 if(albums.length==0){
-                    link='../../../static/blank.jpg';
+                    link='../../../assets/1.jpg';
                     //console.log(link)
                 }
                 else{
                     link= albums[0].link;
                 }
-                console.log(that.picFile[i])
-                that.picFile[i].cover=link;
+                console.log(that.Favorite[i])
+                that.Favorite[i].cover=link;
                 
              }
              
-             console.log(that.picFile)
+             console.log(that.Favorite)
             })
             .catch(function (error) {
               alert(error);

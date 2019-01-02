@@ -8,7 +8,7 @@
                     background-color="#fff" text-color="#4D4D4D"  
                     active-text-color="rgb(60, 121, 202)"
                     @select="handleSelect" router>
-                    <el-menu-item index="Guest_Order_Undone" >
+                    <el-menu-item index="Guest_Order_Undone" @click="aa">
                         <i class="el-icon-menu"></i>                       
                         <span slot="title">Undone</span>
                     </el-menu-item>
@@ -47,6 +47,10 @@ export default {
       }
     },
     methods: {
+      aa(){
+          this.$router
+
+      },
       handleSelect(key, keyPath) {
         console.log(this);
         console.log(key,keyPath);

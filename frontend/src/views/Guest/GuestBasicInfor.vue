@@ -67,7 +67,7 @@ export default {
             param.append('teleNumber',this.guest.teleNumber);
             axios({
                 method: 'post',
-                url: 'http://111.187.58.169/guest/reviser?',
+                url: 'http://111.187.58.169/guest/reviser?guestID=1',
                 data:param
             })
             .then(function(reponse) {
@@ -120,7 +120,7 @@ export default {
       {
         this.page = this.$route.params.page;
       }
-      axios.get('/api/guest/')
+      axios.get('http://172.20.10.4:8080/guest/message')
         .then(function (response) {
           console.log(response);
           that.guest = response.data.guest;

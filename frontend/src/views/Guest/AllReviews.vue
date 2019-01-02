@@ -10,13 +10,12 @@
                 <div class="title">
                     <span>All Reviews</span>
                 </div>
-                <div class="review" v-for="(item, i) in comment" :key="i">
+                <div class="review" v-for="item in Comment" :key="item.id">
                     <el-card class="box-card">
                         <div slot="header" class="clearfix">
                             <span>
-                                {{item.reviewid}}
+                                {{item.Comment.id}}
                             </span>
-                             <time class="time">{{ currentDate }}</time>
                             <el-rate v-model="item.rate" disabled show-score text-color="#ff9900" score-template="{value}" class="rate"></el-rate>
                         </div>
                         <div class="text item">
@@ -42,27 +41,40 @@ export default {
     },
     data(){
         return {
-            comment:[{
-                reviewid:"1",
-                text:"comment1",
-                rate:"4",
-                img:require("../../assets/1.jpg")
-            },
-            {
-                reviewid:"2",
-                text:"comment2",
-                rate:"5",
-                img:require("../../assets/2.jpg")
-            }
-            ],
-            currentDate: new Date()
-
+           text:"",
+           img: require("../../assets/1.jpg")
         }
     },
-    methods: {
-        onSubmit() {
-            console.log('submit!');
-        }
+    created(){
+         let that = this;
+          axios({
+            method:	'get',
+            url: 'http://172.20.10.4:8080/myOrderForm/all', 
+          })
+            .then(function (response) {
+            console.log(response);
+             that.Comment = response.data.images;
+             for(let i=0;i<response.data.images.length;i++){
+                let albums=response.data.images[i].resources;
+                let link;
+                //console.log(albums.length)
+                if(albums.length==0){
+                    link='../../../assets/1.jpg';
+                    //console.log(link)
+                }
+                else{
+                    link= albums[0].link;
+                }
+                console.log(that.Comment[i])
+                that.Comment[i].cover=link;
+                
+             }
+             
+             console.log(that.Comment)
+            })
+            .catch(function (error) {
+              alert(error);
+            });
     }
 }
 </script>
