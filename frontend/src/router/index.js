@@ -99,9 +99,8 @@ const router = new Router({
       component: HostOrderWeek
     },
     {
-      path: '/Shop/:id',
+      path: '/Shop',
       name: 'Shop',
-      props: true,
       component: Shop
     },
     {

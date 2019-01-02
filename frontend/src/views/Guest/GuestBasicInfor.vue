@@ -12,23 +12,20 @@
                     </div>
 
                     <div class="box">
-                        <el-form label-position="left" label-width="110px" >                                            
+                        <el-form ref="form" label-position="left" label-width="110px" :model="form">                                            
                         <el-form-item label="Name">
-                        <el-input v-model="guest.username"></el-input>
+                        <el-input  value="Jack"></el-input>
                         </el-form-item>
                         <el-form-item label="Email">
-                        <el-input v-model="guest.email"></el-input>
+                        <el-input value="1888888@tongji.edu.cn"></el-input>
                         </el-form-item>
                         <el-form-item label="Age">
-                        <el-input v-model="guest.age"></el-input>
+                        <el-input value="12"></el-input>
                         </el-form-item>
                         <el-form-item label="TeleNumber">
-                        <el-input v-model="guest.teleNumber"></el-input>
+                        <el-input value="13245678901"></el-input>
                         </el-form-item>
-                        <el-form-item>
-                            <el-button type="primary" @click="confirmupdate">Save</el-button>
-                            <el-button @click="cancel">Cancel</el-button>
-                        </el-form-item>               
+                                  
                 </el-form>
                     </div>
                  </div>
@@ -67,7 +64,7 @@ export default {
             param.append('teleNumber',this.guest.teleNumber);
             axios({
                 method: 'put',
-                url: 'http://172.20.10.4:8080/guest/reviser?guestID=1',
+                url: 'http://172.20.10.4:8080/guest/reviser?id=1',
                 data:param
             })
             .then(function(reponse) {
