@@ -5,6 +5,7 @@ import GuestBasicInfor from '@/views/Guest/GuestBasicInfor.vue'
 import AllReviews from '@/views/Guest/AllReviews.vue'
 import MyFavorite from '@/views/Guest/MyFavorite.vue'
 import Shop from '@/views/Shop/Shop.vue'
+import Shop_Snack from '@/views/Shop/Shop_Snack.vue'
 import Edit from '@/views/Shop/Edit.vue'
 import Menu from '@/views/Shop/Menu.vue'
 import Comment from '@/views/Shop/Comment.vue'
@@ -103,6 +104,12 @@ const router = new Router({
       name: 'Shop',
       props: true,
       component: Shop
+    },
+    {
+      path: '/Shop_Snack',
+      name: 'Shop_Snack',
+      props: true,
+      component: Shop_Snack
     },
     {
       path: '/Edit',

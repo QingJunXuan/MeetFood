@@ -191,10 +191,10 @@ export default {
     data(){
         return {
             Dining:{
-                name:'Deliciousrilla',
+                name:'Snack Shop',
                 intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
-                rate:4.3,
-                hostname:'Lela',
+                rate:4.1,
+                hostname:'Johnies',
                 hostavatar:require("../../assets/1.jpg"),
                 cover:require("../../assets/2.jpg"),
                 picture:[
@@ -204,21 +204,21 @@ export default {
                     require("../../assets/6.jpg"),
                     require("../../assets/7.jpg"),
                     ],
-                price:357,
-                person:"3~5"
+                price:159,
+                person:"1~3"
             },
             Dish:[
             {
-                name:'Caesar Salad'
+                name:'Roasted Cauliflower With Parmesan & Garlic'
             },
             {
-                name:'Chicken Cordon Bleu'
+                name:'Brown Rice & Cherry Tomato Cooked Salad'
             },
             {
-                name:'Deep-Fried Chicken and Bacon Rolls'
+                name:'Cheese Spread'
             },
             {
-                name:'Beef Stroganoff'
+                name:'Chopped Greek Salad'
             },
             ],
             reserve: {
