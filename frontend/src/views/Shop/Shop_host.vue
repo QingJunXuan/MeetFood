@@ -156,7 +156,7 @@ export default {
         this.baiduMap();
     },
     components:{
-        guestTopbar,
+        hostTopbar,
     },
 
     data(){
