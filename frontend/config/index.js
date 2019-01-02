@@ -19,11 +19,12 @@ module.exports = {
         },*/
         '/api': {
           target: 'http://172.20.10.4:8080',
+          changeOrigin:true,
           pathRewrite: {
             '^/api': ''
           }
         }
-      }
+      
     },
 
     // Various Dev Server settings

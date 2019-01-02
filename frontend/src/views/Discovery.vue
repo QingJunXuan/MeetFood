@@ -187,7 +187,7 @@ export default {
             });*/
             axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myReservation/all?guest_id=1',
+            url: '/api/myReservation/all?guest_id=1',
           })
             .then(function (response) {
             console.log(response);
@@ -198,7 +198,7 @@ export default {
             });
             for(let i=0;i<this.countries.length;i++){
                 this.options.push({label:this.countries[i].name,cities:[]});
-                console.log(this.options)
+                //console.log(this.options)
             }
     },
     methods:{
