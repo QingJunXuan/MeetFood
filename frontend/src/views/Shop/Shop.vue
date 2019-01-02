@@ -96,8 +96,9 @@
                         <span>Number of guests</span>
                         <el-row>
                             <el-select v-model="reserve.number" placeholder="Please choose the number of guests" style="width: 80%;">
-                                <el-option label="1位" value="1"></el-option>
-                                <el-option label="2位" value="2"></el-option>
+                                <el-option label="3" value="3"></el-option>
+                                <el-option label="4" value="4"></el-option>
+                                <el-option label="5" value="5"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
@@ -147,13 +148,44 @@ export default {
         let that = this;
         let param = new URLSearchParams();
         param.append('id',file.id);
+        
         axios({
             method:'get',
-            url:'/api/',
+            url:'/api/dining/view',
             data:param
         })
         .then(function(response){
-            this.info = response
+            that.Dining.name = response.data.name;
+            that.Dining.intro = response.data.intro;
+            that.Dining.rate = response.data.grade;
+            that.Dining.hostavatar = response.data.icon;
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+
+        axios({
+            method:'get',
+            url:'/api/comment/receivedComments',
+            data:param
+        })
+        .then(function(response){
+            that.comment.text = response.data.text;
+            that.comment.rate = response.data.score;
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+
+        axios({
+            method:'post',
+            url:'/api/myReservation/book',
+            data: order_time
+        })
+        .then(function(response){
+            that.$message('成功')
         })
         .catch(function(error){
             console.log(error)
@@ -220,6 +252,7 @@ export default {
             ]
         }
     },
+    
     methods: {
       onSubmit() {
         console.log('submit!');

@@ -13,7 +13,7 @@
                        <span>{{item.name}}</span>
                    </div>
                    <div class="ingredients">
-                       <span>{{item.ingredients}}</span>
+                       <span>Ingredients: {{item.ingredients}}</span>
                    </div>
                    <img :src="item.img" width="100" height="100">
                 </div>
@@ -58,8 +58,9 @@
                         <span>Number of guests</span>
                         <el-row>
                             <el-select v-model="reserve.number" placeholder="Please choose the number of guests" style="width: 80%;">
-                                <el-option label="1位" value="1"></el-option>
-                                <el-option label="2位" value="2"></el-option>
+                                <el-option label="3" value="3"></el-option>
+                                <el-option label="4" value="4"></el-option>
+                                <el-option label="5" value="5"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
@@ -82,6 +83,18 @@
                 <span>Nutritions analysis</span>
             </div>
             <div class="section">
+                <div class="ingredients">
+                    <span>In every 100 grams:</span>
+                </div>
+                <div class="ingredients">
+                    <span>Food calories:  16.00</span>
+                </div>
+                <div class="ingredients">
+                    <span>Fat:  0.40</span>
+                </div>
+                <div class="ingredients">
+                    <span>Fibrin:  0.60</span>
+                </div>
             </div>
         </el-col>     
     </el-row>
@@ -108,13 +121,13 @@ export default {
             value5:3.7,
             Dish:[
                 {
-                    name:"Here is the name of the first dish",
-                    ingredients:"The ingredients of the first dish",
+                    name:"Caesar Salad",
+                    ingredients:"lettuce, bacon, cheese",
                     img:require("../../assets/2.jpg"),
                 },
                 {
-                    name:"Here is the name of the second dish",
-                    ingredients:"The ingredients of the second dish",
+                    name:"Chicken Cordon Bleu",
+                    ingredients:"chicken, cheese, bacon, eggs",
                     img:require("../../assets/2.jpg"),
                 },
             ],
