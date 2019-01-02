@@ -18,7 +18,12 @@
                              <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
-                            <span>{{item.order.id}}</span>
+                            <span>{{item.id}}</span>
+                             <span>{{item.date}}</span>
+                            <span>{{item.text}} </span><br>
+                            <span>{{item.Tel}} </span><br>
+                            <span> {{item.address}} </span><br>
+                            <span> {{item.Email}} </span><br>
                             <div class="text item">
                                 {{ item.text }}
                                 </div>
@@ -53,8 +58,67 @@ export default {
     },
     data(){
         return{
-            text:"",
-            img: require("../../../assets/1.jpg")
+             Order:[{
+                 text:"Name:Deliciousrilla",
+                        img:require("../../../assets/2.jpg"),
+                        id:"1",
+                        rate:"5",
+                        address:"Address:767 South State Street, Chicago, IL 60605",
+                        Email:"Email:devil@gmail.com",
+                        Tel:"Tel:(312) 583-9100",
+                        date:"2018-04-13",
+            },{
+                       text:"Name:Snack Shop",
+                        img:require("../../../assets/P2.jpg"),
+                        id:"1",
+                        rate:"3.8",
+                        address:"Address:160 North Halsted Street, Chicago, IL 60661",
+                        Email:"Email:snack@gmail.com",
+                        Tel:"Tel:(312) 226-7769",
+                        date:"2018-05-13"
+            },
+           {
+                        text:"Name:Davern's Tavern",
+                        img:require("../../../assets/D1-1.jpg"),
+                        id:"1",
+                        rate:"4.5",
+                        address:"Address:8527 79th St, Justice, IL 60458",
+                        Email:"Email:davern@gmail.com",
+                        Tel:"Tel:(708) 924-6003",
+                        date:"2018-06-30"
+                },
+                {
+                        text:"Name:Lao Sze Chuan Evanston",
+                        img:require("../../../assets/D1-3.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:1633 Orrington Avenue, Evanston, IL 60201",
+                        Email:"Email:davern@gmail.com",
+                        Tel:"Tel:(847) 868-8989",
+                        date:"2018-12-10"
+                },
+                {
+                        text:"Name: Corner Bar ",
+                        img:require("../../../assets/D2-1.jpg"),
+                        id:"1",
+                        rate:"4.2",
+                        address:"Address:956 West Addison Street, Chicago, IL 60613",
+                        Email:"Email:grill@gmail.com",
+                        Tel:"Tel:(773) 929-1441" ,
+                        date:"2018-12-15"
+                },
+                {
+                        text:"Name:New Furama Restaurant",
+                        img:require("../../../assets/D2-3.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
+                        Email:"Email:furama@gmail.com",
+                        Tel:"Tel:(312) 225-6888",
+                        date:"2018-12-31"
+                },
+
+            ]
         }
     },
     created(){

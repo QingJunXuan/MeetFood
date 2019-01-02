@@ -25,10 +25,10 @@
     export default {
         methods: {
             HOME(){
-                this.$router.push('/')
+                this.$router.push('/Shop_host')
             },
             Edit_Page(){
-                this.$router.push('/')
+                this.$router.push('/Edit')
             },
             YOUR_Order(){
                 this.$router.push('/Host_Order_All')

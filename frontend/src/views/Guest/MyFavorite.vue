@@ -18,12 +18,13 @@
                              <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
-                            <span>{{item.favoriteID}}</span>
-                            <div class="text item">
-                                {{ item.text }}
-                                </div>
+                            <el-rate v-model="item.rate" disabled show-score text-color="#ff9900" score-template="{value}" class="rate"></el-rate>
+                           <span>{{item.text}} </span><br>
+                            <span>{{item.Tel}} </span><br>
+                            <span> {{item.address}} </span><br>
+                            <span> {{item.Email}} </span><br>
                          <div class="bottom clearfix">
-                         <el-button type="text" class="button" @click="view_detail(item.favorite.id)"> View Details </el-button>
+                         <el-button type="text" class="button" @click="view_detail(item.id)"> View Details </el-button>
                         </div>
                         </div>
                         </el-card>
@@ -53,9 +54,63 @@ export default {
     },
     data() {
         return{
-                text:"",
-                img: require("../../assets/1.jpg"),
-                Favorite:[],
+                Favorite:[{
+                   
+                        text:"Name:Deliciousrilla",
+                        img:require("../../assets/2.jpg"),
+                        id:"1",
+                        rate:"5",
+                        address:"Address:767 South State Street, Chicago, IL 60605",
+                        Email:"Email:devil@gmail.com",
+                        Tel:"Tel:(312) 583-9100"
+                       
+                },
+                {
+                        text:"Name:Snack Shop",
+                        img:require("../../assets/P2.jpg"),
+                        id:"1",
+                        rate:"3.8",
+                        address:"Address:160 North Halsted Street, Chicago, IL 60661",
+                        Email:"Email:snack@gmail.com",
+                        Tel:"Tel:(312) 226-7769"
+                },
+                {
+                        text:"Name: Corner Bar ",
+                        img:require("../../assets/Pi3.jpg"),
+                        id:"1",
+                        rate:"4.2",
+                        address:"Address:956 West Addison Street, Chicago, IL 60613",
+                        Email:"Email:grill@gmail.com",
+                        Tel:"Tel:(773) 929-1441" 
+                },
+                {
+                        text:"Name:New Furama Restaurant",
+                        img:require("../../assets/Pi4.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
+                        Email:"Email:furama@gmail.com",
+                        Tel:"Tel:(312) 225-6888"
+                },
+                {
+                        text:"Name:Davern's Tavern",
+                        img:require("../../assets/P5.jpg"),
+                        id:"1",
+                        rate:"4.5",
+                        address:"Address:8527 79th St, Justice, IL 60458",
+                        Email:"Email:davern@gmail.com",
+                        Tel:"Tel:(708) 924-6003"
+                },
+                {
+                        text:"Name:Lao Sze Chuan Evanston",
+                        img:require("../../assets/P6.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:1633 Orrington Avenue, Evanston, IL 60201",
+                        Email:"Email:davern@gmail.com",
+                        Tel:"Tel:(847) 868-8989"
+                }
+                ]
         }
 
     },
@@ -63,11 +118,11 @@ export default {
            let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/collection/all?guest_id=1', 
+            url: 'http://172.20.10.4:8080/collection/viewCollection?guest_id=1', 
           })
             .then(function (response) {
             console.log(response);
-             that.Favorite = response.data.images;
+             /*that.Favorite = response.data.images;
              for(let i=0;i<response.data.images.length;i++){
                 let albums=response.data.images[i].resources;
                 let link;
@@ -81,10 +136,8 @@ export default {
                 }
                 console.log(that.Favorite[i])
                 that.Favorite[i].cover=link;
-                
              }
-             
-             console.log(that.Favorite)
+             console.log(that.Favorite)*/
             })
             .catch(function (error) {
               alert(error);
@@ -92,7 +145,7 @@ export default {
         },
         methods: {
             view_detail(id){
-                this.$router.push('/Shop/'+id)
+                this.$router.push('/Shop')
             }
         }
 }

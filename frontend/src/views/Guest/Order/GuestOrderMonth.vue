@@ -8,7 +8,7 @@
           <el-col :span="20" style="background-color:rgb(255, 255, 255)">         
                 
                     <div class="basic_info_title">
-                        <span>LastedMonth</span>
+                        <span>Lasted Month</span>
                     </div>
 
                      <div class="box">
@@ -18,12 +18,14 @@
                              <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
-                            <span>{{item.order.id}}</span>
-                            <div class="text item">
-                                {{ item.text }}
-                                </div>
+                            <span>{{item.id}}</span>
+                            <span>{{item.date}}</span>
+                            <span>{{item.text}} </span><br>
+                            <span>{{item.Tel}} </span><br>
+                            <span> {{item.address}} </span><br>
+                            <span> {{item.Email}} </span><br>
                          <div class="bottom clearfix">
-                         <el-button type="text" class="button" @click="order_detail(item.order.id)"> View Details </el-button>
+                         <el-button type="text" class="button" @click="order_detail(item.id)"> View Details </el-button>
                         </div>
                         </div>
                         </el-card>
@@ -53,19 +55,50 @@ export default {
     },
     data(){
         return{
-            text:"",
-            img: require("../../../assets/1.jpg")
+            Order:[
+                {
+                        text:"Name:Lao Sze Chuan Evanston",
+                        img:require("../../../assets/P6.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:1633 Orrington Avenue, Evanston, IL 60201",
+                        Email:"Email:davern@gmail.com",
+                        Tel:"Tel:(847) 868-8989",
+                        date:"2018-12-10"
+                },
+                {
+                        text:"Name: Corner Bar ",
+                        img:require("../../../assets/Pi3.jpg"),
+                        id:"1",
+                        rate:"4.2",
+                        address:"Address:956 West Addison Street, Chicago, IL 60613",
+                        Email:"Email:grill@gmail.com",
+                        Tel:"Tel:(773) 929-1441" ,
+                        date:"2018-12-15"
+                },
+                {
+                        text:"Name:New Furama Restaurant",
+                        img:require("../../../assets/Pi4.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
+                        Email:"Email:furama@gmail.com",
+                        Tel:"Tel:(312) 225-6888",
+                        date:"2018-12-31"
+                },
+
+            ]
         }
     },
     created(){
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myReservation/lastMonth?date_state=30&guest_id=1', 
+            url: 'http://172.20.10.4:8080/myReservation/all?guest_id=1', 
           })
             .then(function (response) {
             console.log(response);
-             that.Order = response.data.images;
+             /*that.Order = response.data.images;
              for(let i=0;i<response.data.images.length;i++){
                 let albums=response.data.images[i].resources;
                 let link;
@@ -82,7 +115,7 @@ export default {
                 
              }
              
-             console.log(that.Order)
+             console.log(that.Order)*/
             })
             .catch(function (error) {
               alert(error);
@@ -90,7 +123,7 @@ export default {
     },
     methods: {
         order_detail(id){
-            this.$router.push('/Shop/'+id)
+            this.$router.push('/Shop')
         }
     }
 }

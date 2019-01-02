@@ -18,7 +18,12 @@
                              <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
-                            <span>{{item.order.id}}</span>
+                            <span>{{item.id}}</span>
+                             <span>{{item.date}}</span>
+                            <span>{{item.text}} </span><br>
+                            <span>{{item.Tel}} </span><br>
+                            <span> {{item.address}} </span><br>
+                            <span> {{item.Email}} </span><br>
                             <div class="text item">
                                 {{ item.text }}
                                 </div>
@@ -53,15 +58,46 @@ export default {
     },
     data(){
         return{
-            text:"",
-            img: require("../../../assets/1.jpg")
+             Order:[
+                {
+                        text:"Name:Lao Sze Chuan Evanston",
+                        img:require("../../../assets/D1-3.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:1633 Orrington Avenue, Evanston, IL 60201",
+                        Email:"Email:davern@gmail.com",
+                        Tel:"Tel:(847) 868-8989",
+                        date:"2018-12-10"
+                },
+                {
+                        text:"Name: Corner Bar ",
+                        img:require("../../../assets/D2-1.jpg"),
+                        id:"1",
+                        rate:"4.2",
+                        address:"Address:956 West Addison Street, Chicago, IL 60613",
+                        Email:"Email:grill@gmail.com",
+                        Tel:"Tel:(773) 929-1441" ,
+                        date:"2018-12-15"
+                },
+                {
+                        text:"Name:New Furama Restaurant",
+                        img:require("../../../assets/D2-3.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
+                        Email:"Email:furama@gmail.com",
+                        Tel:"Tel:(312) 225-6888",
+                        date:"2018-12-31"
+                },
+
+            ]
         }
     },
     created(){
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myOrderForm/lastMonth?dining_id=1&date_state=30', 
+            url: 'http://172.20.10.4:8080/myOrderForm/all?dining_id=1', 
           })
             .then(function (response) {
             console.log(response);

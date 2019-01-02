@@ -18,12 +18,14 @@
                              <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
-                            <span>{{item.order.id}}</span>
-                            <div class="text item">
-                                {{ item.text }}
-                                </div>
+                            <span>{{item.id}}</span>
+                            <span>{{item.date}}</span>
+                            <span>{{item.text}} </span><br>
+                            <span>{{item.Tel}} </span><br>
+                            <span> {{item.address}} </span><br>
+                            <span> {{item.Email}} </span><br>
                          <div class="bottom clearfix">
-                         <el-button type="text" class="button" @click="order_detail(item.order.id)"> View Details </el-button>
+                         <el-button type="text" class="button" @click="order_detail(item.id)"> View Details </el-button>
                         </div>
                         </div>
                         </el-card>
@@ -53,19 +55,30 @@ export default {
     },
     data(){
         return{
-            text:"",
-            img: require("../../../assets/1.jpg")
+            Order:[
+                {
+                        text:"Name:New Furama Restaurant",
+                        img:require("../../../assets/Pi4.jpg"),
+                        id:"1",
+                        rate:"3.6",
+                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
+                        Email:"Email:furama@gmail.com",
+                        Tel:"Tel:(312) 225-6888",
+                        date:"2018-12-31"
+                },
+
+            ]
         }
     },
     created(){
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myReservation/lastWeek?date_state=7&guest_id=1', 
+            url: 'http://172.20.10.4:8080/myReservation/all?guest_id=1', 
           })
             .then(function (response) {
             console.log(response);
-             that.Order = response.data.images;
+             /*that.Order = response.data.images;
              for(let i=0;i<response.data.images.length;i++){
                 let albums=response.data.images[i].resources;
                 let link;
@@ -82,7 +95,7 @@ export default {
                 
              }
              
-             console.log(that.Order)
+             console.log(that.Order)*/
             })
             .catch(function (error) {
               alert(error);
@@ -90,7 +103,7 @@ export default {
     },
     methods: {
         order_detail(id){
-            this.$router.push('/Shop/'+id)
+            this.$router.push('/Shop')
         }
     }
 }
