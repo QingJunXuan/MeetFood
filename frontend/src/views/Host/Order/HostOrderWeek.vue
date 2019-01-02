@@ -60,7 +60,7 @@ export default {
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myOrderForm/lastWeek', 
+            url: 'http://172.20.10.4:8080/myOrderForm/lastWeek?dining_id=1&date_state=7', 
           })
             .then(function (response) {
             console.log(response);

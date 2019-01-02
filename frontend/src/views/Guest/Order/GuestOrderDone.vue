@@ -60,7 +60,7 @@ export default {
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myReservation/finished', 
+            url: 'http://172.20.10.4:8080/myReservation/finished?state=2&guest=1', 
           })
             .then(function (response) {
             console.log(response);

@@ -18,7 +18,7 @@
                              <img :src="item.img" class="image" style="width:100%;height:250px" >
                                 </div>
                          <div style="padding: 60px;">
-                            <span>{{item.orderID}}</span>
+                            <span>{{item.order.id}}</span>
                             <div class="text item">
                                 {{ item.text }}
                                 </div>
@@ -60,7 +60,7 @@ export default {
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myReservation/lastMonth', 
+            url: 'http://172.20.10.4:8080/myReservation/lastMonth?date_state=30&guest_id=1', 
           })
             .then(function (response) {
             console.log(response);

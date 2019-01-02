@@ -60,7 +60,7 @@ export default {
          let that = this;
           axios({
             method:	'get',
-            url: 'http://172.20.10.4:8080/myOrderForm/finished', 
+            url: 'http://172.20.10.4:8080/myOrderForm/finished?dining_id=1&state=2', 
           })
             .then(function (response) {
             console.log(response);
