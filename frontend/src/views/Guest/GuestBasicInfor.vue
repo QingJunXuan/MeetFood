@@ -67,7 +67,7 @@ export default {
             param.append('teleNumber',this.guest.teleNumber);
             axios({
                 method: 'put',
-                url: 'http://172.20.10.4:8080/guest/reviser?guestID=1',
+                url: 'http://172.20.10.4:8080/guest/reviser?id=1',
                 data:param
             })
             .then(function(reponse) {

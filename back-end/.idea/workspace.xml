@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f4e8363-ad54-4aa7-a849-60a0ed755a32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_security_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_config_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_5_0_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MeetFood 数据库.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../MeetFood 数据库.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/01bbf291-4072-45c9-88a3-95845995257d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/01bbf291-4072-45c9-88a3-95845995257d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/back-end_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/back-end_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/back-end_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/back-end_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CollectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CollectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DiningController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DiningController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DishController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/GuestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/GuestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/OrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/OrderFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/entity/Dining.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/entity/Dining.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/repository/CommentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/entity/Dining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/entity/Dining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -932,7 +899,7 @@
     <property name="SearchEverywhereHistoryKey" value="Date&#9;PSI&#9;JAVA://com.meetfood.statusCode.JsonResult#date&#10;findBy&#9;PSI&#9;JAVA://com.meetfood.repository.BookRepository#findByGuest_id&#10;v&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546454721211" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546456106644" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/jsonjar/json-lib-2.4-jdk15.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1015,7 +982,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183313000" />
+    <option name="totallyTimeSpent" value="183815000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
