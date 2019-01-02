@@ -21,6 +21,7 @@ import HostOrderMonth from '@/views/Host/Order/HostOrderMonth.vue'
 import HostOrderWeek from '@/views/Host/Order/HostOrderWeek.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
+import Discovery from '@/views/Discovery.vue'
 
 Vue.use(Router)
 
@@ -132,6 +133,11 @@ const router = new Router({
       name: 'Register',
       component: Register
     },
+    {
+      path: '/discovery',
+      name: 'Discovery',
+      component: Discovery
+    } 
   ]
 })
 
