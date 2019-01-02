@@ -77,7 +77,7 @@
                         <div class="side_pic_box">
                             <img :src="side_item.pic" style="width:100%">
                         </div>
-                        <router-link tag="to_side" to="">
+                        <router-link tag="" to="">
                             <h4 style="font-weight:400;font-size:20x;color:#303133;margin:10px 0;">
                                 {{side_item.name}}
                             </h4>
@@ -93,6 +93,7 @@
 
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
+ import * as axios from 'axios'
 export default {
     components:{
         guestTopbar
@@ -140,14 +141,30 @@ export default {
         }
     },
     computed:{
-        /*text:function(){
-            if(this.side_item.text.length>)
-        }*/
+        
     },
     mounted(){
-        //console.log(this.side_item.text);
         
-    }
+        
+    },
+    created() {
+                axios({
+                    method:'get',
+                    url: 'http://172.20.10.4:8080/dining/all',
+                    
+                    })
+                    .then(function(response){
+                      console.log(response);
+                        if(response.data.code == "200"){
+                            
+                            
+                        }
+                        else {}
+                    })
+                    .catch(function (error) {
+                        alert(error);
+                    });
+    },
 }
 </script>
 
