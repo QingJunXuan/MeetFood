@@ -30,7 +30,7 @@
             Edit_Page(){
                 this.$router.push('/Edit')
             },
-            YOUR_Order(){
+            YOUR_ORDER(){
                 this.$router.push('/Host_Order_All')
             },
             handleSelect(key, keyPath) {
