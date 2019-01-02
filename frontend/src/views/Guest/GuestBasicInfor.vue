@@ -6,10 +6,11 @@
             <guestInforSidebar/>
         </el-col>
         <el-col :span="20" style="background-color:#F7F6F6">         
-                <div class="basic_info">
+                 <div class="basic_info">
                     <div class="basic_info_title">
                         <span>Basic Information</span>
                     </div>
+
                     <div class="box">
                         <el-form label-position="left" label-width="110px" >                                            
                         <el-form-item label="Name">
@@ -30,7 +31,7 @@
                         </el-form-item>               
                 </el-form>
                     </div>
-                </div>
+                 </div>
             
         </el-col>
     
