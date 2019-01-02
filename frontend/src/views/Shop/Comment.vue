@@ -49,7 +49,7 @@ export default {
       }
     },
     methods: {
-      onSubmit() {
+      onSubmit() {/*
         let that = this;
         let param = new URLSearchParams();
         param.append('dining_id',1);
@@ -68,7 +68,7 @@ export default {
         .catch(function(error){
             console.log(error)
             this.errored = true
-        })
+        })*/
       },
       handleRemove(file, fileList) {
         console.log(file, fileList);

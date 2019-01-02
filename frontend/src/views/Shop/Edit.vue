@@ -287,7 +287,7 @@ export default {
           this.DishForm.splice(index, 1)
         }
       },
-      onSubmit(){
+      onSubmit(){/*
         let that = this
         this.button_disabled = true;
         let param = new URLSearchParams();
@@ -307,7 +307,7 @@ export default {
         })
         .catch(function (error) {
             alert(error);
-        })
+        })*/
       }
     }
 }

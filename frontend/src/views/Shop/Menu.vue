@@ -162,7 +162,7 @@ export default {
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        console.log('submit!');/*
         let that=this;
         let order = new URLSearchParams();
         order.append('repast_time',this.reserve.date1);
@@ -176,20 +176,21 @@ export default {
         })
         .then(function(response){
             that.$message('成功');
-            that.$alert('您已成功预订', '预订成功', {
+            
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })*/
+        this.$alert('您已成功预订', '预订成功', {
             confirmButtonText: '确定',
             callback: action => {
-                that.$message({
+                this.$message({
                 type: 'info',
                 message: `action: ${ action }`
                 });
             }
             });
-        })
-        .catch(function(error){
-            console.log(error)
-            this.errored = true
-        })
       },
       toShop(){
           this.$router.push({path:'/Shop'})

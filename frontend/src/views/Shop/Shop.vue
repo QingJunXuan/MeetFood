@@ -145,7 +145,7 @@ import axios from 'axios'
 export default {
     mounted(){
         this.baiduMap();
-
+/*
         let that = this;
         let param = new URLSearchParams();
         param.append('id',1);
@@ -180,7 +180,7 @@ export default {
         .catch(function(error){
             console.log(error)
             this.errored = true
-        })
+        })*/
 
     },
     props:['id'],
@@ -246,7 +246,7 @@ export default {
     methods: {
       onSubmit() {
         console.log('submit!');
-        let that=this;
+        /*let that=this;
         let order = new URLSearchParams();
         order.append('repast_time',this.reserve.date1);
         order.append('dining_id',1);
@@ -259,20 +259,21 @@ export default {
         })
         .then(function(response){
             that.$message('成功');
-            that.$alert('您已成功预订', '预订成功', {
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })*/
+
+        this.$alert('您已成功预订', '预订成功', {
             confirmButtonText: '确定',
             callback: action => {
-                that.$message({
+                this.$message({
                 type: 'info',
                 message: `action: ${ action }`
                 });
             }
             });
-        })
-        .catch(function(error){
-            console.log(error)
-            this.errored = true
-        })
       },
       baiduMap(){
           var map = new BMap.Map("allmap");
