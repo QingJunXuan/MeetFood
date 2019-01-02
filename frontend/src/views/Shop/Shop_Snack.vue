@@ -287,7 +287,7 @@ export default {
           map.enableScrollWheelZoom(true);
       },
       toNutrients(){
-          this.$router.push({path:'/Menu'})
+          this.$router.push({path:'/Menu_Snack'})
       },
     }
 }

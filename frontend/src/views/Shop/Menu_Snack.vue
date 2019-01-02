@@ -144,22 +144,22 @@ export default {
                 {
                     name:"Roasted Cauliflower With Parmesan & Garlic",
                     ingredients:"lettuce, bacon, cheese",
-                    img:require("../../assets/2.jpg"),
+                    img:require("../../assets/3-1.jpg"),
                 },
                 {
                     name:"Brown Rice & Cherry Tomato Cooked Salad",
-                    ingredients:"chicken, cheese, bacon, eggs",
-                    img:require("../../assets/2.jpg"),
+                    ingredients:"rice, tomato",
+                    img:require("../../assets/3-2.jpg"),
                 },
                 {
                     name:"Cheese Spread",
-                    ingredients:"chicken, cheese, bacon, eggs",
-                    img:require("../../assets/2.jpg"),
+                    ingredients:"cheese, bread",
+                    img:require("../../assets/3-3.jpg"),
                 },
                 {
                     name:"Chopped Greek Salad",
-                    ingredients:"chicken, cheese, bacon, eggs",
-                    img:require("../../assets/2.jpg"),
+                    ingredients:"lettuce, tomato, cucumber, bell pepper",
+                    img:require("../../assets/3-4.jpg"),
                 },
             ],
             Dining:{
@@ -202,7 +202,7 @@ export default {
         })
       },
       toShop(){
-          this.$router.push({path:'/Shop'})
+          this.$router.push({path:'/Shop_Snack'})
       }
     }
 }

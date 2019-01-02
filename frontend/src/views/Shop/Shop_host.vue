@@ -12,7 +12,9 @@
                 <el-col :span="4">
                     <el-button class="title" @click="toEdit">Edit page</el-button>
                 </el-col>    
-                <img :src="imgUrl" width="1000">
+                <div class="recommend_pic_box" style="width:100%;height:600px;overflow: hidden;">
+                    <img :src="Dining.cover" style="height:600px;width:1000px">
+                </div>
             </div>
             
         </el-col>
@@ -77,7 +79,7 @@
                     <span>Number of guests suggested：3~5 person</span>
                 </div>
                 <el-rate
-                        v-model="value5"
+                        v-model="Dining.rate"
                         disabled
                         show-score
                         text-color="#ff9900"
@@ -85,31 +87,31 @@
                         class="rate">
                 </el-rate>
                
-                <el-form ref="form" :model="form" label-width="80px">    
+                <el-form ref="form" :model="reserve" label-width="80px">    
                     <el-form-item>
                         <span>DATE</span>
                         <el-row>
                             <el-col>
-                                <el-date-picker type="date" placeholder="Choose Date" v-model="form.date1" style="width: 80%;"></el-date-picker>
+                                <el-date-picker type="date" placeholder="Choose Date" v-model="reserve.date1" style="width: 80%;"></el-date-picker>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col>
-                                <el-time-picker type="fixed-time" placeholder="Choose Time" v-model="form.date2" style="width: 80%;"></el-time-picker>
+                                <el-time-picker type="fixed-time" placeholder="Choose Time" v-model="reserve.date2" style="width: 80%;"></el-time-picker>
                             </el-col>
                         </el-row>
                     </el-form-item>
                     <el-form-item>
                         <span>Number of guests</span>
                         <el-row>
-                            <el-select v-model="form.region" placeholder="Please choose the number of guests" style="width: 80%;">
+                            <el-select v-model="reserve.number" placeholder="Please choose the number of guests" style="width: 80%;">
                                 <el-option label="1位" value="1"></el-option>
                                 <el-option label="2位" value="2"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
                     <el-form-item>
-                        <el-input type="textarea" v-model="form.desc" placeholder="Leave some message" style="width: 80%;">></el-input>
+                        <el-input type="textarea" v-model="reserve.message" placeholder="Leave some message" style="width: 80%;">></el-input>
                     </el-form-item>
 
                     <el-form-item>
@@ -161,28 +163,54 @@ export default {
         return {
             Dining:{
                 name:'Deliciousrilla',
-                intro:'Here are some introductions of the restaurant',
+                intro:'Traditional Mexican recipes and warm decor make you feel at home at this Chicago mainstay.',
+                rate:4.3,
+                hostname:'Lela',
+                hostavatar:require("../../assets/1.jpg"),
+                cover:require("../../assets/2.jpg"),
+                picture:[
+                    require("../../assets/3.jpg"),
+                    require("../../assets/4.jpg"),
+                    require("../../assets/5.jpg"),
+                    require("../../assets/6.jpg"),
+                    require("../../assets/7.jpg"),
+                    ],
+                price:357,
+                person:"3~5"
             },
             Dish:[
             {
-                name:'the first dish'
+                name:'Caesar Salad'
             },
             {
-                name:'the second dish'
-            }
+                name:'Chicken Cordon Bleu'
+            },
+            {
+                name:'Deep-Fried Chicken and Bacon Rolls'
+            },
+            {
+                name:'Beef Stroganoff'
+            },
             ],
-            imgUrl:require("../../assets/2.jpg"),
-            form: {
+            reserve: {
                 date1: '',
                 date2: '',
-                region:'',
-                desc:'',
+                number:0,
+                message:'',
             },
             comment:[{
-                guestid:"aaa",
-                text:"Here is the comment of one guest",
-                rate:"3.7"
-            }]
+                guestid:"Courtney L.",
+                text:"The food and atmosphere were amazing. The margaritas were kind of strong.",
+                rate:4,
+                img:require("../../assets/1.jpg")
+            },
+            {
+                guestid:"John S.",
+                text:"This is an unbelievable value. Great restaurant. You would be dumb if you do not buy and use it. I feel like I am stealing from them when I bought and used this groupon especially with a 20% ",
+                rate:5,
+                img:require("../../assets/2.jpg")
+            }
+            ]
         }
     },
     methods: {
@@ -262,7 +290,7 @@ template {
     padding-left: 10px;
     margin-left: 20px;
     font-size: 16px;
-    height: 500px;
+    
     border-style:solid;
     border-color:#a0a0a0;
     border-width:0px;
