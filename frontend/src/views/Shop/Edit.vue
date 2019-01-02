@@ -1,6 +1,6 @@
 <template>
 <div>
-    <guestTopbar/>
+    <hostTopbar/>
     <el-form class="dish">
     <div class="title">
         <span>Deliciousrilla</span>
@@ -168,7 +168,7 @@
 </template>
 
 <script>
-import guestTopbar from '@/components/guestTopbar.vue'
+import hostTopbar from '@/components/hostTopbar.vue'
 import axios from 'axios'
 
 export default {
