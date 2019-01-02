@@ -149,10 +149,7 @@ export default {
         let that = this;
         let param = new URLSearchParams();
         param.append('id',1);
-        let order = new URLSearchParams();
-        order.append('repast_time',this.reserve.date1);
-        order.append('dining_id',1);
-        order.append('guest_id',1);
+        
         let dining_id = new URLSearchParams();
         dining_id.append('dining_id',1);
         axios({
@@ -185,19 +182,6 @@ export default {
             this.errored = true
         })
 
-        axios({
-            method:'post',
-            url:'http://172.20.10.4:8080/myReservation/book',
-            data: order
-        })
-        .then(function(response){
-            that.$message('成功')
-        })
-        .catch(function(error){
-            console.log(error)
-            this.errored = true
-        })
-
     },
     props:['id'],
     components:{
@@ -209,7 +193,7 @@ export default {
             Dining:{
                 name:'Deliciousrilla',
                 intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
-                rate:'4.3',
+                rate:4.3,
                 hostname:'Lela',
                 hostavatar:require("../../assets/1.jpg"),
                 cover:require("../../assets/2.jpg"),
@@ -246,13 +230,13 @@ export default {
             comment:[{
                 guestid:"aaa",
                 text:"Here is the comment of one guest",
-                rate:"4",
+                rate:4,
                 img:require("../../assets/1.jpg")
             },
             {
                 guestid:"bbb",
                 text:"Here is another comment of one guest",
-                rate:"5",
+                rate:5,
                 img:require("../../assets/2.jpg")
             }
             ]
@@ -262,15 +246,33 @@ export default {
     methods: {
       onSubmit() {
         console.log('submit!');
-        this.$alert('您已成功预订', '预订成功', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
+        let that=this;
+        let order = new URLSearchParams();
+        order.append('repast_time',this.reserve.date1);
+        order.append('dining_id',1);
+        order.append('guest_id',1);
+        
+        axios({
+            method:'post',
+            url:'http://172.20.10.4:8080/myReservation/book',
+            data: order
+        })
+        .then(function(response){
+            that.$message('成功');
+            that.$alert('您已成功预订', '预订成功', {
+            confirmButtonText: '确定',
+            callback: action => {
+                that.$message({
+                type: 'info',
+                message: `action: ${ action }`
+                });
+            }
             });
-          }
-        });
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
       },
       baiduMap(){
           var map = new BMap.Map("allmap");

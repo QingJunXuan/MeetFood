@@ -111,34 +111,19 @@ export default {
     },
     mounted(){
         let that=this;
-        let order = new URLSearchParams();
-        order.append('repast_time',this.reserve.date1);
-        order.append('dining_id',1);
-        order.append('guest_id',1);
         let param = new URLSearchParams();
         param.append('dining_id',1);
-        axios({
-            method:'post',
-            url:'http://172.20.10.4:8080/myReservation/book',
-            data: order
-        })
-        .then(function(response){
-            that.$message('成功')
-        })
-        .catch(function(error){
-            console.log(error)
-            this.errored = true
-        })
 
         axios({
             method:'get',
-            url:'http://172.20.10.4:8080/dining/dish/viewDish',
+            url:'http://172.20.10.4:8080/dish/viewDish?dining_id=1',
             data: param
         })
         .then(function(response){
             that.$message('成功')
             that.Dish.name = response.data.name;
             that.Dish.ingredients = response.data.ingredients;
+            console.log(response)
         })
         .catch(function(error){
             console.log(error)
@@ -168,7 +153,7 @@ export default {
                 },
             ],
             Dining:{
-                rate:'4.3',
+                rate:4.3,
                 price:357,
                 person:"3~5"
             }
@@ -178,15 +163,33 @@ export default {
     methods: {
       onSubmit() {
         console.log('submit!');
-        this.$alert('您已成功预订', '预订成功', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
+        let that=this;
+        let order = new URLSearchParams();
+        order.append('repast_time',this.reserve.date1);
+        order.append('dining_id',1);
+        order.append('guest_id',1);
+        
+        axios({
+            method:'post',
+            url:'http://172.20.10.4:8080/myReservation/book',
+            data: order
+        })
+        .then(function(response){
+            that.$message('成功');
+            that.$alert('您已成功预订', '预订成功', {
+            confirmButtonText: '确定',
+            callback: action => {
+                that.$message({
+                type: 'info',
+                message: `action: ${ action }`
+                });
+            }
             });
-          }
-        });
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
       },
       toShop(){
           this.$router.push({path:'/Shop'})

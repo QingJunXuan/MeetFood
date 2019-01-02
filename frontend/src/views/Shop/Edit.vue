@@ -293,20 +293,9 @@ export default {
         let param = new URLSearchParams();
         let self = this;
         
-        param.append('Diningintro',this.Dining.intro);
-        axios({
-            method:'put',
-            url:'http://172.20.10.4:8080/dining/update',
-            data: param
-        })
-        .then(function(reponse) {
-            console.log(reponse);
-            
-        })
-        .catch(function (error) {
-            alert(error);
-        })
-
+        param.append('id',1);
+        param.append('name',this.Dining.name);
+        
         axios({
             method:'put',
             url:'http://172.20.10.4:8080/dining/update',
