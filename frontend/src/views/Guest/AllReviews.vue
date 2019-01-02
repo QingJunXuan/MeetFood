@@ -37,7 +37,7 @@
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
 import guestInforSidebar from '@/components/guestInforSidebar.vue'
-import axios from 'axios'
+
 export default {
     components:{
         guestTopbar,
@@ -91,37 +91,7 @@ export default {
 
         }
     },
-    created(){
-         let that = this;
-          axios({
-            method:	'get',
-            url: 'http://172.20.10.4:8080/myOrderForm/all', 
-          })
-            .then(function (response) {
-            console.log(response);
-            /* that.Comment = response.data.images;
-             for(let i=0;i<response.data.images.length;i++){
-                let albums=response.data.images[i].resources;
-                let link;
-                //console.log(albums.length)
-                if(albums.length==0){
-                    link='../../../assets/1.jpg';
-                    //console.log(link)
-                }
-                else{
-                    link= albums[0].link;
-                }
-                console.log(that.Comment[i])
-                that.Comment[i].cover=link;
-                
-             }*/
-             
-             console.log(that.Comment)
-            })
-            .catch(function (error) {
-              alert(error);
-            });
-    }
+    
 }
 </script>
 
