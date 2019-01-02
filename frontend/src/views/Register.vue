@@ -2,17 +2,33 @@
 <div  >
     <guestTopbar/>
     <el-row type="flex" justify="center">
-        <el-col :span="7">          
+        <el-col :span="8">          
             <!--login-->
             <div class="requester_box">
                 <b style="font-size:38px;color:#303133;margin-bottom:20px;">Register</b>
                 <br><span style="color:#909399;font-size:15px;">Create a new account</span>
-                 <el-form label-position="top" label-width="60px" :model="user" :rules="rules" required ref="user" status-icon>
-                    <el-form-item label="" prop="name">
-                        <el-input v-model="user.name" placeholder="Username">
+                 <el-form label-position="top" label-width="60px" :model="user" :rules="rules" required ref="user" status-icon>                   
+                    
+                    <div v-if="this.user.identity=='Guest'">
+                    <el-form-item label="" prop="username">
+                        <el-input v-model="user.username" placeholder="Username">
                             <template slot="prepend">&nbsp;&nbsp;</template>
                             </el-input>
                     </el-form-item>
+                    <el-form-item label="" prop="age">
+                        <el-input v-model="user.age" placeholder="Age">
+                            <template slot="prepend">&nbsp;&nbsp;</template>
+                            </el-input>
+                    </el-form-item>
+                    </div>
+                    <div v-if="this.user.identity=='Host'">
+                        <el-form-item label="" prop="dinningname">
+                        <el-input v-model="user.dinningname" placeholder="Restraurant Name">
+                            <template slot="prepend">&nbsp;&nbsp;</template>
+                            </el-input>
+                        </el-form-item>
+                                                                          
+                    </div>
                     <el-form-item label="" prop="email">
                         <el-input v-model="user.email" placeholder="E-mail">
                             <template slot="prepend">&nbsp;&nbsp;</template>
@@ -20,11 +36,6 @@
                     </el-form-item>
                     <el-form-item label="" prop="tele">
                         <el-input v-model="user.tele" placeholder="Telephone">
-                            <template slot="prepend">&nbsp;&nbsp;</template>
-                            </el-input>
-                    </el-form-item>
-                    <el-form-item label="" prop="age">
-                        <el-input v-model="user.age" placeholder="Age">
                             <template slot="prepend">&nbsp;&nbsp;</template>
                             </el-input>
                     </el-form-item>
@@ -38,6 +49,27 @@
                             <template slot="prepend">&nbsp;&nbsp;</template>
                         </el-input>
                     </el-form-item>
+                    
+                    <div v-if="this.user.identity=='Host'">
+                        <el-form-item label="" prop="address">
+                        <el-input 
+                            v-model="user.address" placeholder="Address of the restraunt">                           
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item label="" prop="dinningtype"> 
+                            <el-select v-model="user.dinningtype" placeholder="Restraurant Type">
+                                <template slot="prepend">&nbsp;&nbsp;</template>
+                                <el-option label="Asian cuisines" value="Asian cuisines"></el-option>
+                                <el-option label="European cuisines" value="European  cuisines"></el-option>
+                                <el-option label="Others" value="Others"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="" prop="dinningintro">
+                        <el-input :autosize="{ minRows: 3, maxRows: 4}"  type="textarea"
+                            v-model="user.dinningintro" placeholder="Introduction of the restaurant">                           
+                            </el-input>
+                        </el-form-item>
+                    </div>
                     <el-form-item label="" prop="identity">
                         <el-radio-group v-model="user.identity">
                             <el-radio-button label="Guest"></el-radio-button>
@@ -73,12 +105,12 @@ import * as axios from 'axios'
             },
             register(formName) {
                 this.$refs[formName].validate((valid) => {
-                if (valid) {
-                    if(this.user.identity=="guest"){
+                if (valid){
+                    if(this.user.identity=="Guest"){
                         
-                        let that = this;
+                    let that = this;
                     let param = new URLSearchParams();
-                    param.append('username',that.user.name);
+                    param.append('username',that.user.username);
                     param.append('email',that.user.email);
                     param.append('password',that.user.pwd);
                     param.append('age',that.user.age);
@@ -86,31 +118,65 @@ import * as axios from 'axios'
                     console.log(param);
                     axios({
                     method:'post',
-                    url: 'api/register',
+                    url: 'http://172.20.10.4:8080/guest/register',
                     data:param
                     })
                     .then(function(response){
                       console.log(response);
                         if(response.data.code[0] == "2"){
-                            that.$message('注册成功！');
+                            that.$message('Registration successful');
                             that.$router.replace('/login');
                         }
                         else if(response.data.code == "400") {
-                        that.wrong_pwd("输入格式有误")
+                        that.wrong_pwd("Error400")
                         }
                         else if(response.data.code == "500") {
-                        that.wrong_pwd("服务器错误")
+                        that.wrong_pwd("Error500")
                         }
                     })
                     .catch(function (error) {
                         alert(error);
-                    });
+                    });                  
+                } 
+                else if(this.user.identity=="Host"){
+                    let that = this;
+                    let param = new URLSearchParams();
+                    param.append('name',that.user.dinningname);
+                    param.append('email',that.user.email);
+                    param.append('password',that.user.pwd);
+                    param.append('type',that.user.dinningtype);
+                    param.append('intro',that.user.dinningintro);   
+                    param.append('tel',that.user.tele); 
+                    param.append('address',that.user.address);                 
                     
-                } else {
+                    axios({
+                    method:'post',
+                    url: 'http://172.20.10.4:8080/dining/register',
+                    data:param
+                    })
+                    .then(function(response){
+                      console.log(response);
+                        if(response.data.code == "200"){
+                            
+                            that.$message('Registration successful');
+                            that.$router.replace('/login');
+                        }
+                        else if(response.data.code == "400") {
+                        that.wrong_pwd("Error400")
+                        }
+                        else if(response.data.code == "500") {
+                        that.wrong_pwd("Error500")
+                        }
+                    })
+                    .catch(function (error) {
+                        alert(error);
+                    });  
+                }
+                }else {
                     console.log('error submit!!');
                     return false;
                 }
-                }
+                
                 });
             },
         },
@@ -137,14 +203,21 @@ import * as axios from 'axios'
             return {    
                        
                 user: {
-                    name:'',
+                    username:'',
                     email:'',
+                    tele:'',
                     pwd:'',
                     pwd2:'',
-                    identity:'Guest'
+                    identity:'Guest',
+                    dinningname:'',
+                    age:'',
+                    dinningname:'',
+                    dinningtype:'',
+                    dinningintro:'',
+                    address:''
                 },
                 rules: {
-                    name: [
+                    username: [
                         {required: true, message: 'Please enter the username', trigger: 'blur'}
                     ],
                     email:[
