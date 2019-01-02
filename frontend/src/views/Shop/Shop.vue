@@ -7,7 +7,10 @@
                 <div class="title">
                     <span>{{Dining.name}}</span>
                 </div>
-                <img :src="Dining.cover" width="1000">
+                <div class="recommend_pic_box" style="width:100%;height:600px;overflow: hidden;">
+                    <img :src="Dining.cover" style="height:600px;width:1000px">
+                </div>
+                
             </div>
         </el-col>
         <el-col :span="8">
@@ -24,7 +27,7 @@
     </el-row>
     <el-row>
         <el-col :span="24">
-            <div class="picture_row">
+            <div class="picture_row" style="width:100%;height:300px;overflow: hidden;">
                 <img  v-for="(item, i) in Dining.picture" :key="i" :src="item" width="300" height="300" class="picture_small">
             </div>
         </el-col>
@@ -140,6 +143,23 @@ import guestTopbar from '@/components/guestTopbar.vue'
 export default {
     mounted(){
         this.baiduMap();
+
+        let that = this;
+        let param = new URLSearchParams();
+        param.append('id',file.id);
+        axios({
+            method:'get',
+            url:'/api/',
+            data:param
+        })
+        .then(function(response){
+            this.info = response
+        })
+        .catch(function(error){
+            console.log(error)
+            this.errored = true
+        })
+
     },
     components:{
         guestTopbar,
@@ -199,7 +219,7 @@ export default {
       },
       baiduMap(){
           var map = new BMap.Map("allmap");
-          map.centerAndZoom(new BMap.Point(116.404,39.915),11);
+          map.centerAndZoom(new BMap.Point(116.404,39.915),16);
           map.addControl(new BMap.MapTypeControl({
               mapTypes:[
                   BMAP_NORMAL_MAP,
@@ -311,7 +331,6 @@ template {
     padding-bottom: 20px;
     font-size: 16px;
     color: gray;
-    height: 500px;
     width: 450px;
     border-style:solid;
     border-color:#a0a0a0;
