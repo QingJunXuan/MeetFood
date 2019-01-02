@@ -166,8 +166,28 @@ export default {
             newest_list:[
                 {
                     id:'1',
+                    name:'Devil Dawgs',
+                    intro:'Nestled inside a tiny brick storefront, Devil Dawgs conjures colossal flavors from all-beef hot dogs, fresh-cut russet fries, and burgers made of juicy sirloin steak. Each sausage gets comfy in a natural casing before hopping into a steamed bun with toppings such as smooth, tangy cheese and crunchy dill pickles. The restaurants namesake Devil Dawg flaunts its Chicago pride with onions, relish, and a spicy mustache of sport peppers, and the Coney Dawg salutes the East Coast with a sauce sweeter than the Statue of Liberty’s doo-wop ballads.',
+                    time:'Jun.2,2019'
+                },{
+                    id:'2',
+                    name:'Johnnies Snack Shop',
+                    intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
+                    time:'Dec.25,2018'
+                },{
+                    id:'3',
+                    name:'New Furama Restaurant',
+                    intro:'At the beginning of 2016, New Furama Restaurant hosted a fashion show that showcased qipaos, or cheongsams—traditional form-fitting Chinese dresses with high collars and high slits. Many Chinese parents took their American-born children to the show to help them connect with their Chinese heritage, something New Furama was happy to play a part in.The Chinatown eatery gives Chicagoans a taste of China in other ways, too. Theres the food, of course, dim sum and Cantonese-style dishes such as egg-custard buns, chicken feet spiced with Chinese herbs, fried shrimp balls, and the classic rice-porridge comfort dish known as congee. Then theres the decor, which mixes rich fuchsia and red with golden accents, including a golden buddha that greets people when they enter the dining areaNew Furama also hosts many special occasions, including weddings complete with turntables in the middle of the tables. These allow guests to easily share dishes, drinks, and the song-request lists they intend to hand to the DJ.',
+                    time:'Dec.19,2018'
+                },{
+                    id:'4',
                     name:'Vestibulum',
                     intro:'Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi.',
+                    time:'Oct.19,2018'
+                },{
+                    id:'5',
+                    name:'Lao Sze Chuan Evanston',
+                    intro:"Each dish at Lao Sze Chuan incorporates nearly two decades of expertise at serving up tip-top Sichuan cuisine to the Chicago area. With food overseen by chefs from that region of China, Lao Sze Chuan offers favorites such as Mongolian chicken, Chairman Mao Hong Sue pork, and General Tao's tofu. The results have been lauded by local media, including the Chicago Tribune.",
                     time:'Oct.19th,2018'
                 }
             ]
@@ -184,7 +204,7 @@ export default {
             })
             .catch(function (error) {
               alert(error);
-            });*/
+            });
             axios({
             method:	'get',
             url: '/api/myReservation/all?guest_id=1',
@@ -199,7 +219,7 @@ export default {
             for(let i=0;i<this.countries.length;i++){
                 this.options.push({label:this.countries[i].name,cities:[]});
                 //console.log(this.options)
-            }
+            }*/
     },
     methods:{
         getLocation(){

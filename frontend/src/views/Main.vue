@@ -10,7 +10,7 @@
             </div>
         </el-col>
         </el-row>
-        <el-row>
+        <!--<el-row>
           <el-col :span='6'>
               <div class="navi_box">
                   <div class="navi_box_title">
@@ -37,7 +37,7 @@
               </div>
           </el-col>
           
-        </el-row>
+        </el-row>-->
         <div style="height:50px; border-bottom:1px solid #DCDFE6;margin-bottom:50px;"></div>
         <el-row>
             <h2 style="font-weight:500;font-size:28px;color:#303133">Daily Recommendation </h2>
@@ -148,7 +148,7 @@ export default {
         
     },
     created() {
-                axios({
+                /*axios({
                     method:'get',
                     url: 'http://172.20.10.4:8080/dining/all',
                     
@@ -163,7 +163,7 @@ export default {
                     })
                     .catch(function (error) {
                         alert(error);
-                    });
+                    });*/
     },
 }
 </script>

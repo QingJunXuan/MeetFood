@@ -67,10 +67,13 @@ import guestTopbar from '@/components/guestTopbar.vue'
       },
       computed: {
         getToken () {
-          return this.$store.state.token;
+          //return this.$store.state.token;
         }
       },
       methods: {
+        Signup(){
+          this.$router.push('/register')
+        },
         setToken: function() {
           this.$store.commit('newToken', this.textValue)
         },
@@ -99,7 +102,8 @@ import guestTopbar from '@/components/guestTopbar.vue'
           else
           {
             if((this.email == "guest1@qq.com"&&this.pwd == "tongji")||
-                this.email == "666@qq.com"&&this.pwd == "tongji"){
+                (this.email == "666@qq.com"&&this.pwd == "tongji")||
+                 (this.email == "1888888@tongji.edu.cn"&&this.pwd == "tongji")){
               let user_information = {
                     token: this.email,
                     email: this.email
@@ -192,7 +196,8 @@ import guestTopbar from '@/components/guestTopbar.vue'
           else
           {
             if((this.email == "host1@qq.com"&&this.pwd == "tongji")||
-                this.email == "666@qq.com"&&this.pwd == "tongji"){
+                (this.email == "666@qq.com"&&this.pwd == "tongji")||
+                 (this.email == "abc@gmail.com"&&this.pwd == "tongji") ){
               let user_information = {
                     token: this.email,
                     email: this.email
@@ -201,7 +206,7 @@ import guestTopbar from '@/components/guestTopbar.vue'
               //this.$store.state.token = '1234';
               console.log('token',localStorage.token);
               this.$message('Login successfully ');
-              this.$router.push('/Guest_Basic_Infor')
+              this.$router.push('/Shop_host')
             }
             else{
               this.$message({

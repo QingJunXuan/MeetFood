@@ -83,7 +83,7 @@ export default {
       {
         this.page = this.$route.params.page;
       }
-      axios.get('http://172.20.10.4:8080/guest/message?id=1')
+      /*axios.get('http://172.20.10.4:8080/guest/message?id=1')
         .then(function (response) {
           console.log(response);
           that.guest = response.data.guest;
@@ -91,7 +91,7 @@ export default {
         })
         .catch(function (error) {
           console.log(error);
-        })
+        })*/
     }
 }
 </script>
