@@ -14,16 +14,16 @@
                     <div class="box">
                         <el-form label-position="left" label-width="110px" >                                            
                         <el-form-item label="Name">
-                        <el-input v-model="username"></el-input>
+                        <el-input v-model="guest.username"></el-input>
                         </el-form-item>
                         <el-form-item label="Email">
-                        <el-input v-model="email"></el-input>
+                        <el-input v-model="guest.email"></el-input>
                         </el-form-item>
                         <el-form-item label="Age">
-                        <el-input v-model="age"></el-input>
+                        <el-input v-model="guest.age"></el-input>
                         </el-form-item>
                         <el-form-item label="TeleNumber">
-                        <el-input v-model="teleNumber"></el-input>
+                        <el-input v-model="guest.teleNumber"></el-input>
                         </el-form-item>
                         <el-form-item>
                             <el-button type="primary" @click="confirmupdate">Save</el-button>
@@ -66,8 +66,8 @@ export default {
             param.append('email',this.guest.email);
             param.append('teleNumber',this.guest.teleNumber);
             axios({
-                method: 'post',
-                url: 'http://111.187.58.169/guest/reviser?guestID=1',
+                method: 'put',
+                url: 'http://172.20.10.4:8080/guest/reviser?guestID=1',
                 data:param
             })
             .then(function(reponse) {
@@ -120,7 +120,7 @@ export default {
       {
         this.page = this.$route.params.page;
       }
-      axios.get('http://172.20.10.4:8080/guest/message')
+      axios.get('http://172.20.10.4:8080/guest/message?id=1')
         .then(function (response) {
           console.log(response);
           that.guest = response.data.guest;

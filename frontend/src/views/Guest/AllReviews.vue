@@ -34,6 +34,7 @@
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
 import guestInforSidebar from '@/components/guestInforSidebar.vue'
+import axios from 'axios'
 export default {
     components:{
         guestTopbar,
@@ -42,7 +43,8 @@ export default {
     data(){
         return {
            text:"",
-           img: require("../../assets/1.jpg")
+           img: require("../../assets/1.jpg"),
+           Comment:[],
         }
     },
     created(){
