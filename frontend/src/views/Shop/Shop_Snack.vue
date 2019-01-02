@@ -196,7 +196,7 @@ export default {
                 rate:4.1,
                 hostname:'Johnies',
                 hostavatar:require("../../assets/1.jpg"),
-                cover:require("../../assets/2-1.jpg"),
+                cover:require("../../assets/3-3.jpg"),
                 picture:[
                     require("../../assets/2-2.jpg"),
                     require("../../assets/2-3.jpg"),
