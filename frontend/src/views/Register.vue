@@ -115,7 +115,7 @@ import * as axios from 'axios'
                     param.append('password',that.user.pwd);
                     param.append('age',that.user.age);
                     param.append('teleNumber',that.user.tele);                   
-                    console.log(param);
+                    //console.log(param);
                     axios({
                     method:'post',
                     url: 'http://172.20.10.4:8080/guest/register',

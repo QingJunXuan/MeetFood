@@ -117,6 +117,7 @@ const router = new Router({
     {
       path: '/Comment',
       name: 'Comment',
+      meta: { login: true },
       component: Comment
     },
     {
@@ -138,8 +139,32 @@ const router = new Router({
       path: '/discovery',
       name: 'Discovery',
       component: Discovery
-    } 
+    }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  // console.info(22, window.location.href)
+  // console.info(to,from,next)
+  // 对路由变化作出响应...
+  // console.log(router,to)
+  // console.log(router,to.query, from)
+  // console.log(to,$.param( to.query ),window.location.href)
+  // 全局拦截器的
+  if (to.meta.login) { // 判断该路由是否需要登录权限
+    if (window.localStorage.getItem('token') === null) {
+      alert('未登录，请先登录')
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
+      })
+    } else {
+      console.log(window.localStorage.getItem('token'))
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

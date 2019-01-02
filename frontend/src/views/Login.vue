@@ -9,7 +9,7 @@
             <div class="login_box left">
                 <b style="font-size:38px;color:#303133;margin-bottom:20px;">Login</b>
                 <br><span style="color:#909399;font-size:15px;">Sign In to your account</span>
-                 <el-form label-position="top" label-width="60px" style=" margin-top: 30px;">
+                 <el-form label-position="top" label-width="60px" style=" margin-top: 30px;" >
                     <el-form-item label="">
                         <el-input v-model="email" placeholder="E-mail"><template slot="prepend">&nbsp;&nbsp;</template></el-input>
                     </el-form-item>
@@ -46,7 +46,7 @@
               You can sign up as a guest to be a order and enjoy fascinating food
               or as a host to offer your wonderful dishes to all your guests.
             </p>
-            <el-button  @click="loginQuest" 
+            <el-button  @click="Signup" 
               style="background-color:#F5C300;color:#fff;font-weight:500;font-size:17px;width:110px;">
               Sign up
               </el-button>
@@ -98,7 +98,11 @@ import guestTopbar from '@/components/guestTopbar.vue'
           }
           else
           {
-            let param = new URLSearchParams();
+            if(this.email == "666@qq.com"&&this.pwd == "tongji"){
+              this.$store.state.username = 'z';
+              this.$store.state.token = '1234';
+            }
+            /*let param = new URLSearchParams();
             let self = this;
             let login = false;
             param.append('email',this.email);
@@ -135,7 +139,7 @@ import guestTopbar from '@/components/guestTopbar.vue'
                     })
                     .catch(function (error) {
                       alert(error);
-                    });*/
+                    });
                   token_pointer.button_disabled = false;
                 }
                 else if(response.data.code[0] == "4") {
@@ -150,7 +154,7 @@ import guestTopbar from '@/components/guestTopbar.vue'
               .catch(function (error) {
                 alert(error);
                 token_pointer.button_disabled = false;
-              });
+              });*/
           }
         },
         loginHost:function () {
@@ -176,41 +180,13 @@ import guestTopbar from '@/components/guestTopbar.vue'
             
             axios({
               method:	'post',
-              url: '/dining/login',
+              url: 'http://172.20.10.4:8080/dining/login',
               data:param
             })
               .then(function (response) {
                 window.localStorage.getItem('token');
                 if(response.data.code[0] == "2") {
-                  let token = response.data.X_Auth_Token;
-                  console.log(token);
-                  let user_information = {
-                    token: token,
-                    email: self.email
-                  }
-                  self.$store.commit('UserLogin', user_information);
-                  axios({
-                    method:	'get',
-                    url: '/api/worker/find-myself',
-                  })
-                    .then(function (response) {
-                      console.log(response);
-                      if(response.data.code[0] == "2") {
-                        console.log(response);
-                        let worker_information = {
-                          username: response.data.worker.username,
-                          level:response.data.worker.level,
-                        }
-                        self.$store.commit('WorkerLogin', worker_information);
-                        self.$router.replace("/worker_task_square");
-                      }
-                    })
-                    .catch(function (error) {
-                      alert(error);
-                    });
-                  self.$router.replace("/worker_task_square");
-                  self.wrong_pwd = "";
-                  self.button_disabled = false;
+                  console.log("login")
                 }
                 else if(response.data.code[0] == "4") {
                   self.wrong_pwd = "用户名或密码错误";

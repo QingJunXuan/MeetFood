@@ -190,7 +190,7 @@ export default {
             url: '/api/myReservation/all?guest_id=1',
           })
             .then(function (response) {
-            console.log('api ok');
+            console.log(response);
              
             })
             .catch(function (error) {
