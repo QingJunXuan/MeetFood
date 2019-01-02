@@ -98,9 +98,23 @@ import guestTopbar from '@/components/guestTopbar.vue'
           }
           else
           {
-            if(this.email == "666@qq.com"&&this.pwd == "tongji"){
-              this.$store.state.username = 'z';
-              this.$store.state.token = '1234';
+            if((this.email == "guest1@qq.com"&&this.pwd == "tongji")||
+                this.email == "666@qq.com"&&this.pwd == "tongji"){
+              let user_information = {
+                    token: this.email,
+                    email: this.email
+                  }
+              token_pointer.$store.commit('UserLogin', user_information);
+              //this.$store.state.token = '1234';
+              console.log('token',localStorage.token);
+              this.$message('Login successfully ');
+              this.$router.push('/Guest_Basic_Infor')
+            }
+            else{
+              this.$message({
+              message: 'E-mail or password is not correct',
+              type: 'warning'
+            });
             }
             /*let param = new URLSearchParams();
             let self = this;
@@ -160,6 +174,44 @@ import guestTopbar from '@/components/guestTopbar.vue'
         loginHost:function () {
           delete localStorage.token;
           delete localStorage.username;
+          this.$store.state.username = '';
+          this.$store.state.token = '';
+          console.log(localStorage.token);
+          let token_pointer = this
+          this.button_disabled = true;
+          //this.role = "ROLE_REQUESTER";
+          if (this.email == "") {
+            this.$message({
+              message: 'Please enter the email',
+              type: 'warning'
+            });
+          }
+          else if (this.pwd == "") {
+            this.$message('Please enter the password');
+          }
+          else
+          {
+            if((this.email == "host1@qq.com"&&this.pwd == "tongji")||
+                this.email == "666@qq.com"&&this.pwd == "tongji"){
+              let user_information = {
+                    token: this.email,
+                    email: this.email
+                  }
+              token_pointer.$store.commit('UserLogin', user_information);
+              //this.$store.state.token = '1234';
+              console.log('token',localStorage.token);
+              this.$message('Login successfully ');
+              this.$router.push('/Guest_Basic_Infor')
+            }
+            else{
+              this.$message({
+              message: 'E-mail or password is not correct',
+              type: 'warning'
+            });
+            }
+          }
+         /* delete localStorage.token;
+          delete localStorage.username;
           let self = this
           this.button_disabled = true;
           //this.role = "ROLE_WORKER";
@@ -203,7 +255,7 @@ import guestTopbar from '@/components/guestTopbar.vue'
             if(login == 'true'){
               console.log(a);
             }
-          }
+          }*/
         },
         forget(){
             this.$prompt('请输入邮箱', '找回密码', {

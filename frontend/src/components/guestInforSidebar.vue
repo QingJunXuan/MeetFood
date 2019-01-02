@@ -48,6 +48,8 @@ export default {
       },
       logout() {
           this.$message('Log out')
+          this.$store.commit('UserLogout');
+            this.$router.replace('/login')
       }
     }
 }
