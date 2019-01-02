@@ -1,6 +1,6 @@
 <template>
 <div>
-    <guestTopbar/>
+    <hostTopbar/>
     <el-row>
         <el-col :span="16">
             <div class="picture">
@@ -149,7 +149,7 @@
 </template>
 
 <script>
-import guestTopbar from '@/components/guestTopbar.vue'
+import hostTopbar from '@/components/hostTopbar.vue'
 import axios from 'axios'
 export default {
     mounted(){

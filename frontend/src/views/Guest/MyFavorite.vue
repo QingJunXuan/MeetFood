@@ -41,7 +41,7 @@
 <script>
 import guestTopbar from '@/components/guestTopbar.vue'
 import guestInforSidebar from '@/components/guestInforSidebar.vue'
-import axios from 'axios'
+
 export default {
     components:{
         guestTopbar,
@@ -67,8 +67,8 @@ export default {
                 },
                 {
                         text:"Name:Snack Shop",
-                        img:require("../../assets/P2.jpg"),
-                        id:"1",
+                        img:require("../../assets/3-3.jpg"),
+                        id:"2",
                         rate:"3.8",
                         address:"Address:160 North Halsted Street, Chicago, IL 60661",
                         Email:"Email:snack@gmail.com",
@@ -77,7 +77,7 @@ export default {
                 {
                         text:"Name: Corner Bar ",
                         img:require("../../assets/Pi3.jpg"),
-                        id:"1",
+                        id:"2",
                         rate:"4.2",
                         address:"Address:956 West Addison Street, Chicago, IL 60613",
                         Email:"Email:grill@gmail.com",
@@ -86,7 +86,7 @@ export default {
                 {
                         text:"Name:New Furama Restaurant",
                         img:require("../../assets/Pi4.jpg"),
-                        id:"1",
+                        id:"2",
                         rate:"3.6",
                         address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
                         Email:"Email:furama@gmail.com",
@@ -95,7 +95,7 @@ export default {
                 {
                         text:"Name:Davern's Tavern",
                         img:require("../../assets/P5.jpg"),
-                        id:"1",
+                        id:"2",
                         rate:"4.5",
                         address:"Address:8527 79th St, Justice, IL 60458",
                         Email:"Email:davern@gmail.com",
@@ -104,7 +104,7 @@ export default {
                 {
                         text:"Name:Lao Sze Chuan Evanston",
                         img:require("../../assets/P6.jpg"),
-                        id:"1",
+                        id:"2",
                         rate:"3.6",
                         address:"Address:1633 Orrington Avenue, Evanston, IL 60201",
                         Email:"Email:davern@gmail.com",
@@ -114,39 +114,14 @@ export default {
         }
 
     },
-    created(){
-           let that = this;
-          axios({
-            method:	'get',
-            url: 'http://172.20.10.4:8080/collection/viewCollection?guest_id=1', 
-          })
-            .then(function (response) {
-            console.log(response);
-             /*that.Favorite = response.data.images;
-             for(let i=0;i<response.data.images.length;i++){
-                let albums=response.data.images[i].resources;
-                let link;
-                //console.log(albums.length)
-                if(albums.length==0){
-                    link='../../../assets/1.jpg';
-                    //console.log(link)
-                }
-                else{
-                    link= albums[0].link;
-                }
-                console.log(that.Favorite[i])
-                that.Favorite[i].cover=link;
-             }
-             console.log(that.Favorite)*/
-            })
-            .catch(function (error) {
-              alert(error);
-            });
-        },
         methods: {
             view_detail(id){
+                if(id==1)
                 this.$router.push('/Shop')
+                else
+                this.$router.push('/Shop_Snack')
             }
+           
         }
 }
 </script>
