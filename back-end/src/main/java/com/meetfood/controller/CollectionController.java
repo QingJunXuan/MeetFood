@@ -1,7 +1,6 @@
 package com.meetfood.controller;
 
 import com.meetfood.entity.Collection;
-//import com.meetfood.entity.CollectionPK;
 import com.meetfood.entity.Dining;
 import com.meetfood.repository.CollectionRepository;
 import com.meetfood.repository.DiningRepository;
@@ -17,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@CrossOrigin
 @RequestMapping(path = "/collection")
 @Api(value = "CollectionController|客人收藏餐厅、查看已收藏餐厅")
 public class CollectionController {

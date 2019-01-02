@@ -15,4 +15,7 @@ public interface CommentRepository extends CrudRepository<Comment,Integer> {
     @Query(value = "from  Comment c where c.dining_id=:dining_id")
     List<Comment> findByDining_id(@Param("dining_id") Integer dining_id);
 
+    @Query(value = "select avg(c.score) from Comment c where c.dining_id=:dining_id")
+    Integer avgScore(@Param("dining_id") Integer dining_id);
+
 }

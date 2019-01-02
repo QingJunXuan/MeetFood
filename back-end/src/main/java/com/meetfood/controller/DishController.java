@@ -14,6 +14,7 @@ import java.sql.Blob;
 import java.util.Date;
 
 @Controller
+@CrossOrigin
 @RequestMapping(path = "/dining/dish")
 @Api(value = "DishController|菜品信息增删改查")
 public class DishController {

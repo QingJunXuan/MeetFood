@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@CrossOrigin
 @RequestMapping(path = "/dining")
 @Api(value = "DiningController|私人厨房信息增删改查")
 public class DiningController {
@@ -58,6 +59,8 @@ public class DiningController {
                 d.setAddress(address);
                 //d.setIcon(icon);
                 d.setPrice(0);
+                d.setCollections(0);
+                d.setTime(new Date());
 
                 diningRepository.save(d);
                 return "success";
@@ -110,5 +113,11 @@ public class DiningController {
     @ApiImplicitParam( paramType = "query",name = "id",value = "餐厅id",required = true,dataType = "Integer")
     public @ResponseBody Iterable<Dining> viewDining(@RequestParam Integer id){
         return diningRepository.viewById(id);
+    }
+
+    //查看所有用户
+    @GetMapping(path="/all")
+    public @ResponseBody Iterable<Dining> getAllDinings() {
+        return diningRepository.findAll();
     }
 }

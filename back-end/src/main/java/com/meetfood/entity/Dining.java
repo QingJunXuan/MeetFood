@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Blob;
+import java.util.Date;
 
 @Entity
 public class Dining {
@@ -23,6 +24,7 @@ public class Dining {
     private String address;
     private Integer collections;//收藏数
     private Blob icon;
+    private Date time;//创建时间
 
     public Integer getId() {
         return id;
@@ -90,4 +92,6 @@ public class Dining {
         this.icon = icon;
     }
 
+    public Date getTime(){return time;}
+    public void setTime(Date time){this.time= time;}
 }

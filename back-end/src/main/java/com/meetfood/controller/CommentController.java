@@ -1,8 +1,10 @@
 package com.meetfood.controller;
 
 import com.meetfood.entity.Comment;
+import com.meetfood.entity.Dining;
 import com.meetfood.entity.Picture;
 import com.meetfood.repository.CommentRepository;
+import com.meetfood.repository.DiningRepository;
 import com.meetfood.repository.PictureRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -16,6 +18,7 @@ import java.sql.Blob;
 import java.util.Date;
 
 @Controller
+@CrossOrigin
 @RequestMapping(path = "/comment")
 @Api(value = "CommentController|餐厅的评价相关")
 public class CommentController {
@@ -23,6 +26,8 @@ public class CommentController {
     private CommentRepository commentRepository;
     @Autowired
     private PictureRepository pictureRepository;
+    @Autowired
+    private DiningRepository diningRepository;
 
     //添加评论
     @ResponseBody
@@ -48,6 +53,15 @@ public class CommentController {
 
         try {
             commentRepository.save(comment);
+
+            //计算评分
+            Integer avg = commentRepository.avgScore(dining_id);
+
+            //写入dining
+            Dining dining = diningRepository.findById(dining_id).get();
+            dining.setGrade(avg);
+            diningRepository.save(dining);
+
         }catch (Exception e){
             return "failed";
         }

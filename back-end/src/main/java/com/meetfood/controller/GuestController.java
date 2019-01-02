@@ -9,16 +9,14 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import net.sf.json.*;
-import net.sf.json.util.CycleDetectionStrategy;
+//import net.sf.json.*;
+//import net.sf.json.util.CycleDetectionStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.spring.web.json.Json;
 
-import javax.validation.constraints.Max;
-import java.io.InputStream;
-import java.io.OutputStream;
+
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.Date;
@@ -26,6 +24,7 @@ import java.util.List;
 
 
 @Controller    // This means that this class is a Controller
+@CrossOrigin
 @RequestMapping(path="/guest") // This means URL's start with /user (after Application path)
 @Api(value="GuestController|用于用户登录注册等")
 public class GuestController {

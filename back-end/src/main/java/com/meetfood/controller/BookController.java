@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Controller
+@CrossOrigin
 @RequestMapping(path = "/myReservation")
 @Api(value = "BookController|用于用户预约餐厅和查看预约信息")
 public class BookController {
@@ -60,6 +61,7 @@ public class BookController {
 
     //查看当前用户的所有预订订单
     @GetMapping(path = "/all")
+    @CrossOrigin
     @ApiOperation(value = "当前用户的所有预订订单",notes = "返回json")
     @ApiImplicitParam( paramType = "query",name = "guest_id",value = "当前用户",required = true,dataType = "Integer")
     public @ResponseBody Iterable<Book> getByGuest(@RequestParam Integer guest_id){
