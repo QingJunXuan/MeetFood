@@ -44,7 +44,7 @@
                             <span>HOST:{{Dining.hostname}}</span>
                         </div>
                         <div class="reviewamount">
-                            <span>79 Comments Now</span>
+                            <span>281 Comments Now</span>
                         </div>
                     </el-col>
                 </el-row>
@@ -96,9 +96,9 @@
                         <span>Number of guests</span>
                         <el-row>
                             <el-select v-model="reserve.number" placeholder="Please choose the number of guests" style="width: 80%;">
+                                <el-option label="1" value="1"></el-option>
+                                <el-option label="2" value="2"></el-option>
                                 <el-option label="3" value="3"></el-option>
-                                <el-option label="4" value="4"></el-option>
-                                <el-option label="5" value="5"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
@@ -194,14 +194,14 @@ export default {
                 name:'Snack Shop',
                 intro:'Johnnies Snack Shop prides itself on being an old-school diner. The atmosphere is no-frills, but the service is good and the food comes fast. The breakfast staples—omelettes, skillets, pancakes, and more—are served all day, or there are a range of plate lunch specials and sandwiches, including five Greek-inspired pita delights. Another sign of a great diner? No matter when you stop in, there will likely be a Chicago police officer enjoying a meal.',
                 rate:4.1,
-                hostname:'Johnies',
-                hostavatar:require("../../assets/1.jpg"),
+                hostname:'Johnnie',
+                hostavatar:require("../../assets/P5.jpg"),
                 cover:require("../../assets/3-3.jpg"),
                 picture:[
-                    require("../../assets/2-2.jpg"),
+                    require("../../assets/D4-1.jpg"),
                     require("../../assets/2-3.jpg"),
                     require("../../assets/2-4.jpg"),
-                    require("../../assets/2-5.jpg"),
+                    require("../../assets/D1-2.jpg"),
                     require("../../assets/2-6.jpg"),
                     ],
                 price:159,
@@ -231,13 +231,13 @@ export default {
                 guestid:"Tim K.",
                 text:"Gyro omelet was incredible! They also have a 3 eggs, 3 pancakes and 3 sausages deal for $9. Amazing! Especially for the area of overpriced “foodie” places.",
                 rate:4.8,
-                img:require("../../assets/1.jpg")
+                img:require("../../assets/3-2.jpg")
             },
             {
                 guestid:"Kevin P.",
                 text:"Great food and service thank you",
                 rate:5,
-                img:require("../../assets/2.jpg")
+                img:require("../../assets/3.jpg")
             }
             ]
         }
@@ -265,19 +265,15 @@ export default {
             console.log(error)
             this.errored = true
         })*/
-        this.$alert('您已成功预订', '预订成功', {
-            confirmButtonText: '确定',
+        this.$alert('You have successfully reserved the restaurant', 'RESERVE SUCCESS', {
+            confirmButtonText: 'OK',
             callback: action => {
-                this.$message({
-                type: 'info',
-                message: `action: ${ action }`
-                });
             }
-            });
+        });
       },
       baiduMap(){
           var map = new BMap.Map("allmap");
-          map.centerAndZoom(new BMap.Point(116.404,39.915),16);
+          map.centerAndZoom(new BMap.Point(-87.615527, 41.821292),16);
           map.addControl(new BMap.MapTypeControl({
               mapTypes:[
                   BMAP_NORMAL_MAP,

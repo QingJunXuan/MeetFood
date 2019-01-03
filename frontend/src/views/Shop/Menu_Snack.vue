@@ -58,9 +58,9 @@
                         <span>Number of guests</span>
                         <el-row>
                             <el-select v-model="reserve.number" placeholder="Please choose the number of guests" style="width: 80%;">
+                                <el-option label="1" value="1"></el-option>
+                                <el-option label="2" value="2"></el-option>
                                 <el-option label="3" value="3"></el-option>
-                                <el-option label="4" value="4"></el-option>
-                                <el-option label="5" value="5"></el-option>
                             </el-select>
                         </el-row>
                     </el-form-item>
@@ -192,15 +192,11 @@ export default {
             console.log(error)
             this.errored = true
         })*/
-        this.$alert('您已成功预订', '预订成功', {
-            confirmButtonText: '确定',
+        this.$alert('You have successfully reserved the restaurant', 'RESERVE SUCCESS', {
+            confirmButtonText: 'OK',
             callback: action => {
-                this.$message({
-                type: 'info',
-                message: `action: ${ action }`
-                });
             }
-            });
+        });
       },
       toShop(){
           this.$router.push({path:'/Shop_Snack'})

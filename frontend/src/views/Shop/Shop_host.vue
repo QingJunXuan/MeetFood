@@ -138,7 +138,7 @@
                         <div class="text item">
                             {{item.text}}
                         </div>
-                        <img src="../../assets/1.jpg" class="image">
+                        <img :src="item.img" class="image">
                         
                     </el-card>
                 </div>    
@@ -219,7 +219,7 @@ export default {
       },
       baiduMap(){
           var map = new BMap.Map("allmap");
-          map.centerAndZoom(new BMap.Point(116.404,39.915),11);
+          map.centerAndZoom(new BMap.Point(117.33013, 31.872926),16);
           map.addControl(new BMap.MapTypeControl({
               mapTypes:[
                   BMAP_NORMAL_MAP,

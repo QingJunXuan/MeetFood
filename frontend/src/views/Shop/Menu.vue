@@ -144,12 +144,22 @@ export default {
                 {
                     name:"Caesar Salad",
                     ingredients:"lettuce, bacon, cheese",
-                    img:require("../../assets/2.jpg"),
+                    img:require("../../assets/4-1.jpg"),
                 },
                 {
                     name:"Chicken Cordon Bleu",
                     ingredients:"chicken, cheese, bacon, eggs",
-                    img:require("../../assets/2.jpg"),
+                    img:require("../../assets/4-2.jpg"),
+                },
+                {
+                    name:"Deep-Fried Chicken and Bacon Rolls",
+                    ingredients:"chicken, cheese",
+                    img:require("../../assets/4-4.jpg"),
+                },
+                {
+                    name:"Beef Stroganoff",
+                    ingredients:"beef, mushroom, egg noodles",
+                    img:require("../../assets/4-3.jpg"),
                 },
             ],
             Dining:{
@@ -182,15 +192,11 @@ export default {
             console.log(error)
             this.errored = true
         })*/
-        this.$alert('您已成功预订', '预订成功', {
-            confirmButtonText: '确定',
+        this.$alert('You have successfully reserved the restaurant', 'RESERVE SUCCESS', {
+            confirmButtonText: 'OK',
             callback: action => {
-                this.$message({
-                type: 'info',
-                message: `action: ${ action }`
-                });
             }
-            });
+        });
       },
       toShop(){
           this.$router.push({path:'/Shop'})

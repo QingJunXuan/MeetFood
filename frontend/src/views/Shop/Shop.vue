@@ -265,19 +265,15 @@ export default {
             this.errored = true
         })*/
 
-        this.$alert('您已成功预订', '预订成功', {
-            confirmButtonText: '确定',
+        this.$alert('You have successfully reserved the restaurant', 'RESERVE SUCCESS', {
+            confirmButtonText: 'OK',
             callback: action => {
-                this.$message({
-                type: 'info',
-                message: `action: ${ action }`
-                });
             }
-            });
+        });
       },
       baiduMap(){
           var map = new BMap.Map("allmap");
-          map.centerAndZoom(new BMap.Point(116.404,39.915),16);
+          map.centerAndZoom(new BMap.Point(117.33013, 31.872926),16);
           map.addControl(new BMap.MapTypeControl({
               mapTypes:[
                   BMAP_NORMAL_MAP,
