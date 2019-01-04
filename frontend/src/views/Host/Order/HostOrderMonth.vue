@@ -59,13 +59,19 @@ export default {
     data(){
         return{
              Order:[
+                 {
+                 text:"Name:guest1",
+                        img:require("../../../assets/4.jpg"),
+                        id:"1",
+                      address:"Num:3 people",
+                        Tel:"(720) 865-9090",
+                        date:"2019-01-04",
+            },
                 {
                         text:"Name:Lao Sze Chuan Evanston",
                         img:require("../../../assets/D1-3.jpg"),
                         id:"1",
-                        rate:"3.6",
-                        address:"Address:1633 Orrington Avenue, Evanston, IL 60201",
-                        Email:"Email:davern@gmail.com",
+                       address:"Num:3 people",
                         Tel:"Tel:(847) 868-8989",
                         date:"2018-12-10"
                 },
@@ -73,9 +79,7 @@ export default {
                         text:"Name: Corner Bar ",
                         img:require("../../../assets/D2-1.jpg"),
                         id:"1",
-                        rate:"4.2",
-                        address:"Address:956 West Addison Street, Chicago, IL 60613",
-                        Email:"Email:grill@gmail.com",
+                       address:"Num:3 people",
                         Tel:"Tel:(773) 929-1441" ,
                         date:"2018-12-15"
                 },
@@ -83,9 +87,7 @@ export default {
                         text:"Name:New Furama Restaurant",
                         img:require("../../../assets/D2-3.jpg"),
                         id:"1",
-                        rate:"3.6",
-                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
-                        Email:"Email:furama@gmail.com",
+                       address:"Num:3 people",
                         Tel:"Tel:(312) 225-6888",
                         date:"2018-12-31"
                 },

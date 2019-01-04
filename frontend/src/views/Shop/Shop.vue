@@ -191,20 +191,20 @@ export default {
     data(){
         return {
             Dining:{
-                name:'Deliciousrilla',
-                intro:'Traditional Mexican recipes and warm decor make you feel at home at this Chicago mainstay.',
+                name:'Queen',
+                intro:'Simple and comfortable content, hope to let the user experience the warm feeling of homeTraditional Mexican recipes and warm decor make you feel at home at this Chicago mainstay.',
                 rate:4.3,
-                hostname:'Lela',
+                hostname:'Anna',
                 hostavatar:require("../../assets/1.jpg"),
-                cover:require("../../assets/2.jpg"),
+                cover:require("../../assets/4.jpg"),
                 picture:[
+                    require("../../assets/1.jpg"),
                     require("../../assets/3.jpg"),
-                    require("../../assets/4.jpg"),
-                    require("../../assets/5.jpg"),
-                    require("../../assets/6.jpg"),
+                    require("../../assets/2-1.jpg"),
+                    require("../../assets/D2-1.jpg"),
                     require("../../assets/7.jpg"),
                     ],
-                price:357,
+                price:456,
                 person:"3~5"
             },
             Dish:[

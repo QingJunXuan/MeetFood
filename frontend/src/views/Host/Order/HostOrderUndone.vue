@@ -59,13 +59,19 @@ export default {
     data(){
         return{
              Order:[
+                  {
+                 text:"Name:guest1",
+                        img:require("../../../assets/4.jpg"),
+                        id:"1",
+                      address:"Num:3 people",
+                        Tel:"(720) 865-9090",
+                        date:"2019-01-04",
+            },
                 {
                         text:"Name:New Furama Restaurant",
                         img:require("../../../assets/D2-3.jpg"),
                         id:"1",
-                        rate:"3.6",
-                        address:"Address:2828 South Wentworth Avenue, Chicago, IL 60616",
-                        Email:"Email:furama@gmail.com",
+                       address:"Num:3 people",
                         Tel:"Tel:(312) 225-6888",
                         date:"2018-12-31"
                 },

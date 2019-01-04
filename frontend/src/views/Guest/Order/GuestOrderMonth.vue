@@ -57,6 +57,16 @@ export default {
         return{
             Order:[
                 {
+                    text:"Name:Queen",
+                        img:require("../../../assets/4.jpg"),
+                        id:"1",
+                        rate:"5",
+                        address:"Address:120 Lincoln Street, Denver, CO 80203",
+                        Email:"Email:queen@gmail.com",
+                        Tel:"Tel:(720) 865-9090",
+                        date:"2019-01-04",
+                },
+                {
                         text:"Name:Lao Sze Chuan Evanston",
                         img:require("../../../assets/P6.jpg"),
                         id:"1",
