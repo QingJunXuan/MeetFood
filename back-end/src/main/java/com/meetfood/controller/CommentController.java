@@ -6,6 +6,8 @@ import com.meetfood.entity.Picture;
 import com.meetfood.repository.CommentRepository;
 import com.meetfood.repository.DiningRepository;
 import com.meetfood.repository.PictureRepository;
+import com.meetfood.statusCode.JsonResult;
+import com.meetfood.statusCode.StatusCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -20,7 +22,7 @@ import java.util.Date;
 @Controller
 @CrossOrigin
 @RequestMapping(path = "/comment")
-@Api(value = "CommentController|餐厅的评价相关")
+@Api(value = "CommentController")
 public class CommentController {
     @Autowired
     private CommentRepository commentRepository;
@@ -39,10 +41,10 @@ public class CommentController {
             @ApiImplicitParam( paramType ="query",name="text",value="发表评论的内容",required=true,dataType="String"),
             @ApiImplicitParam( paramType ="query",name="score",value="评分",required=true,dataType="Integer"),
     })
-    public String addComment (@RequestParam  Integer dining_id,
-                              @RequestParam  Integer guest_id,
-                              @RequestParam String text,
-                              @RequestParam Integer score) {
+    public JsonResult addComment (@RequestParam  Integer dining_id,
+                                  @RequestParam  Integer guest_id,
+                                  @RequestParam String text,
+                                  @RequestParam Integer score) {
 
         Comment comment = new Comment();
         comment.setDining_id(dining_id);
@@ -61,11 +63,13 @@ public class CommentController {
             Dining dining = diningRepository.findById(dining_id).get();
             dining.setGrade(avg);
             diningRepository.save(dining);
+            return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
+
 
         }catch (Exception e){
-            return "failed";
+            return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
+
         }
-        return "success";
     }
 
     //上传评论图片
@@ -76,7 +80,7 @@ public class CommentController {
             @ApiImplicitParam( paramType ="query",name="comment_id",value="对应评论的id",required=true,dataType="Integer"),
             @ApiImplicitParam( paramType ="query",name="picture",value="二进制图片",required=true,dataType="Blob")
     })
-    public String addCommentPicture (@RequestParam Integer comment_id,
+    public JsonResult addCommentPicture (@RequestParam Integer comment_id,
                                      @RequestParam Blob picture){
         Picture p = new Picture();
         p.setComment_id(comment_id);
@@ -84,11 +88,10 @@ public class CommentController {
 
         try {
             pictureRepository.save(p);
-            //return "success";
+            return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
         }catch (Exception e){
-            return "failed";
+            return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
         }
-        return "success";
     }
 
     //根据comment_id返回对应图片
@@ -96,8 +99,8 @@ public class CommentController {
     @GetMapping(path="/myComments/picture")
     @ApiOperation(value="根据comment_id返回对应图片",notes="返回json/String")
     @ApiImplicitParam( paramType ="query",name="picture",value="二进制图片",required=true,dataType="Blob")
-    public Iterable<Picture> viewPicture(@RequestParam Integer comment_id){
-        return pictureRepository.findByComment_id(comment_id);
+    public JsonResult viewPicture(@RequestParam Integer comment_id){
+        return new JsonResult(StatusCode.SUCCESS.getCode(),pictureRepository.findByComment_id(comment_id),new Date());
     }
 
     //客人查看我的所有评论
@@ -105,8 +108,9 @@ public class CommentController {
     @GetMapping(path="/myComments/text")
     @ApiOperation(value="客人查看我发出的评论",notes="返回json/String")
     @ApiImplicitParam( paramType ="query",name="guest_id",value="客人id",required=true,dataType="Integer")
-    public Iterable<Comment> viewCommentGuest (@RequestParam Integer guest_id) {
-        return commentRepository.findByGuest_id(guest_id);
+    public JsonResult viewCommentGuest (@RequestParam Integer guest_id) {
+        return new JsonResult(StatusCode.SUCCESS.getCode(),commentRepository.findByGuest_id(guest_id),new Date());
+
     }
 
     //餐厅查看所有评论
@@ -114,7 +118,7 @@ public class CommentController {
     @GetMapping(path="/receivedComments")
     @ApiOperation(value="餐厅查看我收到的评论",notes="返回json/String")
     @ApiImplicitParam( paramType ="query",name="dining_id",value="餐厅id",required=true,dataType="Integer")
-    public Iterable<Comment> viewCommentDining (@RequestParam Integer dining_id) {
-        return commentRepository.findByDining_id(dining_id);
+    public JsonResult viewCommentDining (@RequestParam Integer dining_id) {
+        return new JsonResult(StatusCode.SUCCESS.getCode(),commentRepository.findByDining_id(dining_id),new Date());
     }
 }

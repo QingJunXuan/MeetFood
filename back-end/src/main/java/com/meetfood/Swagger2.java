@@ -39,7 +39,7 @@ public class Swagger2 {
     }
     /**
      * 创建该API的基本信息（这些基本信息会展现在文档页面中）
-     * 访问地址：http://项目实际地址/swagger-ui.html
+     * 访问地址：http://localhost:8080/swagger-ui.html
      * @return
      */
     private ApiInfo apiInfo() {

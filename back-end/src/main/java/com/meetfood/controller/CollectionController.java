@@ -4,6 +4,8 @@ import com.meetfood.entity.Collection;
 import com.meetfood.entity.Dining;
 import com.meetfood.repository.CollectionRepository;
 import com.meetfood.repository.DiningRepository;
+import com.meetfood.statusCode.JsonResult;
+import com.meetfood.statusCode.StatusCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -18,7 +20,7 @@ import java.util.List;
 @Controller
 @CrossOrigin
 @RequestMapping(path = "/collection")
-@Api(value = "CollectionController|客人收藏餐厅、查看已收藏餐厅")
+@Api(value = "CollectionController")
 public class CollectionController {
     @Autowired
     private CollectionRepository collectionRepository;
@@ -33,8 +35,9 @@ public class CollectionController {
             @ApiImplicitParam(paramType = "query",name = "guest_id",value = "客人编号",required = true,dataType = "Integer"),
             @ApiImplicitParam(paramType = "query",name = "dining_id",value = "被收藏餐厅的编号",required = true,dataType = "Integer")
     })
-    public @ResponseBody String collectDining(@RequestParam Integer guest_id,
-                         @RequestParam Integer dining_id){
+    public @ResponseBody
+    JsonResult collectDining(@RequestParam Integer guest_id,
+                             @RequestParam Integer dining_id){
         /*
         SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date now = new Date();
@@ -56,9 +59,9 @@ public class CollectionController {
             Integer num = dining.getCollections();
             dining.setCollections(num+1);
             diningRepository.save(dining);
-            return "success";
+            return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
         }catch (Exception e){
-            return "failed";
+            return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
         }
     }
 
@@ -66,8 +69,8 @@ public class CollectionController {
     @GetMapping(path = "/viewCollection")
     @ApiOperation(value = "客人查看收藏的餐厅",notes = "返回json")
     @ApiImplicitParam(paramType = "query",name = "guest_id",value = "客人编号",required = true,dataType = "Integer")
-    public @ResponseBody List<Collection> getCollectionsByGuest_id(@RequestParam Integer guest_id){
-        return collectionRepository.findByGuest_id(guest_id);
+    public @ResponseBody JsonResult getCollectionsByGuest_id(@RequestParam Integer guest_id){
+        return new JsonResult(StatusCode.SUCCESS.getCode(),collectionRepository.findByGuest_id(guest_id),new Date());
     }
 
     @GetMapping(path = "all")
@@ -78,7 +81,7 @@ public class CollectionController {
     @DeleteMapping(path = "/delete")
     @ApiOperation(value = "客人删除已收藏的餐厅",notes = "返回string")
     @ApiImplicitParam(paramType = "param",name = "id",value = "收藏编号",required = true,dataType = "Integer")
-    public @ResponseBody String deleteCollection(@RequestParam Integer id){
+    public @ResponseBody JsonResult deleteCollection(@RequestParam Integer id){
         //CollectionPK id = new CollectionPK();
         //id.setGuest_id(guest_id);
         //id.setDining_id(dining_id);
@@ -86,10 +89,11 @@ public class CollectionController {
         if( collectionRepository.findById(id) != null){
             try {
                 collectionRepository.deleteById(id);
-                return "success";
+                return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
             }catch (Exception e){
-                return "failed";
+                return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
             }
-        }else return "notExist";
+        }else  return new JsonResult(StatusCode.NOT_EXIST.getCode(),new Date());
+
     }
 }

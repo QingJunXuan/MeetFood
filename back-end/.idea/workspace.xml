@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f4e8363-ad54-4aa7-a849-60a0ed755a32" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/01bbf291-4072-45c9-88a3-95845995257d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/01bbf291-4072-45c9-88a3-95845995257d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CollectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CollectionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DiningController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DiningController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/DishController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/GuestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/GuestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/InitialController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/OrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/controller/OrderFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/meetfood/statusCode/StatusCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/meetfood/statusCode/StatusCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/InitialController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -107,17 +128,17 @@
     <session id="-1751923796">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -125,32 +146,34 @@
           <entry key="book" value="1" />
           <entry key="collection" value="2" />
           <entry key="dining" value="1" />
-          <entry key="gradle" value="5" />
+          <entry key="gradle" value="6" />
+          <entry key="gradlew" value="1" />
           <entry key="hibernate_sequence" value="1" />
-          <entry key="java" value="213" />
-          <entry key="properties" value="5" />
+          <entry key="java" value="231" />
+          <entry key="properties" value="7" />
           <entry key="sql" value="2" />
           <entry key="xml" value="2" />
-          <entry key="yml" value="2" />
+          <entry key="yml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="5" />
-          <entry key="Groovy" value="5" />
-          <entry key="JAVA" value="213" />
-          <entry key="Properties" value="5" />
+          <entry key="Groovy" value="6" />
+          <entry key="JAVA" value="231" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="7" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="2" />
-          <entry key="YAML" value="2" />
+          <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
           <entry key="gradle" value="162" />
-          <entry key="java" value="25432" />
+          <entry key="java" value="26314" />
           <entry key="properties" value="181" />
           <entry key="sql" value="30" />
           <entry key="txt" value="49" />
@@ -160,7 +183,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="162" />
-          <entry key="JAVA" value="25430" />
+          <entry key="JAVA" value="26312" />
           <entry key="PLAIN_TEXT" value="64" />
           <entry key="Properties" value="181" />
           <entry key="SQL" value="30" />
@@ -172,35 +195,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/Application.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/repository/PictureRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+            <state relative-caret-position="549">
+              <caret line="128" column="9" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,8 +210,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="114">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -221,10 +220,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="437">
+              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -232,11 +231,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1634">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="836">
+              <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -247,13 +267,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="133">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5359#5360#0" expanded="true" />
-                <element signature="e#5408#5409#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="58" lean-forward="true" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -261,29 +288,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="133">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/JsonResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -746,8 +755,6 @@
         <option value="$PROJECT_DIR$/src/main/java/App/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/entity/Picture.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/entity/Type.java" />
@@ -764,20 +771,24 @@
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/JsonResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/repository/BookRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/entity/Guest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/InitialController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/entity/Dining.java" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/repository/CommentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/meetfood/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/CORSConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/InitialController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ExcecutorConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java" />
       </list>
     </option>
   </component>
@@ -787,10 +798,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-30" />
-    <option name="y" value="361" />
-    <option name="width" value="1946" />
+    <option name="y" value="360" />
+    <option name="width" value="1947" />
     <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -847,33 +858,6 @@
               <item name="back-end" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="meetfood" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="meetfood" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="meetfood" type="462c0819:PsiDirectoryNode" />
-              <item name="statusCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="back-end" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -899,7 +883,7 @@
     <property name="SearchEverywhereHistoryKey" value="Date&#9;PSI&#9;JAVA://com.meetfood.statusCode.JsonResult#date&#10;findBy&#9;PSI&#9;JAVA://com.meetfood.repository.BookRepository#findByGuest_id&#10;v&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546456106644" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546500908423" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/jsonjar/json-lib-2.4-jdk15.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -957,7 +941,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9c449e5c-06ed-45b9-9eb2-243134568419" name="Default Changelist" comment="" />
+      <changelist id="8f4e8363-ad54-4aa7-a849-60a0ed755a32" name="Default Changelist" comment="" />
       <created>1544639853586</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -978,11 +962,12 @@
       <workItem from="1546000913050" duration="1253000" />
       <workItem from="1546233750358" duration="1899000" />
       <workItem from="1546238113780" duration="34320000" />
+      <workItem from="1546498214414" duration="2361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183815000" />
+    <option name="totallyTimeSpent" value="196742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -994,10 +979,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25383994" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24737267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1015,7 +1000,7 @@
       <window_info anchor="bottom" id="Build" order="7" weight="0.3291815" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3291815" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3291815" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5004042" side_tool="true" weight="0.26868328" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3291815" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.3291815" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3291815" />
@@ -1029,7 +1014,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.32983023" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.2603072" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.18270008" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.32983023" />
@@ -1090,13 +1075,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4560">
-          <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../大三课件/WebServer&amp;SOA/json/LoginResult.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/user/JsonResult.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/user/StatusCode.java" />
@@ -1169,13 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/repository/GuestRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/entity/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1224,17 +1195,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradlew.bat">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/entity/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -1272,47 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/InitialController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" selection-start-column="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/repository/CommentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -1323,23 +1246,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/JsonResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1347,42 +1253,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5359#5360#0" expanded="true" />
-            <element signature="e#5408#5409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1399,30 +1273,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/CORSConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/repository/GuestRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="274">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/statusCode/StatusCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/InitialController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExcecutorConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/OrderFormController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/DiningController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/DishController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/Swagger2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="58" lean-forward="true" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="57">
+          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/CollectionController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/meetfood/controller/GuestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1634">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="549">
+          <caret line="128" column="9" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -19,7 +19,7 @@ import java.util.List;
 @Controller
 @CrossOrigin
 @RequestMapping(path = "/dining")
-@Api(value = "DiningController|私人厨房信息增删改查")
+@Api(value = "DiningController")
 public class DiningController {
     @Autowired
     private DiningRepository diningRepository;
@@ -36,7 +36,7 @@ public class DiningController {
             @ApiImplicitParam(paramType = "query", name = "address", value = "餐厅地址", required = true, dataType = "String"),
             //@ApiImplicitParam(paramType = "query", name = "icon", value = "餐厅图标", required = true, dataType = "Blob")
     })
-    public @ResponseBody String addDining(@RequestParam String email,
+    public @ResponseBody JsonResult addDining(@RequestParam String email,
                                           @RequestParam String password,
                                           @RequestParam String type,
                                           @RequestParam String name,
@@ -63,11 +63,12 @@ public class DiningController {
                 d.setTime(new Date());
 
                 diningRepository.save(d);
-                return "success";
+                return  new JsonResult(StatusCode.SUCCESS.getCode(), new Date());
             } catch (Exception e) {
-                return "failed";
+                return  new JsonResult(StatusCode.SYS_ERROR.getCode(), new Date());
             }
-        }else return "registered";
+        }else   return  new JsonResult(StatusCode.FAIL_REGISTERED.getCode(), new Date());
+
     }
 
     //登录
@@ -85,7 +86,7 @@ public class DiningController {
                 return new JsonResult(StatusCode.SUCCESS.getCode(),dining,new Date());
             }
             else return new JsonResult(StatusCode.FAIL_PASS.getCode(),new Date());
-        }else return new JsonResult(StatusCode.FAIL_UNREGISTER.getCode(),new Date());
+        }else return new JsonResult(StatusCode.NOT_EXIST.getCode(),new Date());
     }
 
     //修改信息
@@ -95,15 +96,15 @@ public class DiningController {
             @ApiImplicitParam( paramType = "query",name = "id",value = "餐厅编号",required = true,dataType = "Integer"),
             @ApiImplicitParam( paramType = "query",name = "name",value = "餐厅名字",required = true,dataType = "String")
     })
-    public @ResponseBody String updateDining(@RequestParam Integer id,
+    public @ResponseBody JsonResult updateDining(@RequestParam Integer id,
                                              @RequestParam String name){
         try{
             Dining dining = diningRepository.findById(id).get();
             dining.setName(name);
             diningRepository.save(dining);
-            return "success";
+            return  new JsonResult(StatusCode.SUCCESS.getCode(), new Date());
         }catch (Exception e){
-            return "failed";
+            return  new JsonResult(StatusCode.NOT_EXIST.getCode(), new Date());
         }
     }
 
@@ -111,13 +112,14 @@ public class DiningController {
     @GetMapping(path = "/view")
     @ApiOperation(value = "根据餐厅id返回餐厅信息",notes = "返回JSON")
     @ApiImplicitParam( paramType = "query",name = "id",value = "餐厅id",required = true,dataType = "Integer")
-    public @ResponseBody Iterable<Dining> viewDining(@RequestParam Integer id){
-        return diningRepository.viewById(id);
+    public @ResponseBody JsonResult viewDining(@RequestParam Integer id){
+        return  new JsonResult(StatusCode.SUCCESS.getCode(),diningRepository.viewById(id), new Date());
     }
 
-    //查看所有用户
+    //查看所有餐厅
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Dining> getAllDinings() {
-        return diningRepository.findAll();
+        return  diningRepository.findAll();
+
     }
 }

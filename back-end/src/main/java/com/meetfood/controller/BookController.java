@@ -2,6 +2,8 @@ package com.meetfood.controller;
 
 import com.meetfood.entity.Book;
 import com.meetfood.repository.BookRepository;
+import com.meetfood.statusCode.JsonResult;
+import com.meetfood.statusCode.StatusCode;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,7 @@ import java.util.List;
 @Controller
 @CrossOrigin
 @RequestMapping(path = "/myReservation")
-@Api(value = "BookController|用于用户预约餐厅和查看预约信息")
+@Api(value = "BookController")
 public class BookController {
     @Autowired
     private BookRepository bookRepository;
@@ -30,10 +32,15 @@ public class BookController {
             @ApiImplicitParam( paramType ="query",name="state",value="预订状态",required=true,dataType="Integer"),
             @ApiImplicitParam( paramType ="query",name="guest_id",value="当前用户",required=true,dataType="Integer")
     })
-    public @ResponseBody Iterable<Book> getBook1(@RequestParam Integer state,
-                                                @RequestParam Integer guest_id) {
+    public @ResponseBody JsonResult getBook1(@RequestParam Integer state,
+                        @RequestParam Integer guest_id) {
         // This returns a JSON or XML with the users
-        return bookRepository.findByStateAndGuest_id(state,guest_id);
+        try{
+        List<Book> book = bookRepository.findByStateAndGuest_id(state,guest_id);
+        return new JsonResult(StatusCode.SUCCESS.getCode(),book,new Date());
+        }catch (Exception e){
+            return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
+        }
     }
 
     //根据时间查看预约信息
@@ -64,8 +71,8 @@ public class BookController {
     @CrossOrigin
     @ApiOperation(value = "当前用户的所有预订订单",notes = "返回json")
     @ApiImplicitParam( paramType = "query",name = "guest_id",value = "当前用户",required = true,dataType = "Integer")
-    public @ResponseBody Iterable<Book> getByGuest(@RequestParam Integer guest_id){
-        return bookRepository.findByGuest_id(guest_id);
+    public @ResponseBody JsonResult getByGuest(@RequestParam Integer guest_id){
+        return new JsonResult(StatusCode.SUCCESS.getCode(),bookRepository.findByGuest_id(guest_id),new Date());
     }
 
     //预约餐厅
@@ -76,7 +83,7 @@ public class BookController {
             @ApiImplicitParam( paramType ="query",name="repast_time",value="用餐时间",required=true,dataType="Date")
             //@ApiImplicitParam( paramType ="query",name="order_time",value="预约时间",required=true,dataType="Date")
     })
-    public @ResponseBody String addBook(@RequestParam Integer dining_id,
+    public @ResponseBody JsonResult addBook(@RequestParam Integer dining_id,
                                         @RequestParam Integer guest_id,
                                         @RequestParam Date repast_time
                                         //@RequestParam Date order_time
@@ -90,9 +97,9 @@ public class BookController {
            b.setOrder_time(new Date());
 
            bookRepository.save(b);
-           return "success";
+           return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
        }catch(Exception e){
-           return "failed!";
+           return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
        }
     }
 }

@@ -10,7 +10,7 @@ public enum StatusCode {
     SUCCESS(200, "成功"),
 
     /** 未注册邮箱 */
-    FAIL_UNREGISTER(400, "未注册邮箱"),
+    NOT_EXIST(400, "不存在"),
 
     /** 邮箱已注册 */
     FAIL_REGISTERED(401, "邮箱已注册"),

@@ -1,6 +1,8 @@
 package com.meetfood.controller;
 import com.meetfood.entity.Book;
 import com.meetfood.repository.BookRepository;
+import com.meetfood.statusCode.JsonResult;
+import com.meetfood.statusCode.StatusCode;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,7 @@ import java.util.List;
 @Controller
 @CrossOrigin
 @RequestMapping(path = "/myOrderForm")
-@Api(value = "OrderFormController|用于餐厅查看订单信息")
+@Api(value = "OrderFormController")
 
 public class OrderFormController {
     @Autowired
@@ -29,10 +31,11 @@ public class OrderFormController {
             @ApiImplicitParam( paramType ="query",name="state",value="预订状态",required=true,dataType="Integer"),
             @ApiImplicitParam( paramType ="query",name="dining_id",value="当前餐厅",required=true,dataType="Integer")
     })
-    public @ResponseBody Iterable<Book> getBookByStateAndDining_id(@RequestParam Integer state,
-                                                 @RequestParam Integer dining_id) {
+    public @ResponseBody
+    JsonResult getBookByStateAndDining_id(@RequestParam Integer state,
+                                          @RequestParam Integer dining_id) {
         // This returns a JSON or XML with the users
-        return bookRepository.findByStateAndDining_id(state,dining_id);
+        return new JsonResult(StatusCode.SUCCESS.getCode(),bookRepository.findByStateAndDining_id(state,dining_id),new Date());
     }
 
     @GetMapping({"/lastWeek",
@@ -42,7 +45,7 @@ public class OrderFormController {
     @ApiImplicitParams({@ApiImplicitParam( paramType = "query",name = "dining_id",value="当前用户",required = true,dataType = "Integer"),
             @ApiImplicitParam( paramType = "query",name = "date_state",value="距当前的时间",required = true,dataType = "Integer")
     })
-    public @ResponseBody Iterable<Book> getBookByTime(@RequestParam Integer dining_id,
+    public @ResponseBody JsonResult getBookByTime(@RequestParam Integer dining_id,
                                                  @RequestParam Integer date_state){
         SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd");
         //ft.format(current_time);
@@ -53,14 +56,14 @@ public class OrderFormController {
         c.add(Calendar.DATE, - date_state);
         Date d = c.getTime();
 
-        return bookRepository.findByDining_idAndOrder_time(dining_id,d);
+        return new JsonResult(StatusCode.SUCCESS.getCode(),bookRepository.findByDining_idAndOrder_time(dining_id,d), new Date());
     }
 
         @GetMapping(path = "/all")
         @ApiOperation(value = "当前餐厅的所有预定订单",notes = "返回json")
         @ApiImplicitParam( paramType = "query",name = "dining_id",value = "当前用户",required = true,dataType = "Integer")
-        public @ResponseBody Iterable<Book> getByGuest(@RequestParam Integer dining_id){
-            return bookRepository.findByDining_id(dining_id);
+        public @ResponseBody JsonResult getByGuest(@RequestParam Integer dining_id){
+            return new JsonResult(StatusCode.SUCCESS.getCode(),bookRepository.findByDining_id(dining_id), new Date());
 
         }
 
@@ -71,7 +74,7 @@ public class OrderFormController {
             @ApiImplicitParam( paramType ="query",name="toState",value="将处于的状态",required=true,dataType="Integer")
     })
 
-    public @ResponseBody String setBookState(@RequestParam Integer id,
+    public @ResponseBody JsonResult setBookState(@RequestParam Integer id,
                                              @RequestParam Integer toState){
         try {//在数据库中新建预订订单
             //Book b = new Book();
@@ -82,9 +85,9 @@ public class OrderFormController {
             Book book = bookRepository.findById(id).get();
             book.setState(toState);
             bookRepository.save(book);
-            return "success";
+            return new JsonResult(StatusCode.SUCCESS.getCode(), new Date());
         }catch(Exception e){
-            return "failed!";
+            return new JsonResult(StatusCode.SYS_ERROR.getCode(), new Date());
         }
     }
 }

@@ -2,6 +2,8 @@ package com.meetfood.controller;
 
 import com.meetfood.entity.Dish;
 import com.meetfood.repository.DishRepository;
+import com.meetfood.statusCode.JsonResult;
+import com.meetfood.statusCode.StatusCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -16,7 +18,7 @@ import java.util.Date;
 @Controller
 @CrossOrigin
 @RequestMapping(path = "/dining/dish")
-@Api(value = "DishController|菜品信息增删改查")
+@Api(value = "DishController")
 public class DishController {
     @Autowired
     private DishRepository dishRepository;
@@ -34,13 +36,13 @@ public class DishController {
             @ApiImplicitParam( paramType = "query",name = "start_time",value = "开始供应时间",required = true,dataType = "Date"),
             @ApiImplicitParam( paramType = "query",name = "stop_time",value = "停止供应时间",required = true,dataType = "Date")
     })
-    public String addDish (@RequestParam Integer dining_id,
-                        @RequestParam String name,
-                        @RequestParam String intro,
-                        @RequestParam String ingredient,
-                        @RequestParam Blob pic,
-                        @RequestParam Date start_time,
-                        @RequestParam Date stop_time) {
+    public JsonResult addDish (@RequestParam Integer dining_id,
+                               @RequestParam String name,
+                               @RequestParam String intro,
+                               @RequestParam String ingredient,
+                               @RequestParam Blob pic,
+                               @RequestParam Date start_time,
+                               @RequestParam Date stop_time) {
 
         Dish dish = new Dish();
         dish.setDining_id(dining_id);
@@ -54,9 +56,9 @@ public class DishController {
         try {
             dishRepository.save(dish);
         }catch (Exception e){
-            return "failed";
+            return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
         }
-        return "success";
+        return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
     }
 
     //删除现有菜品
@@ -64,30 +66,38 @@ public class DishController {
     @DeleteMapping(path="/deleteDish")
     @ApiOperation(value="删除某种菜品",notes="返回json/String")
     @ApiImplicitParam( paramType ="query",name="id",value="菜品id",required=true,dataType="String")
-    public String deleteDish (@RequestParam Integer id) {
+    public JsonResult deleteDish (@RequestParam Integer id) {
 
         boolean exists = dishRepository.existsById(id);
         if(exists){
             try {
                 dishRepository.deleteById(id);
             }catch (Exception e){
-                return "failed";
+                return new JsonResult(StatusCode.SYS_ERROR.getCode(),new Date());
             }
-            return "success";
-        }else return "notExists";
+            return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
+        }else
+            return new JsonResult(StatusCode.NOT_EXIST.getCode(),new Date());
     }
-/*
+
     //修改现有菜品
     @ResponseBody
     @RequestMapping(path="/updateDish")
     @ApiOperation(value="修改菜品信息",notes="返回json/String")
     @ApiImplicitParams({
-            @ApiImplicitParam( paramType ="query",name="dining_id",value="餐厅id",required=true,dataType="Integer")
+            @ApiImplicitParam( paramType ="query",name="dining_id",value="餐厅id",required=true,dataType="Integer"),
+            @ApiImplicitParam( paramType ="query",name="name",value="餐厅名称",required=true,dataType="String")
     })
-    public String updateDish (@RequestParam Integer dining_id) {
+    public JsonResult updateDish (@RequestParam Integer dining_id,
+                                  @RequestParam String name) {
+        Dish dish = new Dish();
+        dish.setName(name);
 
+        dishRepository.save(dish);
+
+        return new JsonResult(StatusCode.SUCCESS.getCode(),new Date());
     }
-*/
+
     //查看所有现有菜品
     @ResponseBody
     @GetMapping(path="/viewDish")
