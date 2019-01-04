@@ -14,7 +14,7 @@
                     <div class="box">
                         <el-form ref="form" label-position="left" label-width="110px" :model="form">                                            
                         <el-form-item label="Name">
-                        <el-input  value="Jack"></el-input>
+                        <el-input  value="guest1"></el-input>
                         </el-form-item>
                         <el-form-item label="Email">
                         <el-input value="1888888@tongji.edu.cn"></el-input>
@@ -23,7 +23,7 @@
                         <el-input value="12"></el-input>
                         </el-form-item>
                         <el-form-item label="TeleNumber">
-                        <el-input value="13245678901"></el-input>
+                        <el-input value="(720) 865-9090"></el-input>
                         </el-form-item>
                                   
                 </el-form>

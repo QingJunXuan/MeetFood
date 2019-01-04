@@ -55,7 +55,8 @@ export default {
     },
     data(){
         return{
-            Order:[{
+            Order:[
+               {
                  text:"Name:Deliciousrilla",
                         img:require("../../../assets/2.jpg"),
                         id:"1",
